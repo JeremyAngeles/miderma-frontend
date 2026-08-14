@@ -11,8 +11,8 @@ const SobreMi = () => {
             
             {/* HERO SIMPLE PARA LA PÁGINA (Espacio para el Navbar) */}
             <div className="relative w-full pt-32 pb-16 bg-[#FDF6F4] flex flex-col items-center justify-center text-center px-4">
-                <h1 className="text-4xl sm:text-5xl font-extrabold text-[#5A4A42] mb-4">Acerca de Nosotros</h1>
-                <div className="w-16 h-1.5 bg-miderma-pink rounded-full"></div>
+                <h1 className="text-4xl sm:text-5xl font-bold text-[#291840] mb-4 font-serif">Acerca de Nosotros</h1>
+                <div className="w-16 h-1.5 bg-[#F2BDC7] rounded-full"></div>
             </div>
 
             {/* 1. SECCIÓN DE CONGRESOS (El carrusel horizontal) */}

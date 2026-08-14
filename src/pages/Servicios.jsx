@@ -2,7 +2,6 @@ import Navbar from '../components/Navbar';
 import CtaBanner from '../components/CtaBanner';
 import { Link } from 'react-router-dom';
 
-// Hemos extraído la info de tus fotos y organizado los "Incluye" en listas para que se vea elegante.
 const serviciosLista = [
     {
         id: "clinica",
@@ -73,10 +72,12 @@ const Servicios = () => {
             
             {/* HERO DE LA PÁGINA */}
             <div className="relative w-full pt-32 pb-16 bg-[#FDF6F4] flex flex-col items-center justify-center text-center px-4">
-                <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 block text-xs md:text-sm">Especialidades</span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#5A4A42] mb-4">Nuestros Servicios</h1>
-                <div className="w-20 h-1.5 bg-miderma-pink rounded-full mb-6"></div>
-                <p className="max-w-2xl text-gray-600 text-sm md:text-base">
+                <span className="text-[#F2BDC7] font-extrabold tracking-widest uppercase mb-2 block text-xs md:text-sm">Especialidades</span>
+                {/* Título cambiado al azul noche oscuro */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#291840] mb-4 font-serif">Nuestros Servicios</h1>
+                <div className="w-20 h-1.5 bg-[#F2BDC7] rounded-full mb-6"></div>
+                {/* Texto cambiado a plomo oscuro */}
+                <p className="max-w-2xl text-[#615573] text-sm md:text-base">
                     Atención médica integral con tecnología de vanguardia para la salud y belleza de tu piel, cabello y uñas.
                 </p>
             </div>
@@ -90,14 +91,14 @@ const Servicios = () => {
                     return (
                         <div 
                             key={servicio.id} 
-                            // Alternamos un fondo ligeramente gris/rosa para separar mejor los servicios
-                            className={`w-full py-16 md:py-24 ${isEven ? 'bg-white' : 'bg-gray-50'}`}
+                            // Alternamos el fondo entre blanco y el gris muy clarito de tu paleta
+                            className={`w-full py-16 md:py-24 ${isEven ? 'bg-white' : 'bg-[#FDF6F4]'}`}
                         >
                             <div className={`max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-10 lg:gap-16 items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                                 
                                 {/* IMAGEN */}
                                 <div className="w-full lg:w-1/2 flex justify-center relative">
-                                    <div className="absolute w-full h-full bg-miderma-pink/10 rounded-[3rem] -z-10 translate-x-4 translate-y-4"></div>
+                                    <div className="absolute w-full h-full bg-[#F2BDC7]/20 rounded-[3rem] -z-10 translate-x-4 translate-y-4"></div>
                                     <img 
                                         src={servicio.imagen} 
                                         alt={servicio.titulo} 
@@ -108,23 +109,23 @@ const Servicios = () => {
 
                                 {/* CONTENIDO (TEXTO) */}
                                 <div className="w-full lg:w-1/2 flex flex-col">
-                                    <h2 className="text-3xl md:text-4xl font-extrabold text-[#5A4A42] mb-4">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-[#291840] mb-4 font-serif">
                                         {servicio.titulo}
                                     </h2>
-                                    <p className="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
+                                    <p className="text-base md:text-lg text-[#615573] mb-8 leading-relaxed">
                                         {servicio.descripcion}
                                     </p>
 
                                     {/* LISTA DE "INCLUYE" (Píldoras/Etiquetas) */}
                                     <div className="mb-10">
-                                        <p className="text-xs font-bold uppercase text-miderma-pink tracking-wider mb-4 border-b border-gray-200 pb-2">
+                                        <p className="text-xs font-bold uppercase text-[#F2BDC7] tracking-wider mb-4 border-b border-[#F2F2F2] pb-2">
                                             Incluye:
                                         </p>
                                         <div className="flex flex-wrap gap-2">
                                             {servicio.incluye.map((item, i) => (
                                                 <span 
                                                     key={i} 
-                                                    className="bg-white border border-gray-200 shadow-sm text-gray-700 text-[11px] md:text-xs font-semibold px-3 py-1.5 rounded-full"
+                                                    className="bg-white border border-[#F2F2F2] shadow-sm text-[#615573] text-[11px] md:text-xs font-semibold px-4 py-2 rounded-full"
                                                 >
                                                     {item}
                                                 </span>
@@ -136,7 +137,7 @@ const Servicios = () => {
                                     <div>
                                         <Link 
                                             to="/contacto" 
-                                            className="inline-flex items-center gap-2 bg-miderma-dark text-white hover:bg-miderma-pink px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-lg text-sm md:text-base uppercase tracking-wider"
+                                            className="inline-flex items-center gap-2 bg-[#291840] text-white hover:bg-[#F2BDC7] px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-lg text-sm md:text-base uppercase tracking-wider"
                                         >
                                             Consulte su tratamiento
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>

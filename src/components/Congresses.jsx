@@ -55,23 +55,18 @@ const congresos = [
 const Congresses = () => {
     const scrollRef = useRef(null);
     const [selectedCongreso, setSelectedCongreso] = useState(null);
-    const [isHovered, setIsHovered] = useState(false); // Para pausar el slider si pones el mouse encima
+    const [isHovered, setIsHovered] = useState(false);
 
-    // Variables para controlar el arrastre con el mouse
     const isDragging = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
-    const wasDragged = useRef(false); // Sirve para saber si arrastraste (y no abrir el modal)
+    const wasDragged = useRef(false); 
 
-    // ========================================================
-    // LÓGICA PARA ARRASTRAR CON EL MOUSE EN PC
-    // ========================================================
     const handleMouseDown = (e) => {
         isDragging.current = true;
         wasDragged.current = false;
         startX.current = e.pageX - scrollRef.current.offsetLeft;
         scrollLeft.current = scrollRef.current.scrollLeft;
-        // Quitamos el scroll suave temporalmente para que siga al mouse perfecto
         scrollRef.current.style.scrollBehavior = 'auto'; 
     };
 
@@ -90,32 +85,27 @@ const Congresses = () => {
         if (!isDragging.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX.current) * 1.5; // La velocidad de arrastre
-        if (Math.abs(walk) > 10) wasDragged.current = true; // Si moviste el mouse más de 10px, cuenta como arrastre
+        const walk = (x - startX.current) * 1.5; 
+        if (Math.abs(walk) > 10) wasDragged.current = true; 
         scrollRef.current.scrollLeft = scrollLeft.current - walk;
     };
 
-    // Solo abre el modal si NO estabas arrastrando la tarjeta
     const handleCardClick = (congreso) => {
         if (!wasDragged.current) {
             setSelectedCongreso(congreso);
         }
     };
 
-    // ========================================================
-    // AUTO-SCROLL (Se mueve solo, pero se pausa si tocas)
-    // ========================================================
     useEffect(() => {
         const interval = setInterval(() => {
-            // Solo avanza si no hay modal abierto, no estás arrastrando y no tienes el mouse encima
             if (scrollRef.current && !selectedCongreso && !isHovered && !isDragging.current) {
                 scrollRef.current.style.scrollBehavior = 'smooth';
                 const maxScroll = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
                 
                 if (scrollRef.current.scrollLeft >= maxScroll - 10) {
-                    scrollRef.current.scrollTo({ left: 0 }); // Regresa al inicio
+                    scrollRef.current.scrollTo({ left: 0 }); 
                 } else {
-                    scrollRef.current.scrollBy({ left: 320 }); // Avanza una tarjeta
+                    scrollRef.current.scrollBy({ left: 320 }); 
                 }
             }
         }, 3000); 
@@ -123,7 +113,6 @@ const Congresses = () => {
         return () => clearInterval(interval);
     }, [selectedCongreso, isHovered]);
 
-    // Bloquea el scroll de la página trasera al abrir un modal
     useEffect(() => {
         if (selectedCongreso) {
             document.body.style.overflow = 'hidden';
@@ -133,17 +122,16 @@ const Congresses = () => {
     }, [selectedCongreso]);
 
     return (
-        <section className="py-16 md:py-24 bg-white text-miderma-dark overflow-hidden relative">
+        <section className="py-16 md:py-24 bg-white overflow-hidden relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 
                 <div className="text-center md:text-left mb-10">
-                    <span className="font-extrabold tracking-widest uppercase mb-2 block text-xs text-miderma-pink">Actualización Constante</span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#5A4A42]">Últimos Congresos Asistidos</h2>
-                    <div className="w-16 h-1.5 bg-miderma-pink mt-4 mx-auto md:mx-0 rounded-full"></div>
-                    <p className="text-gray-500 mt-4 text-sm md:text-base">Puedes deslizar las tarjetas o tocarlas para ver la información detallada.</p>
+                    <span className="font-extrabold tracking-widest uppercase mb-2 block text-xs text-[#F2BDC7]">Actualización Constante</span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-[#291840] font-serif">Últimos Congresos Asistidos</h2>
+                    <div className="w-16 h-1.5 bg-[#F2BDC7] mt-4 mx-auto md:mx-0 rounded-full"></div>
+                    <p className="text-[#9A92A6] mt-4 text-sm md:text-base">Puedes deslizar las tarjetas o tocarlas para ver la información detallada.</p>
                 </div>
 
-                {/* CONTENEDOR DEL SLIDER */}
                 <div 
                     ref={scrollRef}
                     onMouseEnter={() => setIsHovered(true)}
@@ -159,31 +147,28 @@ const Congresses = () => {
                         <div 
                             key={congreso.id} 
                             onClick={() => handleCardClick(congreso)}
-                            className="relative flex-shrink-0 w-[260px] md:w-[320px] h-[360px] rounded-3xl overflow-hidden shadow-lg snap-center group border border-gray-100 transform hover:-translate-y-2 transition-all duration-300"
+                            className="relative flex-shrink-0 w-[260px] md:w-[320px] h-[360px] rounded-3xl overflow-hidden shadow-lg snap-center group border border-[#F2F2F2] transform hover:-translate-y-2 transition-all duration-300"
                         >
-                            {/* IMAGEN PEQUEÑA (CARTA) */}
                             <img 
                                 src={congreso.imagen} 
                                 alt={congreso.titulo} 
-                                draggable="false" // Evita que la foto en sí se arrastre como un archivo
+                                draggable="false" 
                                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 select-none"
                                 onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }}
                             />
-                            {/* Gradiente oscuro abajo */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#5A4A42] via-[#5A4A42]/50 to-transparent opacity-90 pointer-events-none"></div>
+                            {/* GRADIENTE CAMBIADO AL AZUL NOCHE */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#291840] via-[#291840]/60 to-transparent opacity-90 pointer-events-none"></div>
                             
-                            {/* Icono de Click */}
                             <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"/></svg>
                             </div>
 
-                            {/* TÍTULO DE LA CARTA */}
                             <div className="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
-                                <span className="bg-miderma-pink text-white text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
+                                <span className="bg-[#F2BDC7] text-white text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
                                     {congreso.fecha}
                                 </span>
                                 <h3 className="text-lg md:text-xl font-bold leading-tight mb-1">{congreso.titulo}</h3>
-                                <p className="text-xs text-white/80 mt-2 flex items-center gap-1 font-semibold group-hover:text-miderma-pink transition-colors">
+                                <p className="text-xs text-white/80 mt-2 flex items-center gap-1 font-semibold group-hover:text-[#F2BDC7] transition-colors">
                                     Ver Información <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
                                 </p>
                             </div>
@@ -192,27 +177,22 @@ const Congresses = () => {
                 </div>
             </div>
 
-            {/* ========================================================
-                MODAL (VENTANA EMERGENTE AL HACER CLIC)
-            ======================================================== */}
             {selectedCongreso && (
                 <div 
-                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm transition-opacity"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-[#291840]/70 backdrop-blur-sm transition-opacity"
                     onClick={() => setSelectedCongreso(null)} 
                 >
                     <div 
                         className="bg-white rounded-[2rem] w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row shadow-2xl relative transform transition-transform animate-fade-in-up"
                         onClick={(e) => e.stopPropagation()} 
                     >
-                        {/* Botón Cerrar */}
                         <button 
                             onClick={() => setSelectedCongreso(null)}
-                            className="absolute top-4 right-4 z-50 w-10 h-10 bg-white shadow-md text-gray-800 hover:text-miderma-pink hover:bg-gray-50 rounded-full flex items-center justify-center transition-colors"
+                            className="absolute top-4 right-4 z-50 w-10 h-10 bg-white shadow-md text-[#291840] hover:text-[#F2BDC7] hover:bg-[#F2F2F2] rounded-full flex items-center justify-center transition-colors"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/></svg>
                         </button>
 
-                        {/* Mitad Imagen */}
                         <div className="w-full md:w-5/12 h-[250px] md:h-auto relative bg-[#FDF6F4] flex-shrink-0">
                             <img 
                                 src={selectedCongreso.imagen} 
@@ -221,33 +201,32 @@ const Congresses = () => {
                             />
                         </div>
 
-                        {/* Mitad Texto (Habilitado con Scroll) */}
                         <div className="w-full md:w-7/12 p-6 sm:p-10 flex flex-col overflow-y-auto bg-white">
-                            <span className="text-xs font-bold text-miderma-pink uppercase tracking-widest mb-2">
+                            <span className="text-xs font-bold text-[#F2BDC7] uppercase tracking-widest mb-2">
                                 {selectedCongreso.fecha}
                             </span>
                             
-                            <h3 className="text-2xl md:text-3xl font-extrabold text-[#5A4A42] mb-6 leading-tight">
+                            <h3 className="text-2xl md:text-3xl font-bold text-[#291840] mb-6 leading-tight font-serif">
                                 {selectedCongreso.titulo}
                             </h3>
                             
                             {selectedCongreso.organizador && (
-                                <div className="mb-6 bg-[#FDF6F4] p-4 rounded-xl border border-miderma-pink/10">
-                                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Organizado por:</p>
-                                    <p className="text-sm font-semibold text-miderma-dark">{selectedCongreso.organizador}</p>
+                                <div className="mb-6 bg-[#FDF6F4] p-4 rounded-xl border border-[#F2BDC7]/20">
+                                    <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1">Organizado por:</p>
+                                    <p className="text-sm font-semibold text-[#291840]">{selectedCongreso.organizador}</p>
                                 </div>
                             )}
                             
                             <div className="mb-6">
-                                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                                <p className="text-sm md:text-base text-[#615573] leading-relaxed">
                                     {selectedCongreso.descripcion}
                                 </p>
                             </div>
 
                             {selectedCongreso.ponentes && (
-                                <div className="mt-auto pt-6 border-t border-gray-100">
-                                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wider mb-1">Ponentes Destacados:</p>
-                                    <p className="text-sm font-semibold text-miderma-dark">{selectedCongreso.ponentes}</p>
+                                <div className="mt-auto pt-6 border-t border-[#F2F2F2]">
+                                    <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1">Ponentes Destacados:</p>
+                                    <p className="text-sm font-semibold text-[#291840]">{selectedCongreso.ponentes}</p>
                                 </div>
                             )}
                         </div>
