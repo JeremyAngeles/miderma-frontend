@@ -6,14 +6,11 @@ import Footer from './components/Footer';
 import Home from './pages/Home'; 
 import SobreMi from './pages/SobreMi';
 import Servicios from './pages/Servicios';
+import Tratamientos from './pages/Tratamientos'; // <-- IMPORTADO AQUÍ
 import Intervenciones from './pages/Intervenciones';
 import IntervencionDetalle from './pages/IntervencionDetalle';
 import Productos from './pages/Productos';
 import Contacto from './pages/Contacto';
-
-// ==========================================
-// 1. IMPORTA EL NUEVO COMPONENTE
-// ==========================================
 import ScrollToTop from './components/ScrollToTop';
 
 import ProductosTabla from './components/ProductosTabla';
@@ -33,17 +30,13 @@ const WebPublica = () => (
 function App() {
   return (
     <BrowserRouter>
-      {/* ==========================================
-          2. PONLO AQUÍ ADENTRO DEL BROWSER ROUTER
-      ========================================== */}
       <ScrollToTop />
-
       <Routes>
-        
         <Route element={<WebPublica />}>
           <Route path="/" element={<Home />} />
           <Route path="/sobre-mi" element={<SobreMi />} />
           <Route path="/servicios" element={<Servicios />} />
+          <Route path="/tratamientos" element={<Tratamientos />} /> {/* <-- RUTA AÑADIDA */}
           <Route path="/intervenciones" element={<Intervenciones />} />
           <Route path="/intervenciones/:id" element={<IntervencionDetalle />} />
           <Route path="/productos" element={<Productos />} />
@@ -59,7 +52,6 @@ function App() {
             <Route path="publicaciones" element={<PublicacionesTabla />} />
             <Route path="casos" element={<CasosTabla />} />
         </Route>
-
       </Routes>
     </BrowserRouter>
   );

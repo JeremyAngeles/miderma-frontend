@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-// Componente para animar el contador de números
 const AnimatedCounter = ({ end, duration }) => {
     const [count, setCount] = useState(0);
 
@@ -35,13 +34,8 @@ const Hero = () => {
     return (
         <section className="w-full flex flex-col overflow-hidden bg-white">
             
-            {/* =========================================================
-                1. SECCIÓN HERO (FOTO, TEXTOS Y CURVA BLANCA)
-            ========================================================= */}
-            {/* CAMBIO: pt-24 en lugar de pt-32 para ganar espacio arriba en celular */}
             <div className="relative w-full pt-24 pb-32 sm:pt-32 sm:pb-40 md:pt-40 md:pb-52 flex flex-col justify-center">
                 
-                {/* IMAGEN DE FONDO */}
                 <div className="absolute inset-0 w-full h-full z-0">
                     <img 
                         src="/bannerr.jpg" 
@@ -49,39 +43,35 @@ const Hero = () => {
                         className="w-full h-full object-cover object-center"
                         onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" }}
                     />
-                    {/* DEGRADADO OSCURO */}
                     <div className="absolute inset-0 bg-gradient-to-r from-miderma-dark/95 via-miderma-dark/60 to-transparent sm:bg-gradient-to-r sm:from-miderma-dark/90 sm:via-miderma-dark/40 sm:to-transparent"></div>
                 </div>
 
-                {/* CONTENIDO TEXTUAL */}
                 <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
                     <div className="max-w-3xl text-center lg:text-left">
                         
-                        {/* CAMBIO: text-xs en celular */}
                         <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 sm:mb-3 block text-xs sm:text-sm md:text-base drop-shadow-md">
-                            ¡Bienvenidos a Miderma!
+                            ¡Bienvenidos a Miderma Centro de la Piel!
                         </span>
 
-                        {/* CAMBIO: text-3xl en celular para no ocupar tantas líneas */}
                         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-lg">
                             Tu piel, cabello y uñas en <span className="text-miderma-pink">manos expertas.</span>
                         </h1>
                         
-                        {/* CAMBIO: text-sm en celular, márgenes más chicos */}
                         <div className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-10 font-light leading-relaxed drop-shadow-md mx-auto lg:mx-0 space-y-2 sm:space-y-4">
-                            <p>
-                                Sabemos que las afecciones de la piel van más allá de la superficie; impactan directamente en tu bienestar, tu imagen y tu seguridad. En Miderma, atendemos cada condición desde una perspectiva médica rigurosa.
+                            <p className="font-bold text-white text-base sm:text-lg md:text-xl mb-1 sm:mb-2">
+                                Tu piel, cabello y uñas en manos expertas.
                             </p>
-                            {/* CAMBIO: Se oculta este párrafo en celular (hidden sm:block) */}
+                            <p>
+                                En Miderma sabemos que las afecciones de la piel van más allá de lo visible: afectan tu bienestar, tu imagen y tu seguridad. Por eso, cada diagnóstico lo abordamos con rigor médico, sin dejar de lado el cuidado humano y estético que mereces.
+                            </p>
                             <p className="hidden sm:block">
-                                Combinamos tratamientos dermatológicos avanzados con soluciones estéticas modernas y seguras. Así, te ayudamos a sanar, proteger y lucir la mejor versión de ti mismo. 
+                                Combinamos tratamientos dermatológicos avanzados con soluciones estéticas modernas y seguras, diseñadas para ayudarte a sanar, proteger y resaltar la mejor versión de ti.
                             </p>
                             <p className="font-semibold text-white text-base sm:text-xl pt-1 sm:pt-2">
-                                Regálale a tu cuerpo el cuidado que merece.
+                                Regálale a tu piel el cuidado integral que necesita. <span className="font-bold">Estamos listos para atenderte.</span>
                             </p>
                         </div>
                         
-                        {/* CAMBIO: Botones más compactos en móvil y el segundo dice "Agendar" */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                             <Link to="/contacto" className="bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-lg">
                                 Estamos listos para atenderte
@@ -93,7 +83,6 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* CURVA BLANCA */}
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] sm:h-[60px] md:h-[120px]">
                         <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" className="fill-white"></path>
@@ -101,16 +90,11 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* =========================================================
-                2. SECCIÓN BLANCA: INDICADORES Y ONDA INFERIOR
-            ========================================================= */}
-            <div className="relative w-full bg-white pt-8 pb-32 md:pt-12 md:pb-40 px-4 sm:px-6"> 
+            <div className="relative w-full bg-white pt-8 md:pt-12 px-4 sm:px-6"> 
                 
-                {/* TARJETAS */}
-                <div className="max-w-6xl mx-auto relative z-10"> 
+                <div className="max-w-6xl mx-auto relative z-10 pb-8 sm:pb-16 md:pb-20"> 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                         
-                        {/* Tarjeta 1 */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -123,7 +107,6 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Tarjeta 2 */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -138,7 +121,6 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* Tarjeta 3 */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -153,15 +135,16 @@ const Hero = () => {
 
                     </div>
                 </div>
-
-                {/* ONDA INFERIOR (Debajo de los indicadores, conecta con la Doctora #FDF6F4) */}
-                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 translate-y-[1px]">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] md:h-[100px]">
-                        <path d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z" className="fill-[#FDF6F4]"></path>
-                    </svg>
-                </div>
-
             </div>
+
+            <div className="w-full leading-none bg-white">
+                <svg viewBox="0 0 1440 150" preserveAspectRatio="none" className="w-full h-16 sm:h-24 md:h-32 lg:h-40 block">
+                    <path fill="#F2BDC7" fillOpacity="0.2" d="M0,40 C400,130 800,0 1440,60 L1440,150 L0,150 Z"></path>
+                    <path fill="#F2BDC7" fillOpacity="0.4" d="M0,70 C450,150 900,20 1440,90 L1440,150 L0,150 Z"></path>
+                    <path fill="#F2F2F2" d="M0,100 C500,170 1000,40 1440,120 L1440,150 L0,150 Z"></path>
+                </svg>
+            </div>
+            
         </section>
     );
 };

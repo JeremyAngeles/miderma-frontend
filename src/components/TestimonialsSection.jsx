@@ -86,7 +86,7 @@ const TestimonialsSection = () => {
                         <span className="font-extrabold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-miderma-pink">
                             Testimonios
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-[#5A4A42]">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark font-serif">
                             Lo que dicen nuestros pacientes
                         </h2>
                     </div>

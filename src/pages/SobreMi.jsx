@@ -1,6 +1,8 @@
 import Navbar from '../components/Navbar';
+import DoctorSection from '../components/DoctorSection';
 import Congresses from '../components/Congresses';
 import AboutContent from '../components/AboutContent';
+import MedicalStaff from '../components/MedicalStaff';
 import FaqSection from '../components/FaqSection';
 import CtaBanner from '../components/CtaBanner';
 
@@ -15,13 +17,19 @@ const SobreMi = () => {
                 <div className="w-16 h-1.5 bg-[#F2BDC7] rounded-full"></div>
             </div>
 
+            {/* SECCIÓN DE LA DOCTORA (Director Médico) */}
+            <DoctorSection />
+
             {/* 1. SECCIÓN DE CONGRESOS (El carrusel horizontal) */}
             <Congresses />
 
             {/* 2. MISIÓN, VISIÓN, FILOSOFÍA Y DIFERENCIADORES */}
             <AboutContent />
 
-            {/* 3. PREGUNTAS FRECUENTES */}
+            {/* 3. NUESTRO STAFF MÉDICO (Añadido aquí, arriba de FAQ) */}
+            <MedicalStaff />
+
+            {/* 4. PREGUNTAS FRECUENTES */}
             <FaqSection />
 
         </div>
