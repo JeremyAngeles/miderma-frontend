@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 // Hemos agregado fotos de perfil de un banco de imágenes gratuito para que se vea real
 const testimonios = [
@@ -78,7 +77,7 @@ const TestimonialsSection = () => {
                     </div>
                 </div>
 
-                {/* TESTIMONIOS Y BOTÓN (Derecha en PC, Abajo en Celular) */}
+                {/* TESTIMONIOS (Derecha en PC, Abajo en Celular) */}
                 <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
                     
                     {/* Encabezado */}
@@ -94,8 +93,7 @@ const TestimonialsSection = () => {
                     {/* 
                         EL TRUCO DE GRID: 
                         Al usar grid, todos los testimonios se superponen en la misma "celda".
-                        El contenedor crecerá automáticamente hasta la altura del testimonio más largo,
-                        eliminando el espacio vacío que alejaba al botón.
+                        El contenedor crecerá automáticamente hasta la altura del testimonio más largo.
                     */}
                     <div className="grid max-w-lg mx-auto lg:mx-0 w-full mb-6">
                         {testimonios.map((t, idx) => (
@@ -130,16 +128,6 @@ const TestimonialsSection = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    {/* Botón de Intervenciones (Ahora pegadito gracias al grid) */}
-                    <div className="flex justify-center lg:justify-start mt-2">
-                        <Link to="/intervenciones" className="inline-flex items-center gap-2 bg-miderma-pink/20 text-miderma-dark hover:bg-miderma-pink hover:text-white px-6 py-3 rounded-full font-bold transition-all duration-300 text-sm md:text-base">
-                            Ver nuestras intervenciones
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </Link>
                     </div>
 
                 </div>

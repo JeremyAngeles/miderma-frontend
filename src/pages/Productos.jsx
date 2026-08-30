@@ -63,8 +63,7 @@ const Productos = () => {
             {/* ==========================================
                 CATÁLOGO DE PRODUCTOS
             ========================================== */}
-            <section className="w-full bg-[#FDF6F4] py-16 md:py-24">
-                
+            <section className="w-full bg-[#FDF6F4] pt-32 pb-16 md:pt-40 md:pb-24">                
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 md:mb-16">
                     <div className="text-center mb-10">
                         <h2 className="text-3xl md:text-5xl font-bold text-[#291840] font-serif mb-6">
@@ -148,25 +147,26 @@ const Productos = () => {
                     <div className="w-full lg:w-4/5 flex flex-col">
                         {productosMostrados.length > 0 ? (
                             <>
+                                {/* AHORA SON 4 COLUMNAS EN PC (lg:grid-cols-4) */}
                                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
                                     {productosMostrados.map(producto => {
                                         const cantActual = cantidades[producto.id] || 1;
 
                                         return (
-                                            <div key={producto.id} className="bg-white rounded-2xl shadow-sm hover:shadow-[0_15px_35px_rgba(242,189,199,0.3)] transition-all duration-500 border border-gray-200 flex flex-col relative p-4 group">
+                                            <div key={producto.id} className="bg-white rounded-3xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(242,189,199,0.35)] transition-all duration-500 border border-[#F2F2F2] flex flex-col relative p-5 group h-full">
                                                 
                                                 {/* Efecto de destello rosado suave en el fondo */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-[#F2BDC7]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 rounded-2xl"></div>
+                                                <div className="absolute inset-0 bg-[#F2BDC7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 rounded-3xl"></div>
 
-                                                {/* ETIQUETA DESCUENTO (CORREGIDA: top-2 left-2 y z-30 para no quedar detrás de la imagen) */}
+                                                {/* ETIQUETA DESCUENTO FLOTANDO EXACTAMENTE COMO EN LA FOTO */}
                                                 {producto.etiqueta_descuento && (
-                                                    <div className="absolute top-2 left-2 z-30 bg-[#E63946] text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full shadow-md tracking-wider">
+                                                    <div className="absolute -top-3 -left-3 z-30 bg-[#E63946] text-white text-[11px] font-bold px-3 py-1.5 rounded-full shadow-md tracking-wider">
                                                         {producto.etiqueta_descuento}
                                                     </div>
                                                 )}
 
-                                                {/* IMAGEN CON LÍNEA DIVISORIA */}
-                                                <div className="w-full aspect-[4/5] sm:aspect-square relative flex items-center justify-center border-b border-gray-100 pb-4 mb-4 bg-white z-20">
+                                                {/* IMAGEN LIMPIA Y CENTRADA (Sin línea divisoria) */}
+                                                <div className="w-full aspect-[4/5] sm:aspect-square relative flex items-center justify-center mb-6 bg-white z-20 shrink-0">
                                                     <img 
                                                         src={producto.imagen} 
                                                         alt={producto.nombre} 
@@ -174,65 +174,56 @@ const Productos = () => {
                                                     />
                                                 </div>
 
-                                                {/* CONTENIDO CENTRADO Y FUENTE ORIGINAL */}
-                                                <div className="flex flex-col flex-grow text-center relative z-20 bg-white">
+                                                {/* CONTENIDO CENTRADO */}
+                                                <div className="flex flex-col flex-grow text-center relative z-20 bg-transparent">
                                                     
                                                     {/* Marca */}
-                                                    <span className="text-[9px] sm:text-[10px] font-bold text-[#9A92A6] group-hover:text-[#F2BDC7] transition-colors uppercase tracking-widest mb-1.5">
+                                                    <span className="text-[10px] sm:text-[11px] font-medium text-[#9A92A6] group-hover:text-[#F2BDC7] transition-colors uppercase tracking-widest mb-1.5">
                                                         {producto.marca}
                                                     </span>
                                                     
-                                                    {/* Título original con fuente gruesa */}
-                                                    <h3 className="text-xs sm:text-sm font-bold text-[#291840] group-hover:text-[#F2BDC7] transition-colors leading-snug mb-3 line-clamp-2 min-h-[32px] sm:min-h-[40px]">
+                                                    {/* Título en Mayúsculas (Ajustado como la foto) */}
+                                                    <h3 className="text-xs sm:text-sm font-bold text-[#291840] group-hover:text-[#F2BDC7] transition-colors uppercase leading-snug mb-4 line-clamp-2 min-h-[32px] sm:min-h-[40px]">
                                                         {producto.nombre}
                                                     </h3>
                                                     
-                                                    {/* PRECIOS CENTRADOS */}
-<div className="mb-5 flex items-center justify-center gap-2">
-    {producto.precio_oferta ? (
-        <>
-            <span className="text-[11px] sm:text-xs text-[#9A92A6] line-through font-medium">S/ {producto.precio.toFixed(2)}</span>
-            <span className="text-base sm:text-lg font-bold text-[#E63946]">S/ {producto.precio_oferta.toFixed(2)}</span>
-        </>
-    ) : (
-        <span className="text-base sm:text-lg font-bold text-[#291840]">S/ {producto.precio.toFixed(2)}</span>
-    )}
-</div>
+                                                    {/* PRECIOS GIGANTES Y CENTRADOS */}
+                                                    <div className="mt-auto mb-6 flex items-center justify-center gap-2">
+                                                        {producto.precio_oferta ? (
+                                                            <>
+                                                                <span className="text-xs sm:text-sm text-[#9A92A6] line-through font-medium mt-1">S/ {producto.precio.toFixed(2)}</span>
+                                                                <span className="text-xl sm:text-2xl font-bold text-[#E63946]">S/ {producto.precio_oferta.toFixed(2)}</span>
+                                                            </>
+                                                        ) : (
+                                                            <span className="text-xl sm:text-2xl font-bold text-[#291840]">S/ {producto.precio.toFixed(2)}</span>
+                                                        )}
+                                                    </div>
 
-                                                    {/* CONTROLES ALINEADOS EN HORIZONTAL (Misma fila) */}
-                                                    <div className="mt-auto flex flex-col gap-2 w-full">
+                                                    {/* CONTROLES ALINEADOS EN HORIZONTAL (Solo Selector y Botón Añadir) */}
+                                                    <div className="flex flex-row items-center justify-between gap-2 sm:gap-3 w-full">
                                                         
-                                                        {/* Stock */}
-                                                        <div className="text-[9px] sm:text-[10px] font-medium text-[#9A92A6] text-left px-1">
-                                                            Stock: <span className="font-bold text-[#615573]">{producto.stock} un.</span>
-                                                        </div>
-
-                                                        {/* Selector y Botón Añadir */}
-                                                        <div className="flex flex-row items-center justify-between gap-1.5 sm:gap-2 w-full">
-                                                            {/* Selector de cantidad (Izquierda) */}
-                                                            <div className="flex items-center justify-between border border-[#F2F2F2] rounded-full px-1.5 sm:px-2 py-1 w-[40%] bg-white">
-                                                                <button 
-                                                                    onClick={() => decrementarCantidad(producto.id)}
-                                                                    className="text-[#9A92A6] hover:text-[#F2BDC7] text-xs sm:text-sm font-bold transition-colors px-1"
-                                                                >
-                                                                    -
-                                                                </button>
-                                                                <span className="font-bold text-[#291840] text-[10px] sm:text-xs">{cantActual}</span>
-                                                                <button 
-                                                                    onClick={() => incrementarCantidad(producto.id, producto.stock)}
-                                                                    className="text-[#9A92A6] hover:text-[#F2BDC7] text-xs sm:text-sm font-bold transition-colors px-1"
-                                                                >
-                                                                    +
-                                                                </button>
-                                                            </div>
-
-                                                            {/* Botón Añadir (Derecha) */}
-                                                            <button className="flex-grow flex items-center justify-center gap-1 bg-[#291840] hover:bg-[#F2BDC7] text-white hover:text-[#291840] text-[9px] sm:text-[10px] font-bold py-2 sm:py-2.5 rounded-full transition-colors duration-300 uppercase tracking-widest text-center shadow-sm">
-                                                                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                                                                Añadir
+                                                        {/* Selector de cantidad (Izquierda) */}
+                                                        <div className="flex items-center justify-between border border-[#F2F2F2] rounded-full px-2 sm:px-3 py-2 sm:py-2.5 w-[35%] sm:w-[40%] bg-white">
+                                                            <button 
+                                                                onClick={() => decrementarCantidad(producto.id)}
+                                                                className="text-[#9A92A6] hover:text-[#F2BDC7] text-sm sm:text-base font-bold transition-colors px-1 w-6 flex justify-center"
+                                                            >
+                                                                -
+                                                            </button>
+                                                            <span className="font-bold text-[#291840] text-xs sm:text-sm">{cantActual}</span>
+                                                            <button 
+                                                                onClick={() => incrementarCantidad(producto.id, producto.stock)}
+                                                                className="text-[#9A92A6] hover:text-[#F2BDC7] text-sm sm:text-base font-bold transition-colors px-1 w-6 flex justify-center"
+                                                            >
+                                                                +
                                                             </button>
                                                         </div>
 
+                                                        {/* Botón Añadir (Derecha) */}
+                                                        <button className="flex-grow flex items-center justify-center bg-[#291840] hover:bg-[#F2BDC7] text-white hover:text-[#291840] text-[10px] sm:text-xs font-bold py-2.5 sm:py-3 rounded-full transition-colors duration-300 uppercase tracking-widest text-center shadow-sm">
+                                                            Añadir
+                                                        </button>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

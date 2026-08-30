@@ -57,12 +57,12 @@ const Hero = () => {
                             Tu piel, cabello y uñas en <span className="text-miderma-pink">manos expertas.</span>
                         </h1>
                         
-                        <div className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-10 font-light leading-relaxed drop-shadow-md mx-auto lg:mx-0 space-y-2 sm:space-y-4">
-                            <p className="font-bold text-white text-base sm:text-lg md:text-xl mb-1 sm:mb-2">
-                                Tu piel, cabello y uñas en manos expertas.
+                        <div className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-10 font-light leading-relaxed drop-shadow-md mx-auto lg:mx-0 space-y-3 sm:space-y-4">
+                            <p>
+                                En Miderma Centro de la Piel sabemos que las afecciones de la piel van más allá de lo visible: afectan tu bienestar, tu imagen y tu seguridad.
                             </p>
                             <p>
-                                En Miderma sabemos que las afecciones de la piel van más allá de lo visible: afectan tu bienestar, tu imagen y tu seguridad. Por eso, cada diagnóstico lo abordamos con rigor médico, sin dejar de lado el cuidado humano y estético que mereces.
+                                Por eso, cada diagnóstico lo abordamos con rigor médico, sin dejar de lado el cuidado humano y estético que mereces.
                             </p>
                             <p className="hidden sm:block">
                                 Combinamos tratamientos dermatológicos avanzados con soluciones estéticas modernas y seguras, diseñadas para ayudarte a sanar, proteger y resaltar la mejor versión de ti.

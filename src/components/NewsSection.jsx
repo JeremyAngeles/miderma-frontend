@@ -41,14 +41,14 @@ const NewsSection = () => {
             </div>
 
             {/* CONTENIDO PRINCIPAL EN COLOR HUESO */}
-            <div className="w-full bg-miderma-light py-12 md:py-20 px-4 sm:px-6 flex-grow">
+            <div className="w-full bg-[#F2F2F2] py-12 md:py-20 px-4 sm:px-6 flex-grow">
                 <div className="max-w-7xl mx-auto">
                     
                     <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark mb-4 font-serif">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-[#291840] mb-4 font-serif">
                             Noticias
                         </h2>
-                        <span className="font-bold tracking-widest uppercase text-xs sm:text-sm text-miderma-purple">
+                        <span className="font-bold tracking-widest uppercase text-xs sm:text-sm text-[#8E6F96]">
                             Lo que nos gustaría contarte
                         </span>
                     </div>
@@ -57,10 +57,10 @@ const NewsSection = () => {
                         {noticias.map((noticia) => (
                             <div 
                                 key={noticia.id} 
-                                className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(41,24,64,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(242,189,199,0.3)] hover:-translate-y-2 hover:border-miderma-pink/40 transition-all duration-500 group flex flex-col"
+                                className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(41,24,64,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(242,189,199,0.3)] hover:-translate-y-2 hover:border-[#F2BDC7]/40 transition-all duration-500 group flex flex-col"
                             >
                                 <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-100">
-                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-miderma-dark font-extrabold px-4 py-1.5 rounded-full text-[10px] sm:text-xs tracking-wider shadow-sm z-10 uppercase">
+                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#291840] font-extrabold px-4 py-1.5 rounded-full text-[10px] sm:text-xs tracking-wider shadow-sm z-10 uppercase">
                                         {noticia.categoria}
                                     </div>
                                     <img 
@@ -68,20 +68,20 @@ const NewsSection = () => {
                                         alt={noticia.titulo} 
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-miderma-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                    <div className="absolute inset-0 bg-[#291840]/10 group-hover:bg-transparent transition-colors duration-500"></div>
                                 </div>
 
                                 <div className="p-6 md:p-8 flex flex-col flex-grow">
-                                    <h3 className="font-extrabold text-xl md:text-2xl text-miderma-dark mb-3 leading-tight group-hover:text-miderma-pink transition-colors duration-300 font-serif line-clamp-2">
+                                    <h3 className="font-extrabold text-xl md:text-2xl text-[#291840] mb-3 leading-tight group-hover:text-[#F2BDC7] transition-colors duration-300 font-serif line-clamp-2">
                                         {noticia.titulo}
                                     </h3>
-                                    <p className="text-miderma-purple text-sm md:text-base leading-relaxed mb-6 flex-grow line-clamp-3 opacity-90">
+                                    <p className="text-[#8E6F96] text-sm md:text-base leading-relaxed mb-6 flex-grow line-clamp-3 opacity-90">
                                         {noticia.resumen}
                                     </p>
                                     
                                     <Link 
                                         to={noticia.enlace} 
-                                        className="inline-flex items-center gap-2 text-miderma-dark font-bold text-sm hover:text-miderma-pink transition-colors mt-auto group/btn"
+                                        className="inline-flex items-center gap-2 text-[#291840] font-bold text-sm hover:text-[#F2BDC7] transition-colors mt-auto group/btn"
                                     >
                                         Leer artículo completo
                                         <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,10 +95,10 @@ const NewsSection = () => {
 
                     <div className="mt-12 sm:mt-16 text-center">
                         <Link 
-                            to="/noticias" 
-                            className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-miderma-dark text-miderma-dark hover:bg-miderma-dark hover:text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-sm text-sm sm:text-base w-full sm:w-auto"
+                            to="/intervenciones" 
+                            className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-sm text-sm sm:text-base w-full sm:w-auto"
                         >
-                            Ver todas las noticias
+                            Ver casos de éxito
                         </Link>
                     </div>
 
@@ -106,7 +106,7 @@ const NewsSection = () => {
             </div>
 
             {/* ONDA INFERIOR: Transición de Noticias (#F2F2F2) a Promociones (#FFFFFF) */}
-            <div className="w-full leading-none bg-miderma-light">
+            <div className="w-full leading-none bg-[#F2F2F2]">
                 <svg viewBox="0 0 1440 150" preserveAspectRatio="none" className="w-full h-16 sm:h-24 md:h-32 lg:h-40 block">
                     <path fill="#F2BDC7" fillOpacity="0.2" d="M0,40 C400,130 800,0 1440,60 L1440,150 L0,150 Z"></path>
                     <path fill="#F2BDC7" fillOpacity="0.4" d="M0,70 C450,150 900,20 1440,90 L1440,150 L0,150 Z"></path>
