@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 const promociones = [
     {
         id: 1,
-        titulo: "Cóctel Vitamina B",
-        subtitulo: "+ Diclofenaco",
-        descripcion: "(Vitamina B3, B6, B12) Recupera energía y bienestar desde adentro.",
-        precioAntes: "S/ 150",
-        precioAhora: "S/ 135",
-        sesiones: "1 sesión",
-        validez: "Promoción válida por todo el mes.",
+        titulo: "Limpieza Facial Profunda + Protector Solar SPF 50+",
+        subtitulo: "La Roche – Posay",
+        descripcion: "Disfruta de una limpieza facial que revitaliza tu piel y protégela con SPF50+",
+        precioAntes: "S/. 195.00",
+        precioAhora: "S/. 170.00",
+        validez: "Promoción válida hasta el 30 setiembre",
         imagen: "/promo-1.jpg"
     },
     {
         id: 2,
-        titulo: "BODY SCULPT",
-        subtitulo: "(EMS + EXILIS + CRIO)",
-        descripcion: "Tratamiento integral para remodelar y definir tu figura.",
-        precioAntes: "S/ 1500",
-        precioAhora: "S/ 900",
-        sesiones: "3 sesiones",
-        validez: "Promoción válida por todo el mes.",
+        titulo: "Semana del cuidado solar",
+        subtitulo: "Protector solar SPF 50+ | La Roche – Posay",
+        descripcion: "Fórmula ligera y resistente al agua, ideal para uso diario y piel sensible.",
+        precioAntes: "S/ 95.00",
+        precioAhora: "S/ 80.00",
+        validez: "Promoción válida hasta agotar stock. No acumulable con otras ofertas.",
         imagen: "/promo-2.jpg"
     }
 ];
@@ -32,8 +30,8 @@ const PromotionsSection = () => {
             <div className="pt-16 md:pt-24 pb-12 px-4 sm:px-6 max-w-7xl mx-auto w-full flex-grow">
                 
                 <div className="text-center md:text-left mb-10">
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark font-serif">Promociones</h2>
-                    <div className="w-20 h-1.5 bg-miderma-pink mt-4 mx-auto md:mx-0 rounded-full"></div>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#291840] font-serif">Promociones</h2>
+                    <div className="w-20 h-1.5 bg-[#F2BDC7] mt-4 mx-auto md:mx-0 rounded-full"></div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
@@ -49,7 +47,7 @@ const PromotionsSection = () => {
                             />
                             
                             {/* Gradientes para oscurecer solo la parte del texto (Derecha) */}
-                            <div className="absolute inset-0 bg-gradient-to-l from-[#F4EFEA] via-[#F4EFEA]/75 to-transparent"></div>
+                            <div className="absolute inset-0 bg-gradient-to-l from-[#F4EFEA] via-[#F4EFEA]/80 to-transparent"></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFEA]/80 via-transparent to-transparent sm:opacity-60"></div>
 
                             {/* CONTENIDO INTERNO */}
@@ -57,14 +55,14 @@ const PromotionsSection = () => {
                                 
                                 <div className="text-right flex flex-col items-end mt-2 sm:mt-4">
                                     <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">
-                                        MIDERMA exclusiva
+                                        MIDERMA EXCLUSIVA
                                     </span>
                                     
-                                    <h3 translate="no" className="text-3xl lg:text-4xl font-light text-[#5A4A42] leading-[1.1] mb-2 font-serif max-w-[220px] sm:max-w-[280px]">
+                                    <h3 translate="no" className="text-2xl lg:text-3xl font-light text-[#5A4A42] leading-[1.15] mb-2 font-serif max-w-[220px] sm:max-w-[280px]">
                                         {promo.titulo}
                                     </h3>
                                     
-                                    <p className="text-xs sm:text-sm font-bold text-[#5A4A42] uppercase tracking-wider mb-2">
+                                    <p className="text-xs sm:text-sm font-bold text-[#5A4A42] uppercase tracking-wider mb-2 max-w-[220px] sm:max-w-[250px]">
                                         {promo.subtitulo}
                                     </p>
                                     
@@ -74,20 +72,17 @@ const PromotionsSection = () => {
                                 </div>
 
                                 <div className="mt-auto flex flex-col items-end">
-                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5">
+                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5 font-medium">
                                         Antes: {promo.precioAntes}
                                     </span>
                                     
-                                    <div className="bg-[#786154] text-white px-5 py-3 rounded-t-xl text-right w-[140px] sm:w-[160px] transform group-hover:-translate-y-1 transition-transform shadow-md">
-                                        <p className="text-[10px] sm:text-xs uppercase tracking-wider opacity-80 mb-0.5">Ahora:</p>
-                                        <p className="text-3xl sm:text-4xl font-serif font-light leading-none">{promo.precioAhora}</p>
+                                    {/* CAJA DE PRECIO (Se quitó la lógica de "sesiones" y quedó redondeada completa) */}
+                                    <div className="bg-[#F2BDC7] text-[#291840] px-4 sm:px-5 py-3 text-right w-[140px] sm:w-[160px] transform group-hover:-translate-y-1 transition-transform shadow-md rounded-xl mb-3">
+                                        <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold opacity-80 mb-0.5">Ahora:</p>
+                                        <p className="text-2xl sm:text-3xl font-serif font-bold leading-none">{promo.precioAhora}</p>
                                     </div>
 
-                                    <div className="bg-[#EADDCB] text-[#786154] text-xs sm:text-sm font-bold px-4 py-2 rounded-b-xl w-[140px] sm:w-[160px] text-center mb-3">
-                                        {promo.sesiones}
-                                    </div>
-
-                                    <p className="text-[10px] sm:text-xs text-[#7A6B63] font-medium text-right max-w-[140px] sm:max-w-[160px] leading-tight">
+                                    <p className="text-[9px] sm:text-[10px] text-[#7A6B63] font-medium text-right max-w-[140px] sm:max-w-[160px] leading-tight">
                                         {promo.validez}
                                     </p>
                                 </div>

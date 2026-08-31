@@ -7,13 +7,6 @@ const BrandsMarquee = () => {
     return (
         <section className="w-full relative z-20 -mt-[1px]">
             <div className="pb-12 pt-4 bg-white overflow-hidden relative">
-                
-                <div className="text-center mb-8">
-                    <span className="font-extrabold tracking-widest uppercase text-xs text-miderma-gray">
-                        Trabajamos con las mejores marcas a nivel mundial
-                    </span>
-                </div>
-
                 <div className="relative w-full flex overflow-hidden group">
                     
                     <style>{`

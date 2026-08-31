@@ -34,7 +34,7 @@ const Hero = () => {
     return (
         <section className="w-full flex flex-col overflow-hidden bg-white">
             
-            <div className="relative w-full pt-24 pb-32 sm:pt-32 sm:pb-40 md:pt-40 md:pb-52 flex flex-col justify-center">
+            <div className="relative w-full pt-32 pb-32 sm:pt-40 sm:pb-40 md:pt-48 md:pb-52 flex flex-col justify-center">
                 
                 <div className="absolute inset-0 w-full h-full z-0">
                     <img 
@@ -46,7 +46,7 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-miderma-dark/95 via-miderma-dark/60 to-transparent sm:bg-gradient-to-r sm:from-miderma-dark/90 sm:via-miderma-dark/40 sm:to-transparent"></div>
                 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-6 md:mt-10">
                     <div className="max-w-3xl text-center lg:text-left">
                         
                         <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 sm:mb-3 block text-xs sm:text-sm md:text-base drop-shadow-md">
@@ -74,10 +74,7 @@ const Hero = () => {
                         
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                             <Link to="/contacto" className="bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-lg">
-                                Estamos listos para atenderte
-                            </Link>
-                            <Link to="/contacto" className="bg-white/10 backdrop-blur-md border border-white/40 hover:bg-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all duration-300 shadow-lg text-sm sm:text-lg flex items-center justify-center">
-                                Agendar
+                                Reserva tu Cita
                             </Link>
                         </div>
                     </div>
@@ -95,6 +92,7 @@ const Hero = () => {
                 <div className="max-w-6xl mx-auto relative z-10 pb-8 sm:pb-16 md:pb-20"> 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                         
+                        {/* TARJETA 1: + 10 años de Trayectoria */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -102,11 +100,14 @@ const Hero = () => {
                                 </svg>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-extrabold text-miderma-dark text-base md:text-lg mb-1 leading-tight group-hover:text-miderma-pink transition-colors duration-300">Clínica Especializada</h4>
-                                <p className="text-[13px] text-gray-500 leading-tight">Dermatología y Estética Avanzada para el cuidado integral.</p>
+                                <h4 className="font-extrabold text-miderma-dark text-2xl md:text-3xl mb-0 group-hover:text-miderma-pink transition-colors duration-300">
+                                    +<AnimatedCounter end={10} duration={2000} />
+                                </h4>
+                                <p className="text-[11px] font-bold text-miderma-purple uppercase tracking-wider">Años de Trayectoria</p>
                             </div>
                         </div>
 
+                        {/* TARJETA 2: + 3000 Pacientes Atendidos */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -115,12 +116,13 @@ const Hero = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="font-extrabold text-miderma-dark text-2xl md:text-3xl mb-0 group-hover:text-miderma-pink transition-colors duration-300">
-                                    +<AnimatedCounter end={5000} duration={2000} />
+                                    +<AnimatedCounter end={3000} duration={2000} />
                                 </h4>
-                                <p className="text-[11px] font-bold text-miderma-purple uppercase tracking-wider">Pacientes Tratados</p>
+                                <p className="text-[11px] font-bold text-miderma-purple uppercase tracking-wider">Pacientes Atendidos</p>
                             </div>
                         </div>
 
+                        {/* TARJETA 3: 9 de cada 10 pacientes recomiendan */}
                         <div className="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(242,189,199,0.2)] p-6 md:p-8 flex items-center gap-5 border border-gray-100 hover:border-miderma-pink/30 hover:-translate-y-1 transition-all duration-500 group">
                             <div className="flex-shrink-0 bg-miderma-pink/10 p-4 rounded-xl group-hover:bg-miderma-pink/20 transition-colors duration-500">
                                 <svg className="w-8 h-8 md:w-10 md:h-10 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -128,8 +130,10 @@ const Hero = () => {
                                 </svg>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-extrabold text-miderma-dark text-base md:text-lg mb-1 leading-tight group-hover:text-miderma-pink transition-colors duration-300">Tecnología Médica</h4>
-                                <p className="text-[13px] text-gray-500 leading-tight">Equipamiento certificado y aprobado por la FDA.</p>
+                                <h4 className="font-extrabold text-miderma-dark text-2xl md:text-3xl mb-0 group-hover:text-miderma-pink transition-colors duration-300">
+                                    <AnimatedCounter end={9} duration={2000} /> de 10
+                                </h4>
+                                <p className="text-[11px] font-bold text-miderma-purple uppercase tracking-wider leading-tight mt-1">Pacientes recomiendan nuestros tratamientos</p>
                             </div>
                         </div>
 

@@ -11,8 +11,12 @@ const ServicesSection = () => {
                 
                 {/* Título de la Sección */}
                 <div className="text-center mb-16 relative z-10">
-                    <span className="font-extrabold tracking-widest uppercase mb-3 block text-sm text-miderma-pink">Nuestros Servicios</span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark mb-4">Especialidades Destacadas</h2>
+                    <span className="font-extrabold tracking-widest uppercase mb-3 block text-sm text-miderma-pink">
+                        Especialidades Destacadas
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark mb-4 font-serif">
+                        Nuestros Servicios
+                    </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.
                     </p>
@@ -80,7 +84,7 @@ const ServicesSection = () => {
 
                 </div>
 
-                {/* Botón Central (Lleva a la página donde estarán Quirúrgica y Oncológica) */}
+                {/* Botón Central */}
                 <div className="text-center relative z-10">
                     <Link to="/servicios" className="inline-flex items-center justify-center gap-3 bg-white border-2 border-miderma-dark text-miderma-dark hover:bg-miderma-dark hover:text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-md hover:shadow-xl text-lg w-full sm:w-auto group">
                         Conoce todas nuestras especialidades

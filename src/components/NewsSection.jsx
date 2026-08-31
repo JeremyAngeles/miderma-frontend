@@ -91,17 +91,7 @@ const NewsSection = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    <div className="mt-12 sm:mt-16 text-center">
-                        <Link 
-                            to="/intervenciones" 
-                            className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-sm text-sm sm:text-base w-full sm:w-auto"
-                        >
-                            Ver casos de éxito
-                        </Link>
-                    </div>
-
+                    </div>               
                 </div>
             </div>
 

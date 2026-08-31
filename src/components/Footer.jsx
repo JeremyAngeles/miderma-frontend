@@ -22,7 +22,7 @@ const Footer = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
                         
-                        {/* COLUMNA 1: LOGO Y REDES */}
+                        {/* COLUMNA 1: LOGO Y TEXTO */}
                         <div className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
                             <img 
                                 src="/logoopuesto-removebg-preview.png"
@@ -32,8 +32,7 @@ const Footer = () => {
                             />
                             
                             <p className="text-white/90 text-sm leading-relaxed mb-8">
-                                Especialistas en el cuidado integral de tu piel. 
-                                Tecnología de vanguardia y tratamientos personalizados para resaltar tu belleza natural con seguridad y profesionalismo.
+                                Centro dermatológico especializado en el cuidado integral de la piel, cabello y uñas.
                             </p>
                             
                             {/* Redes Sociales */}
@@ -50,38 +49,31 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        {/* COLUMNA 2 */}
+                        {/* COLUMNA 2: MENÚ PRINCIPAL */}
                         <div className="lg:pl-8">
                             <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-[0.15em] font-serif">Menú Principal</h3>
                             <ul className="space-y-4">
                                 <li><Link to="/" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Inicio</Link></li>
-                                <li><Link to="/sobre-mi" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Conoce a la Doctora</Link></li>
-                                <li><Link to="/tratamientos" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Tratamientos Médicos</Link></li>
-                                
-                                {/* SOLUCIÓN: Uso de <a> para forzar la navegación al ID específico */}
-                                <li>
-                                    <a href="/#resultados" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">
-                                        Casos de Éxito
-                                    </a>
-                                </li>
-                                
-                                <li><Link to="/productos" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Tienda Dermocosmética</Link></li>
+                                <li><Link to="/sobre-mi" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Nosotros</Link></li>
+                                <li><Link to="/servicios" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Servicios</Link></li>
+                                <li><Link to="/tratamientos" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Tratamientos</Link></li>
+                                <li><Link to="/intervenciones" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Casos</Link></li>
+                                <li><Link to="/productos" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Farmacia</Link></li>
+                                <li><Link to="/contacto" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Contáctenos</Link></li>
                             </ul>
                         </div>
 
-                        {/* COLUMNA 3 */}
+                        {/* COLUMNA 3: ATENCIÓN AL PACIENTE */}
                         <div>
                             <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-[0.15em] font-serif">Atención al Paciente</h3>
                             <ul className="space-y-4">
-                                {/* SOLUCIÓN: Uso de <a> para el ID del FAQ en la página de contacto */}
                                 <li>
                                     <a href="/contacto#faq" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">
                                         Preguntas Frecuentes
                                     </a>
                                 </li>
-                                
                                 <li><Link to="/politicas-citas" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Políticas de Citas</Link></li>
-                                <li><Link to="/terminos-condiciones" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Términos y Condiciones</Link></li>
+                                <li><Link to="/terminos-condiciones" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Términos y condiciones</Link></li>
                                 <li><Link to="/politica-privacidad" className="text-white/80 hover:text-[#F2BDC7] hover:translate-x-1 transition-all block text-sm font-medium">Política de Privacidad</Link></li>
                             </ul>
                         </div>
@@ -92,6 +84,7 @@ const Footer = () => {
                             
                             <div className="space-y-5 text-white/80 text-sm">
                                 
+                                {/* Dirección */}
                                 <div className="flex items-start gap-3">
                                     <div className="bg-white/10 border border-white/20 p-2 rounded-full shadow-sm text-[#F2BDC7] mt-0.5 shrink-0">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -99,31 +92,39 @@ const Footer = () => {
                                     <p className="font-medium mt-1 text-white/90">Av. San Luis 2534, Oficina 701<br/>San Borja, Lima - Perú</p>
                                 </div>
                                 
+                                {/* Horario */}
                                 <div className="flex items-start gap-3">
                                     <div className="bg-white/10 border border-white/20 p-2 rounded-full shadow-sm text-[#F2BDC7] mt-0.5 shrink-0">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                     </div>
                                     <div className="mt-1">
                                         <p className="font-bold text-white">Lunes a Sábado</p>
-                                        <p className="font-medium text-white/80">9:00 AM - 7:30 PM</p>
+                                        <p className="font-medium text-white/80">9:00 - 19:30</p>
                                     </div>
                                 </div>
                                 
-                                <div className="flex items-center gap-3 group cursor-pointer">
-                                    <div className="bg-white/10 border border-white/20 p-2 rounded-full shadow-sm text-[#F2BDC7] group-hover:bg-[#F2BDC7] group-hover:text-[#291840] transition-colors shrink-0">
+                                {/* Teléfonos (Fijo y WhatsApp) */}
+                                <div className="flex items-start gap-3 group">
+                                    <div className="bg-white/10 border border-white/20 p-2 rounded-full shadow-sm text-[#F2BDC7] mt-0.5 shrink-0">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                                     </div>
-                                    <a href="https://wa.me/51940873816" target="_blank" rel="noreferrer" className="hover:text-[#F2BDC7] transition-colors font-medium text-white/90">
-                                        +51 940 873 816
-                                    </a>
+                                    <div className="flex flex-col gap-1 mt-1">
+                                        <a href="tel:014567890" className="hover:text-[#F2BDC7] transition-colors font-medium text-white/90 block">
+                                            Fijo: (01) 456 7890
+                                        </a>
+                                        <a href="https://wa.me/51940873816" target="_blank" rel="noreferrer" className="hover:text-[#F2BDC7] transition-colors font-medium text-white/90 block">
+                                            WhatsApp: +51 940 873 816
+                                        </a>
+                                    </div>
                                 </div>
 
+                                {/* Correo */}
                                 <div className="flex items-center gap-3 group cursor-pointer">
                                     <div className="bg-white/10 border border-white/20 p-2 rounded-full shadow-sm text-[#F2BDC7] group-hover:bg-[#F2BDC7] group-hover:text-[#291840] transition-colors shrink-0">
                                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                     </div>
-                                    <a href="mailto:citas@miderma.pe" className="hover:text-[#F2BDC7] transition-colors font-medium text-white/90">
-                                        citas@miderma.pe
+                                    <a href="mailto:citas@midermacentrodelapiel.pe" className="hover:text-[#F2BDC7] transition-colors font-medium text-white/90 break-all">
+                                        citas@midermacentrodelapiel.pe
                                     </a>
                                 </div>
                             </div>
