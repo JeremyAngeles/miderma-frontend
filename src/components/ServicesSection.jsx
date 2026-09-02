@@ -22,15 +22,15 @@ const ServicesSection = () => {
                     </p>
                 </div>
 
-                {/* Grid de 4 Especialidades (2 columnas en tablet, 4 en pantallas muy grandes, o 2 y 2 para mantener simetría) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16 relative z-10">
+                {/* Contenedor Flex para alinear 3 arriba y 2 centrados abajo */}
+                <div className="flex flex-wrap justify-center gap-6 lg:gap-8 mb-16 relative z-10">
                     
                     {/* 1. Dermatología Clínica */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-48 xl:h-60 overflow-hidden relative">
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
+                        <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-clinica.jpg" alt="Dermatología Clínica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
-                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Clínica</h3>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Clínica</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
                             <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
@@ -45,11 +45,11 @@ const ServicesSection = () => {
                     </div>
 
                     {/* 2. Dermatología Quirúrgica y Oncológica */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-48 xl:h-60 overflow-hidden relative">
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
+                        <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-quirurgica.jpg" alt="Dermatología Quirúrgica y Oncológica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
-                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Quirúrgica y<br/>Oncológica</h3>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Quirúrgica y<br/>Oncológica</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
                             <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
@@ -57,18 +57,18 @@ const ServicesSection = () => {
                             </p>
                             <ul className="space-y-3 mb-2 mt-auto">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Cáncer de piel (Melanoma y No Melanoma).</li>
-                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Extirpación de lunares, quistes y tumores benignos.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Extirpación de lunares y quistes.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Biopsias cutáneas precisas.</li>
                             </ul>
                         </div>
                     </div>
 
                     {/* 3. Dermatología Estética */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-48 xl:h-60 overflow-hidden relative">
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
+                        <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-estetica.jpg" alt="Dermatología Estética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
-                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Estética</h3>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Estética</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
                             <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
@@ -82,12 +82,32 @@ const ServicesSection = () => {
                         </div>
                     </div>
 
-                    {/* 4. Dermocosmética */}
-                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-48 xl:h-60 overflow-hidden relative">
+                    {/* 4. Dermatología Pediátrica */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
+                        <div className="h-64 lg:h-72 overflow-hidden relative">
+                            {/* NOTA: Aquí se cambió a .webp según tu imagen */}
+                            <img src="/especialidad-pediatrica.webp" alt="Dermatología Pediátrica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Pediátrica</h3>
+                        </div>
+                        <div className="p-6 xl:p-8 flex flex-col flex-grow">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                                Atención especializada para la piel delicada de los niños. Diagnosticamos y tratamos afecciones infantiles, acompañando a la familia.
+                            </p>
+                            <ul className="space-y-3 mb-2 mt-auto">
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermatitis atópica y del pañal.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Sarpullido por calor e Infecciones.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Verrugas y Molusco Contagioso.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* 5. Dermocosmética */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
+                        <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-dermocosmetica.jpg" alt="Dermocosmética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
-                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Cosmética</h3>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Cosmética</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
                             <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">

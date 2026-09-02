@@ -43,7 +43,7 @@ const serviciosLista = [
         id: "clinica",
         titulo: "Dermatología Clínica",
         descripcion: "Tu piel habla de ti. Nosotros te ayudamos a entenderla y cuidarla. La piel es nuestro órgano más grande y el primero que ve el mundo. No solo nos protege, también refleja nuestro estado de salud, nuestras emociones y nuestros hábitos. Por eso, en nuestra consulta no tratamos 'enfermedades de la piel', tratamos personas que buscan sentirse bien con lo que ven en el espejo. En Miderma ofrecemos diagnósticos certeros y tratamientos efectivos porque somos dermatólogos capacitados para las afecciones más comunes de la piel, de todas las edades, con un enfoque integral que combina ciencia y tecnología avanzada. Nuestro objetivo es devolverle la salud a tu piel.",
-        imagen: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/portada-clinica.jpg",
         tratamientos: [
             {
                 titulo: "Acné",
@@ -141,7 +141,7 @@ const serviciosLista = [
         id: "pediatrica",
         titulo: "Dermatología Pediátrica",
         descripcion: "La piel de los niños es más delicada y sensible. En Miderma tenemos como objetivo no solo tratar la enfermedad, sino educar y acompañar a la familia para que la salud de la piel de los más pequeños esté en las mejores manos. Contamos con capacitaciones en dermatología pediátrica porque entendemos las necesidades específicas de la piel infantil, brindándole un diagnóstico y tratamiento para las afecciones cutáneas en este grupo etáreo.",
-        imagen: "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/portada-pediatrica.jpg",
         tratamientos: [
             {
                 titulo: "Dermatitis Atópica",
@@ -218,7 +218,7 @@ const serviciosLista = [
         id: "quirurgica-oncologica",
         titulo: "Dermatología Quirúrgica y Oncológica",
         descripcion: "En Miderma contamos con Dermatología Quirúrgica y Oncológica, el área de nuestra especialidad dedicada al diagnóstico, tratamiento quirúrgico con técnicas de cirugía reconstructiva para minimizar el impacto estético y funcional, y el seguimiento de tumores cutáneos benignos y malignos. Somos conscientes de que un diagnóstico de cáncer de piel genera incertidumbre; nuestro enfoque combina la máxima precisión oncológica con la mejor técnica reconstructiva. Ofrecemos: Diagnóstico preciso (dermatoscopia digital y biopsia), Cirugía oncológica, Cirugía reconstructiva y Tratamiento de lesiones benignas.",
-        imagen: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/portada-quirurgica.jpg",
         tratamientos: [
             {
                 titulo: "Quiste Epidérmico de Inclusión (Ateroma)",
@@ -320,7 +320,7 @@ const serviciosLista = [
         id: "estetica-laser",
         titulo: "Dermatología Estética y Láser",
         descripcion: "La belleza y la salud se complementan. En Miderma Centro de la Piel sabemos que la Dermatología Estética es una parte fundamental de nuestra especialidad que busca promover la salud cutánea óptima, entendiendo que una piel sana es, por definición, una piel estética. Nuestro enfoque se basa en un profundo conocimiento de la anatomía, utilizando tecnología médica de vanguardia para ofrecer tratamientos seguros que realzan tu imagen sin perder naturalidad, mejorando la textura, luminosidad y firmeza de tu piel.",
-        imagen: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/portada-estetica.jpg",
         tratamientos: [
             {
                 titulo: "Toxina Botulínica",
@@ -396,7 +396,7 @@ const serviciosLista = [
         id: "dermocosmetica",
         titulo: "Dermocosmética",
         descripcion: "En Miderma la dermatocosmética es el puente entre la salud y la estética de la piel. Entendemos que una piel luminosa, uniforme y saludable es un reflejo de bienestar integral. Nuestro enfoque va más allá de la cosmética superficial; aplicamos el conocimiento profundo de la fisiología de la piel para ofrecer tratamientos personalizados que restauran su equilibrio y vitalidad. Cada procedimiento se basa en un diagnóstico médico previo para seleccionar los principios activos y tecnologías adecuadas.",
-        imagen: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/portada-dermocosmetica.jpg",
         tratamientos: [
             {
                 titulo: "Limpieza Facial Profunda",
@@ -475,6 +475,7 @@ const Servicios = () => {
                                         src={servicio.imagen}
                                         alt={servicio.titulo}
                                         className="w-full max-w-lg aspect-[4/3] object-cover rounded-[2rem] shadow-xl border-4 border-white"
+                                        onError={(e) => { e.target.onerror = null; e.target.src = "https://images.unsplash.com/photo-1615286611384-5f508003f6f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}
                                     />
                                 </div>
 

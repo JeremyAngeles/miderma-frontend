@@ -34,55 +34,58 @@ const PromotionsSection = () => {
                     <div className="w-20 h-1.5 bg-[#F2BDC7] mt-4 mx-auto md:mx-0 rounded-full"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+                {/* Tarjetas más horizontales */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 w-full">
                     {promociones.map((promo) => (
-                        <div key={promo.id} className="relative bg-[#F4EFEA] rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col w-full h-[460px] sm:h-[450px] lg:h-[480px]">
+                        <div key={promo.id} className="relative bg-[#F4EFEA] rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group flex flex-col w-full h-[400px] sm:h-[420px] lg:h-[450px]">
                             
-                            {/* IMAGEN DE FONDO */}
+                            {/* IMAGEN PURA: Cubre todo, sin filtros ni degradados */}
                             <img 
                                 src={promo.imagen} 
                                 alt={promo.titulo} 
-                                className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-700"
+                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-0"
                                 onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1615286611384-5f508003f6f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}
                             />
-                            
-                            {/* Gradientes para oscurecer solo la parte del texto (Derecha) */}
-                            <div className="absolute inset-0 bg-gradient-to-l from-[#F4EFEA] via-[#F4EFEA]/80 to-transparent"></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFEA]/80 via-transparent to-transparent sm:opacity-60"></div>
 
-                            {/* CONTENIDO INTERNO */}
-                            <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full justify-between">
+                            {/* CONTENIDO INTERNO SOUPREPUESTO (Flotando a la derecha) */}
+                            <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full justify-between items-end text-right w-full sm:w-[75%] ml-auto">
                                 
-                                <div className="text-right flex flex-col items-end mt-2 sm:mt-4">
-                                    <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-gray-500 uppercase mb-2">
+                                <div className="flex flex-col items-end">
+                                    <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#7A6B63] uppercase mb-2">
                                         MIDERMA EXCLUSIVA
                                     </span>
                                     
-                                    <h3 translate="no" className="text-2xl lg:text-3xl font-light text-[#5A4A42] leading-[1.15] mb-2 font-serif max-w-[220px] sm:max-w-[280px]">
+                                    <h3 translate="no" className="text-2xl lg:text-3xl font-light text-[#291840] leading-[1.15] mb-2 font-serif max-w-[280px]">
                                         {promo.titulo}
                                     </h3>
                                     
-                                    <p className="text-xs sm:text-sm font-bold text-[#5A4A42] uppercase tracking-wider mb-2 max-w-[220px] sm:max-w-[250px]">
+                                    <p className="text-xs sm:text-sm font-bold text-[#291840] uppercase tracking-wider mb-2 max-w-[250px]">
                                         {promo.subtitulo}
                                     </p>
                                     
-                                    <p className="text-xs sm:text-sm text-[#7A6B63] leading-relaxed max-w-[200px] sm:max-w-[250px]">
+                                    <p className="text-xs sm:text-sm text-[#5A4A42] leading-relaxed max-w-[260px] font-medium">
                                         {promo.descripcion}
                                     </p>
                                 </div>
 
                                 <div className="mt-auto flex flex-col items-end">
-                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5 font-medium">
+                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5 font-bold">
                                         Antes: {promo.precioAntes}
                                     </span>
                                     
-                                    {/* CAJA DE PRECIO (Se quitó la lógica de "sesiones" y quedó redondeada completa) */}
-                                    <div className="bg-[#F2BDC7] text-[#291840] px-4 sm:px-5 py-3 text-right w-[140px] sm:w-[160px] transform group-hover:-translate-y-1 transition-transform shadow-md rounded-xl mb-3">
-                                        <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold opacity-80 mb-0.5">Ahora:</p>
-                                        <p className="text-2xl sm:text-3xl font-serif font-bold leading-none">{promo.precioAhora}</p>
+                                    {/* CAJA DE PRECIO SOLUCIONADA */}
+                                    {/* Cambié w-[160px] por w-max para que se adapte al contenido exacto */}
+                                    <div className="bg-[#F2BDC7] text-[#291840] px-5 py-3 rounded-xl flex flex-col items-end w-max ml-auto shadow-md transform group-hover:-translate-y-1 transition-transform mb-3">
+                                        <span className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold opacity-80 mb-0.5">
+                                            Ahora:
+                                        </span>
+                                        {/* whitespace-nowrap fuerza al S/. y al número a estar siempre en la misma línea */}
+                                        <span className="text-2xl sm:text-3xl font-serif font-bold leading-none whitespace-nowrap">
+                                            {promo.precioAhora}
+                                        </span>
                                     </div>
 
-                                    <p className="text-[9px] sm:text-[10px] text-[#7A6B63] font-medium text-right max-w-[140px] sm:max-w-[160px] leading-tight">
+                                    <p className="text-[9px] sm:text-[10px] text-[#7A6B63] font-bold text-right max-w-[180px] leading-tight">
                                         {promo.validez}
                                     </p>
                                 </div>

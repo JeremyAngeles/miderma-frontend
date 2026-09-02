@@ -8,14 +8,15 @@ const DoctorSection = () => {
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                 
                 {/* FOTO DE LA DOCTORA */}
-                <div className="w-full lg:w-1/2 flex justify-center relative px-4 lg:px-0">
-                    <div className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-miderma-pink/20 rounded-full blur-3xl -z-10"></div>
-                    <img 
-                        src="/doctora.png" 
-                        alt="Dra. Rudid Huamaní" 
-                        className="w-full max-w-[280px] sm:max-w-md h-auto object-contain rounded-[40px] border-[6px] sm:border-[8px] border-white shadow-2xl ring-4 ring-miderma-pink/30"
-                    />
-                </div>
+<div className="w-full lg:w-1/2 flex justify-center relative px-4 lg:px-0">
+    <div className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-miderma-pink/20 rounded-full blur-3xl -z-10"></div>
+    <img 
+        src="/fotoDoctora.jpeg" 
+        alt="Dra. Rudid Huamaní" 
+        /* AQUÍ AUMENTAMOS EL TAMAÑO (max-w-[320px] sm:max-w-[400px] lg:max-w-[480px]) */
+        className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[580px] aspect-[4/5] object-cover rounded-[40px] border-[6px] sm:border-[8px] border-white shadow-2xl ring-4 ring-miderma-pink/30 -translate-x-4 lg:-translate-x-12"
+    />
+</div>
 
                 {/* INFORMACIÓN CURRICULAR */}
                 <div className="w-full lg:w-1/2 text-center lg:text-left">

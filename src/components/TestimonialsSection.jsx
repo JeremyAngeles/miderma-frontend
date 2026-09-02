@@ -59,17 +59,19 @@ const TestimonialsSection = () => {
 
     return (
         <section className="py-16 md:py-24 px-4 sm:px-6 relative z-10 bg-[#FDF6F4] text-miderma-dark overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
                 
-                {/* VIDEO (Izquierda en PC, Arriba en Celular) */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                    <div className="w-full max-w-[500px] aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 sm:border-8 border-white bg-miderma-dark relative group">
+                {/* VIDEO / FOTO (Izquierda en PC, Arriba en Celular) */}
+                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start xl:justify-center">
+                    
+                    {/* AQUÍ SE AGRANDÓ EL TAMAÑO (de max-w-500px pasó a 650px y 700px) */}
+                    <div className="w-full max-w-[600px] lg:max-w-[650px] xl:max-w-[700px] aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 sm:border-8 border-white bg-miderma-dark relative group">
                         
                         {/* Puedes poner un póster o dejar el video directo */}
                         <video 
                             controls 
                             className="w-full h-full object-cover"
-                            poster="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Imagen de portada mientras no se reproduce
+                            poster="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" // Imagen de portada mientras no se reproduce
                         >
                             <source src="/video-presentacion.mp4" type="video/mp4" />
                             Tu navegador no soporta videos.
@@ -78,7 +80,7 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* TESTIMONIOS (Derecha en PC, Abajo en Celular) */}
-                <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
+                <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left lg:pl-6">
                     
                     {/* Encabezado */}
                     <div className="mb-8">
@@ -90,12 +92,8 @@ const TestimonialsSection = () => {
                         </h2>
                     </div>
                     
-                    {/* 
-                        EL TRUCO DE GRID: 
-                        Al usar grid, todos los testimonios se superponen en la misma "celda".
-                        El contenedor crecerá automáticamente hasta la altura del testimonio más largo.
-                    */}
-                    <div className="grid max-w-lg mx-auto lg:mx-0 w-full mb-6">
+                    {/* Contenedor dinámico con GRID */}
+                    <div className="grid max-w-xl mx-auto lg:mx-0 w-full mb-6">
                         {testimonios.map((t, idx) => (
                             <div 
                                 key={t.id}
@@ -106,19 +104,19 @@ const TestimonialsSection = () => {
                                 }`}
                             >
                                 {/* Texto del testimonio */}
-                                <p className="text-lg md:text-xl italic text-[#7A6B63] mb-6 font-serif leading-relaxed">
+                                <p className="text-lg md:text-2xl italic text-[#7A6B63] mb-6 font-serif leading-relaxed">
                                     "{t.texto}"
                                 </p>
                                 
                                 {/* Info del Paciente */}
-                                <div className="flex items-center justify-center lg:justify-start gap-4">
+                                <div className="flex items-center justify-center lg:justify-start gap-4 mt-2">
                                     <img 
                                         src={t.imagen} 
                                         alt={t.nombre} 
-                                        className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover shadow-sm ring-2 ring-miderma-pink/30" 
+                                        className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-sm ring-2 ring-miderma-pink/30" 
                                     />
                                     <div className="text-left">
-                                        <h4 className="font-bold text-[#5A4A42] text-sm md:text-base leading-tight">
+                                        <h4 className="font-bold text-[#5A4A42] text-sm md:text-lg leading-tight mb-1">
                                             {t.nombre}
                                         </h4>
                                         <span className="text-[10px] md:text-xs text-miderma-pink font-extrabold uppercase tracking-wider">
