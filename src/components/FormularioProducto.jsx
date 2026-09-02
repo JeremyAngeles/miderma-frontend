@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const FormularioProducto = ({ onProductoAgregado, productoAEditar, onCancelarEdicion }) => {
     const [nombre, setNombre] = useState('');
+    const [marca, setMarca] = useState('');
     const [descripcion, setDescripcion] = useState('');
     const [precio, setPrecio] = useState('');
     const [stock, setStock] = useState('');
@@ -19,11 +20,12 @@ const FormularioProducto = ({ onProductoAgregado, productoAEditar, onCancelarEdi
     // Rellenar datos si estamos en modo edición
     useEffect(() => {
         if (productoAEditar) {
-            setNombre(productoAEditar.nombre);
-            setDescripcion(productoAEditar.descripcion);
-            setPrecio(productoAEditar.precio);
-            setStock(productoAEditar.stock);
-            setCategoria(productoAEditar.categoria);
+            setNombre(productoAEditar.nombre || '');
+            setMarca(productoAEditar.marca || '');
+            setDescripcion(productoAEditar.descripcion || '');
+            setPrecio(productoAEditar.precio || '');
+            setStock(productoAEditar.stock || '');
+            setCategoria(productoAEditar.categoria || '');
             setEspecialidad(productoAEditar.especialidad || '');
             setBeneficios(productoAEditar.beneficios || '');
             setEtiquetaDescuento(productoAEditar.etiqueta_descuento || '');
@@ -34,7 +36,7 @@ const FormularioProducto = ({ onProductoAgregado, productoAEditar, onCancelarEdi
     }, [productoAEditar]);
 
     const limpiarFormulario = () => {
-        setNombre(''); setDescripcion(''); setPrecio(''); setStock(''); 
+        setNombre(''); setMarca(''); setDescripcion(''); setPrecio(''); setStock(''); 
         setCategoria(''); setEspecialidad(''); setBeneficios(''); 
         setEtiquetaDescuento(''); setImagen(null); setUrlImagenActual('');
     };
@@ -59,6 +61,7 @@ const FormularioProducto = ({ onProductoAgregado, productoAEditar, onCancelarEdi
 
             const datosProducto = {
                 nombre,
+                marca,
                 descripcion,
                 precio: Number(precio),
                 stock: Number(stock),
@@ -103,10 +106,14 @@ const FormularioProducto = ({ onProductoAgregado, productoAEditar, onCancelarEdi
 
             <form onSubmit={manejarEnvio} className="space-y-6">
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div>
                         <label className="block text-miderma-purple font-semibold mb-2">Nombre</label>
                         <input type="text" required value={nombre} onChange={(e) => setNombre(e.target.value)} className="w-full px-4 py-2 border border-miderma-gray rounded-lg focus:outline-none focus:ring-1 focus:ring-miderma-pink" />
+                    </div>
+                    <div>
+                        <label className="block text-miderma-purple font-semibold mb-2">Marca</label>
+                        <input type="text" required value={marca} onChange={(e) => setMarca(e.target.value)} placeholder="Ej: La Roche-Posay, Isdin..." className="w-full px-4 py-2 border border-miderma-gray rounded-lg focus:outline-none focus:ring-1 focus:ring-miderma-pink" />
                     </div>
                     <div>
                         <label className="block text-miderma-purple font-semibold mb-2">Categoría</label>

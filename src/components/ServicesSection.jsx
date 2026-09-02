@@ -22,62 +22,81 @@ const ServicesSection = () => {
                     </p>
                 </div>
 
-                {/* Grid de 3 Especialidades (Responsive) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 relative z-10">
+                {/* Grid de 4 Especialidades (2 columnas en tablet, 4 en pantallas muy grandes, o 2 y 2 para mantener simetría) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16 relative z-10">
                     
                     {/* 1. Dermatología Clínica */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-60 overflow-hidden relative">
+                        <div className="h-48 xl:h-60 overflow-hidden relative">
                             <img src="/especialidad-clinica.jpg" alt="Dermatología Clínica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">Dermatología Clínica</h3>
+                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Clínica</h3>
                         </div>
-                        <div className="p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-sm md:text-base leading-relaxed">
+                        <div className="p-6 xl:p-8 flex flex-col flex-grow">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
                                 Diagnósticos precisos y terapias efectivas. Tratamos enfermedades de la piel, cabellos y uñas con la mayor rigurosidad médica.
                             </p>
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Acné, rosácea y melasma.</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermatopatías infantiles y autoinmunes.</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Caída de cabello y hongos en uñas.</li>
+                            <ul className="space-y-3 mb-2 mt-auto">
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Acné, rosácea y melasma.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermatopatías infantiles y autoinmunes.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Caída de cabello y hongos en uñas.</li>
                             </ul>
                         </div>
                     </div>
 
-                    {/* 2. Dermatología Estética */}
+                    {/* 2. Dermatología Quirúrgica y Oncológica */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-60 overflow-hidden relative">
+                        <div className="h-48 xl:h-60 overflow-hidden relative">
+                            <img src="/especialidad-quirurgica.jpg" alt="Dermatología Quirúrgica y Oncológica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
+                            <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
+                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Quirúrgica y<br/>Oncológica</h3>
+                        </div>
+                        <div className="p-6 xl:p-8 flex flex-col flex-grow">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                                Abordaje médico especializado para el diagnóstico, extirpación segura y reconstrucción de lesiones cutáneas, priorizando tu salud.
+                            </p>
+                            <ul className="space-y-3 mb-2 mt-auto">
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Cáncer de piel (Melanoma y No Melanoma).</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Extirpación de lunares, quistes y tumores benignos.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Biopsias cutáneas precisas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* 3. Dermatología Estética */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
+                        <div className="h-48 xl:h-60 overflow-hidden relative">
                             <img src="/especialidad-estetica.jpg" alt="Dermatología Estética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">Dermatología Estética</h3>
+                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Estética</h3>
                         </div>
-                        <div className="p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-sm md:text-base leading-relaxed">
+                        <div className="p-6 xl:p-8 flex flex-col flex-grow">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
                                 Mejoramos tu apariencia y prevenimos el envejecimiento con procedimientos seguros, resaltando tu belleza natural.
                             </p>
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Botox y Ácido Hialurónico.</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Bioestimuladores y Mesoterapia.</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Rejuvenecimiento facial láser e IPL.</li>
+                            <ul className="space-y-3 mb-2 mt-auto">
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Botox y Ácido Hialurónico.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Bioestimuladores y Mesoterapia.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Rejuvenecimiento láser e IPL.</li>
                             </ul>
                         </div>
                     </div>
 
-                    {/* 3. Dermocosmética */}
+                    {/* 4. Dermocosmética */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col">
-                        <div className="h-60 overflow-hidden relative">
+                        <div className="h-48 xl:h-60 overflow-hidden relative">
                             <img src="/especialidad-dermocosmetica.jpg" alt="Dermocosmética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/80 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">Dermocosmética</h3>
+                            <h3 className="absolute bottom-5 left-5 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Cosmética</h3>
                         </div>
-                        <div className="p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-sm md:text-base leading-relaxed">
+                        <div className="p-6 xl:p-8 flex flex-col flex-grow">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
                                 Tratamientos especializados para limpiar, nutrir y potenciar el brillo natural, textura y salud de tu piel.
                             </p>
-                            <ul className="space-y-3 mb-8">
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Skin care y Peelings.</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Limpieza profunda (Hydrofacial).</li>
-                                <li className="flex items-start gap-2 text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermapen y Luz LED.</li>
+                            <ul className="space-y-3 mb-2 mt-auto">
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Rutinas Skin Care y Peelings.</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Limpieza profunda (Hydrofacial).</li>
+                                <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermapen y terapias Luz LED.</li>
                             </ul>
                         </div>
                     </div>

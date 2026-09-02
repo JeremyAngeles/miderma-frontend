@@ -40,11 +40,12 @@ const Navbar = () => {
         { name: 'Inicio', path: '/' },
         { name: 'Nosotros', path: '/sobre-mi' },
         { name: 'Servicios', path: '/servicios' },
+        { name: 'Tratamientos', path: '/tratamientos' },
         
     ];
 
     const linksDerecha = [
-        { name: 'Tratamientos', path: '/tratamientos' },
+        { name: 'Contacto', path: '/Contacto' },
         { name: 'Casos', path: '/intervenciones' },
         { name: 'Farmacia', path: '/productos' },
     ];

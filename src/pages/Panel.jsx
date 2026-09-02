@@ -70,6 +70,9 @@ const Panel = () => {
                     <Link to="/panel/casos" className={estiloBotonDesktop('/panel/casos')}>
                         ✨ Casos Clínicos
                     </Link>
+                    <Link to="/panel/doctores" className={estiloBotonDesktop('/panel/doctores')}>
+                        👩‍⚕️ Doctores
+                    </Link>
                 </nav>
 
                 <div className="p-4 border-t border-miderma-purple">
@@ -118,6 +121,10 @@ const Panel = () => {
                 <Link to="/panel/casos" className={estiloBotonMobile('/panel/casos')}>
                     <span className="text-xl mb-1">✨</span>
                     <span>Casos</span>
+                </Link>
+                <Link to="/panel/doctores" className={estiloBotonMobile('/panel/doctores')}>
+                    <span className="text-xl mb-1">👩‍⚕️</span>
+                    <span>Doctores</span>
                 </Link>
             </nav>
             

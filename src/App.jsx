@@ -6,17 +6,19 @@ import Footer from './components/Footer';
 import Home from './pages/Home'; 
 import SobreMi from './pages/SobreMi';
 import Servicios from './pages/Servicios';
-import Tratamientos from './pages/Tratamientos'; // <-- IMPORTADO AQUÍ
+import Tratamientos from './pages/Tratamientos'; 
 import Intervenciones from './pages/Intervenciones';
 import IntervencionDetalle from './pages/IntervencionDetalle';
 import Productos from './pages/Productos';
 import Contacto from './pages/Contacto';
 import ScrollToTop from './components/ScrollToTop';
 
+// Componentes del Panel de Administración
 import ProductosTabla from './components/ProductosTabla';
 import PaquetesTabla from './components/PaquetesTabla';
 import PublicacionesTabla from './components/PublicacionesTabla';
 import CasosTabla from './components/CasosTabla';
+import ListaDoctores from './components/ListaDoctores'; // <-- IMPORTAMOS LA NUEVA LISTA DE DOCTORES
 
 const WebPublica = () => (
   <div className="bg-miderma-light min-h-screen font-sans flex flex-col">
@@ -36,7 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre-mi" element={<SobreMi />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/tratamientos" element={<Tratamientos />} /> {/* <-- RUTA AÑADIDA */}
+          <Route path="/tratamientos" element={<Tratamientos />} /> 
           <Route path="/intervenciones" element={<Intervenciones />} />
           <Route path="/intervenciones/:id" element={<IntervencionDetalle />} />
           <Route path="/productos" element={<Productos />} />
@@ -51,6 +53,9 @@ function App() {
             <Route path="paquetes" element={<PaquetesTabla />} />
             <Route path="publicaciones" element={<PublicacionesTabla />} />
             <Route path="casos" element={<CasosTabla />} />
+            
+            {/* NUEVA RUTA PARA DOCTORES EN EL PANEL */}
+            <Route path="doctores" element={<ListaDoctores />} />
         </Route>
       </Routes>
     </BrowserRouter>

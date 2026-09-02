@@ -3,10 +3,11 @@ import axios from 'axios';
 
 const FormularioPublicacion = ({ onPublicacionAgregada, publicacionAEditar, onCancelarEdicion }) => {
     const [titulo, setTitulo] = useState('');
+    const [categoria, setCategoria] = useState(''); // NUEVO: Estado para categoría
     const [contenidoTexto, setContenidoTexto] = useState('');
     const [tipoPublicacion, setTipoPublicacion] = useState('blog'); 
     
-    // NUEVO: Estado de visibilidad
+    // Estado de visibilidad
     const [visible, setVisible] = useState(true);
 
     const [imagen, setImagen] = useState(null);
@@ -16,9 +17,10 @@ const FormularioPublicacion = ({ onPublicacionAgregada, publicacionAEditar, onCa
 
     useEffect(() => {
         if (publicacionAEditar) {
-            setTitulo(publicacionAEditar.titulo);
-            setContenidoTexto(publicacionAEditar.contenido_texto);
-            setTipoPublicacion(publicacionAEditar.tipo_publicacion);
+            setTitulo(publicacionAEditar.titulo || '');
+            setCategoria(publicacionAEditar.categoria || ''); // Cargar categoría si existe
+            setContenidoTexto(publicacionAEditar.contenido_texto || '');
+            setTipoPublicacion(publicacionAEditar.tipo_publicacion || 'blog');
             
             // Asignar el estado (1 es true, 0 es false)
             setVisible(publicacionAEditar.estado === 1);
@@ -36,8 +38,14 @@ const FormularioPublicacion = ({ onPublicacionAgregada, publicacionAEditar, onCa
     }, [publicacionAEditar]);
 
     const limpiarFormulario = () => {
-        setTitulo(''); setContenidoTexto(''); setTipoPublicacion('blog'); 
-        setVisible(true); setImagen(null); setUrlImagenActual(''); setLinkVideo('');
+        setTitulo(''); 
+        setCategoria(''); // Limpiar categoría
+        setContenidoTexto(''); 
+        setTipoPublicacion('blog'); 
+        setVisible(true); 
+        setImagen(null); 
+        setUrlImagenActual(''); 
+        setLinkVideo('');
     };
 
     const manejarEnvio = async (e) => {
@@ -65,6 +73,7 @@ const FormularioPublicacion = ({ onPublicacionAgregada, publicacionAEditar, onCa
 
             const datosPublicacion = {
                 titulo,
+                categoria, // Enviar categoría a la base de datos
                 contenido_texto: contenidoTexto,
                 tipo_publicacion: tipoPublicacion,
                 url_media: url_media_final,
@@ -119,10 +128,14 @@ const FormularioPublicacion = ({ onPublicacionAgregada, publicacionAEditar, onCa
                     <span className="ml-auto text-xs text-gray-500 italic">Desmarca para guardarlo como borrador oculto.</span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                         <label className="block text-miderma-purple font-semibold mb-2">Título</label>
                         <input type="text" required value={titulo} onChange={(e) => setTitulo(e.target.value)} className="w-full px-4 py-2 border border-miderma-gray rounded-lg focus:outline-none focus:ring-1 focus:ring-miderma-pink" placeholder="Ej. Cuidados de la piel en verano" />
+                    </div>
+                    <div>
+                        <label className="block text-miderma-purple font-semibold mb-2">Categoría</label>
+                        <input type="text" required value={categoria} onChange={(e) => setCategoria(e.target.value)} className="w-full px-4 py-2 border border-miderma-gray rounded-lg focus:outline-none focus:ring-1 focus:ring-miderma-pink" placeholder="Ej. Skincare, Acne..." />
                     </div>
                     <div>
                         <label className="block text-miderma-purple font-semibold mb-2">Formato de Publicación</label>

@@ -173,7 +173,8 @@ const Tratamientos = () => {
             {/* HERO */}
             <div className="relative w-full pt-32 pb-16 flex flex-col items-center justify-center text-center px-4">
                 <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 block text-xs md:text-sm">Catálogo de Especialidades</span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-miderma-dark mb-4 font-serif">Tratamientos Médicos</h1>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-miderma-dark mb-4 font-serif">Nuestros Tratamientos
+                </h1>
                 <div className="w-20 h-1.5 bg-miderma-pink rounded-full mb-6"></div>
                 <p className="max-w-2xl text-miderma-purple text-sm md:text-base leading-relaxed">
                     Soluciones avanzadas y tecnología de última generación adaptadas a las necesidades clínicas, quirúrgicas y estéticas de tu piel.

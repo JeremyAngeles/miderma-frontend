@@ -5,17 +5,17 @@ const Footer = () => {
         <footer className="w-full relative z-20 bg-white">
             
             {/* CONTENEDOR PRINCIPAL CON IMAGEN Y EFECTOS */}
-            <div className="relative pt-24 lg:pt-16 pb-12 rounded-t-[3rem] lg:rounded-t-[4rem] shadow-[0_-10px_40px_rgba(41,24,64,0.15)] overflow-hidden bg-[#8E6F96]">
+            <div className="relative pt-24 lg:pt-16 pb-12 rounded-t-[3rem] lg:rounded-t-[4rem] shadow-[0_-10px_40px_rgba(41,24,64,0.15)] overflow-hidden bg-[#FDF6F4]">
                 
-                {/* 1. FOTO DE FONDO */}
+                {/* 1. FOTO DE FONDO (Más visible para darle luz) */}
                 <img 
                     src="/footer.jpg" 
                     alt="Fondo Miderma" 
-                    className="absolute inset-0 w-full h-full object-cover object-center opacity-40 z-0"
+                    className="absolute inset-0 w-full h-full object-cover object-center opacity-60 z-0"
                 />
 
-                {/* 2. DEGRADADO Y EFECTO CRISTAL (Morado a la izq -> Rosa a la der) */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#8E6F96] via-[#8E6F96]/80 to-[#F2BDC7]/60 backdrop-blur-[2px] z-0"></div>
+                {/* 2. DEGRADADO Y EFECTO CRISTAL (Morado con mucha más transparencia) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#291840]/90 via-[#291840]/60 to-[#291840]/30 backdrop-blur-[3px] z-0"></div>
 
                 {/* 3. CONTENIDO DEL FOOTER */}
                 <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
