@@ -38,7 +38,7 @@ const Hero = () => {
                 
                 <div className="absolute inset-0 w-full h-full z-0 bg-miderma-dark"> {/* Le puse fondo oscuro por si quedan bordes al alejar */}
     <img 
-        src="/fondoooo2.jpg" 
+        src="/fondoooo5.png" 
         alt="Centro Dermatológico Miderma" 
         className="w-full h-full object-contain object-center" /* <-- CAMBIAMOS object-cover POR object-contain */
         onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" }}
@@ -46,39 +46,38 @@ const Hero = () => {
     <div className="absolute inset-0 bg-gradient-to-r from-miderma-dark/95 via-miderma-dark/60 to-transparent sm:bg-gradient-to-r sm:from-miderma-dark/90 sm:via-miderma-dark/40 sm:to-transparent"></div>
 </div>
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-6 md:mt-10">
-                    <div className="max-w-3xl text-center lg:text-left">
-                        
-                        <span className="text-miderma-pink font-nunito font-bold tracking-widest uppercase mb-2 sm:mb-3 block text-base sm:text-lg md:text-xl drop-shadow-md">
-                            ¡Bienvenidos a Miderma Centro de la Piel!
-                        </span>
+               <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-40 md:mt-56 lg:mt-72">
+    <div className="max-w-4xl text-left pb-16 md:pb-24 -ml-2 lg:-ml-6">
+        
+        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg">
+            Tu piel, nuestra esencia y <span className="text-miderma-pink">pasión.</span>
+        </h1>
+        
+        {/* --- RAYA DECORATIVA --- */}
+        <div className="w-24 sm:w-32 h-1.5 bg-miderma-pink rounded-full mb-6 sm:mb-8 drop-shadow-md"></div>
+        {/* ----------------------- */}
+        
+        <span className="text-miderma-pink font-nunito font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
+            Especialistas en Dermatología y Estética
+        </span>
+        
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
+            <Link to="/contacto" className="bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base w-max">
+                Reserva tu Cita
+            </Link>
+        </div>
+        
+    </div>
+</div>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-nunito font-bold text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-lg">
-                            Tu piel, cabello y uñas en <span className="text-miderma-pink">manos expertas.</span>
-                        </h1>
-                        
-                        <div className="text-sm sm:text-base md:text-lg text-gray-100 mb-6 sm:mb-10 font-light leading-relaxed drop-shadow-md mx-auto lg:mx-0 space-y-3 sm:space-y-4">
-                            <p>
-                                En Miderma Centro de la Piel sabemos que las afecciones de la piel van más allá de lo visible: afectan tu bienestar, tu imagen y tu seguridad.
-                            </p>
-                            <p>
-                                Por eso, cada diagnóstico lo abordamos con rigor médico, sin dejar de lado el cuidado humano y estético que mereces.
-                            </p>
-                            <p className="hidden sm:block">
-                                Combinamos tratamientos dermatológicos avanzados con soluciones estéticas modernas y seguras, diseñadas para ayudarte a sanar, proteger y resaltar la mejor versión de ti.
-                            </p>
-                            <p className="font-semibold text-white text-base sm:text-xl pt-1 sm:pt-2">
-                                Regálale a tu piel el cuidado integral que necesita. <span className="font-bold">Estamos listos para atenderte.</span>
-                            </p>
-                        </div>
-                        
-                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                            <Link to="/contacto" className="bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-lg">
-                                Reserva tu Cita
-                            </Link>
-                        </div>
-                    </div>
+                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] sm:h-[60px] md:h-[120px]">
+                        <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" className="fill-white"></path>
+                    </svg>
                 </div>
+            </div>
+
+            <div className="relative w-full bg-white pt-8 md:pt-12 px-4 sm:px-6">
 
                 <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
                     <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] sm:h-[60px] md:h-[120px]">
