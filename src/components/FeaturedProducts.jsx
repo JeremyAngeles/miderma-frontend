@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
                         <span className="font-extrabold tracking-[0.2em] uppercase mb-3 block text-xs text-[#F2BDC7]">
                             Cuidado en Casa
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4 font-serif">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4 font-nunito">
                             Tienda Dermocosmética
                         </h2>
                         <p className="text-sm sm:text-base md:text-lg text-[#615573] max-w-2xl leading-relaxed">

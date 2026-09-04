@@ -62,9 +62,12 @@ const BeforeAfterSection = () => {
                         <span className="font-extrabold tracking-widest uppercase mb-3 block text-sm text-[#F2BDC7]">
                             Resultados Reales
                         </span>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#291840] mb-6 font-serif">
+                        
+                        {/* === AQUÍ SE APLICÓ LA FUENTE NUNITO === */}
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#291840] mb-6 font-nunito">
                             Transformamos vidas y pieles
                         </h2>
+
                         <p className="text-lg leading-relaxed text-[#615573] max-w-3xl mx-auto">
                             Diseñamos protocolos personalizados que garantizan resultados naturales y seguros. Haz clic en las imágenes para ampliarlas y ver los detalles de la evolución de nuestros pacientes.
                         </p>
@@ -92,7 +95,7 @@ const BeforeAfterSection = () => {
                             <svg className="w-6 h-6 ml-[-2px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
                         </button>
 
-                        {/* CONTENEDOR FOTOS (AQUÍ ESTÁ LA CLAVE DEL TAMAÑO: max-w-5xl) */}
+                        {/* CONTENEDOR FOTOS */}
                         <div className="w-full max-w-5xl flex flex-col sm:flex-row gap-4 lg:gap-8 items-center justify-center">
                             
                             {/* FOTO ANTES */}

@@ -45,7 +45,7 @@ const Navbar = () => {
     ];
 
     const linksDerecha = [
-        { name: 'Contacto', path: '/Contacto' },
+        { name: 'Contacto', path: '/contacto' },
         { name: 'Casos', path: '/intervenciones' },
         { name: 'Farmacia', path: '/productos' },
     ];

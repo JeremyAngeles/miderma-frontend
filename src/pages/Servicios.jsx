@@ -140,7 +140,7 @@ const serviciosLista = [
     {
         id: "pediatrica",
         titulo: "Dermatología Pediátrica",
-        descripcion: "La piel de los niños es más delicada y sensible. En Miderma tenemos como objetivo no solo tratar la enfermedad, sino educar y acompañar a la familia para que la salud de la piel de los más pequeños esté en las mejores manos. Contamos con capacitaciones en dermatología pediátrica porque entendemos las necesidades específicas de la piel infantil, brindándole un diagnóstico y tratamiento para las afecciones cutáneas en este grupo etáreo.",
+        descripcion: "La piel de los niños es más delicada y sensible. En Miderma tenemos como objetivo no solo tratar la enfermedad, sino educar y acompañar a la familia para que la salud de la piel de tu pequeño esté en las mejores manos. Contamos con capacitaciones en dermatología pediátrica porque entendemos las necesidades específicas de la piel infantil, brindándole un diagnóstico y tratamiento para las afecciones cutáneas en este grupo etáreo.",
         imagen: "/portada-pediatrica.jpg",
         tratamientos: [
             {

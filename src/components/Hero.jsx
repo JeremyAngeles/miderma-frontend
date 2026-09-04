@@ -38,7 +38,7 @@ const Hero = () => {
                 
                 <div className="absolute inset-0 w-full h-full z-0 bg-miderma-dark"> {/* Le puse fondo oscuro por si quedan bordes al alejar */}
     <img 
-        src="/fondoxd.jpeg" 
+        src="/fondoooo2.jpg" 
         alt="Centro Dermatológico Miderma" 
         className="w-full h-full object-contain object-center" /* <-- CAMBIAMOS object-cover POR object-contain */
         onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" }}
@@ -49,11 +49,11 @@ const Hero = () => {
                 <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-6 md:mt-10">
                     <div className="max-w-3xl text-center lg:text-left">
                         
-                        <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 sm:mb-3 block text-xs sm:text-sm md:text-base drop-shadow-md">
+                        <span className="text-miderma-pink font-nunito font-bold tracking-widest uppercase mb-2 sm:mb-3 block text-base sm:text-lg md:text-xl drop-shadow-md">
                             ¡Bienvenidos a Miderma Centro de la Piel!
                         </span>
 
-                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-lg">
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-nunito font-bold text-white leading-[1.1] mb-4 sm:mb-6 drop-shadow-lg">
                             Tu piel, cabello y uñas en <span className="text-miderma-pink">manos expertas.</span>
                         </h1>
                         

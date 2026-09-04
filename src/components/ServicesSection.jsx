@@ -14,9 +14,12 @@ const ServicesSection = () => {
                     <span className="font-extrabold tracking-widest uppercase mb-3 block text-sm text-miderma-pink">
                         Especialidades Destacadas
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-miderma-dark mb-4 font-serif">
+                    
+                    {/* AQUÍ ESTÁ LA FUENTE NUNITO APLICADA SOLO A ESTE TÍTULO */}
+                    <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark mb-4 font-nunito">
                         Nuestros Servicios
                     </h2>
+                    
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.
                     </p>
@@ -66,7 +69,7 @@ const ServicesSection = () => {
                     {/* 3. Dermatología Estética */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
                         <div className="h-64 lg:h-72 overflow-hidden relative">
-                            <img src="/especialidad-estetica.jpg" alt="Dermatología Estética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
+                            <img src="/especialidad-estetica.jpeg" alt="Dermatología Estética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
                             <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Estética</h3>
                         </div>
@@ -85,7 +88,6 @@ const ServicesSection = () => {
                     {/* 4. Dermatología Pediátrica */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
                         <div className="h-64 lg:h-72 overflow-hidden relative">
-                            {/* NOTA: Aquí se cambió a .webp según tu imagen */}
                             <img src="/especialidad-pediatrica.webp" alt="Dermatología Pediátrica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
                             <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Pediátrica</h3>

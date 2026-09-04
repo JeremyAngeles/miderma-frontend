@@ -45,7 +45,7 @@ const NewsSection = () => {
                 <div className="max-w-7xl mx-auto">
                     
                     <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-[#291840] mb-4 font-serif">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4  font-nunito">
                             Noticias
                         </h2>
                         <span className="font-bold tracking-widest uppercase text-xs sm:text-sm text-[#8E6F96]">
