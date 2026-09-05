@@ -69,9 +69,6 @@ const AnimatedCounter = ({ end, duration }) => {
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // === SOLUCIÓN APLICADA AQUÍ ===
-    // Al agregar [currentSlide] al final, el temporizador se reinicia a 0 
-    // automáticamente cada vez que tocas una flecha.
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -79,7 +76,6 @@ const Hero = () => {
         
         return () => clearInterval(timer);
     }, [currentSlide]); 
-    // ==============================
 
     const nextSlide = () => setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -130,7 +126,7 @@ const Hero = () => {
                             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold leading-[1.2] mb-4 sm:mb-5">
                                 Tu piel, nuestra esencia y pasión.
                             </h1>
-                            <span className="font-nunito font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl">
+                            <span className="font-nunito font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl">
                                 Especialistas en Dermatología y Estética
                             </span>
                             <div className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base w-max">
@@ -145,11 +141,11 @@ const Hero = () => {
                                     index === currentSlide ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
-                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg underline decoration-miderma-pink decoration-4 underline-offset-[10px]">
+                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg">
                                     {slide.title}
                                 </h1>
                                 
-                                <span className="text-miderma-pink font-nunito font-bold tracking-[0.2em] uppercase mt-6 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
+                                <span className="text-miderma-pink font-nunito font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
                                     {slide.subtitle}
                                 </span>
                                 
