@@ -26,12 +26,8 @@ const SobreMi = () => {
             {/* 2. MISIÓN, VISIÓN, FILOSOFÍA Y DIFERENCIADORES */}
             <AboutContent />
 
-            {/* 3. NUESTRO STAFF MÉDICO (Añadido aquí, arriba de FAQ) */}
-            <MedicalStaff />
-
-            {/* 4. PREGUNTAS FRECUENTES */}
-            <FaqSection />
-
+            {/* 3. NUESTRO STAFF MÉDICO <MedicalStaff /> (Añadido aquí, arriba de FAQ) */}
+            
         </div>
     );
 };
