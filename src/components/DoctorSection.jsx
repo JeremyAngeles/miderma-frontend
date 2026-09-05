@@ -11,7 +11,7 @@ const DoctorSection = () => {
 <div className="w-full lg:w-1/2 flex justify-center relative px-4 lg:px-0">
     <div className="absolute w-72 h-72 sm:w-96 sm:h-96 bg-miderma-pink/20 rounded-full blur-3xl -z-10"></div>
     <img 
-        src="/fotoDoctora.jpeg" 
+        src="/doctora.jpeg" 
         alt="Dra. Rudid Huamaní" 
         /* AQUÍ AUMENTAMOS EL TAMAÑO (max-w-[320px] sm:max-w-[400px] lg:max-w-[480px]) */
         className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[580px] aspect-[4/5] object-cover rounded-[40px] border-[6px] sm:border-[8px] border-white shadow-2xl ring-4 ring-miderma-pink/30 -translate-x-4 lg:-translate-x-12"

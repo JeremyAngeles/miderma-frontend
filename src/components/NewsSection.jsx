@@ -6,7 +6,7 @@ const noticias = [
         categoria: "Guía Médica",
         titulo: "Psoriasis: Guía para Entender tu Enfermedad",
         resumen: "La psoriasis es una condición crónica de la piel. Conocer sus causas, síntomas y tratamientos te ayudará a manejarla mejor y a vivir con mayor bienestar.",
-        imagen: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/psioriasis.jpg",
         enlace: "#"
     },
     {
@@ -14,7 +14,7 @@ const noticias = [
         categoria: "Cuidado Facial",
         titulo: "Contaminación en Lima: Limpiezas Profundas",
         resumen: "En una ciudad con altos niveles de contaminación, las limpiezas faciales profundas se convierten en un cuidado esencial para mantener la piel fresca y saludable.",
-        imagen: "https://images.unsplash.com/photo-1615397323147-3806a6ccad92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/tres-fotos.png",
         enlace: "#"
     },
     {
@@ -22,7 +22,7 @@ const noticias = [
         categoria: "Prevención",
         titulo: "Cáncer de Piel en Perú: Detección Temprana",
         resumen: "El cáncer de piel es una de las enfermedades de mayor crecimiento en el Perú. Conoce el nuevo reglamento nacional y la regla ABCDE para identificar lunares.",
-        imagen: "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        imagen: "/una-foto1.png",
         enlace: "#"
     }
 ];
@@ -31,7 +31,7 @@ const NewsSection = () => {
     return (
         <section className="w-full relative z-10 overflow-hidden flex flex-col -mt-[1px]">
             
-            {/* ONDA SUPERIOR: Transición de Testimonios (#FDF6F4) a Noticias (#F2F2F2) con el color rosado de la paleta */}
+            {/* ONDA SUPERIOR */}
             <div className="w-full leading-none bg-[#FDF6F4]">
                 <svg viewBox="0 0 1440 150" preserveAspectRatio="none" className="w-full h-16 sm:h-24 md:h-32 lg:h-40 block">
                     <path fill="#F2BDC7" fillOpacity="0.2" d="M0,40 C400,130 800,0 1440,60 L1440,150 L0,150 Z"></path>
@@ -45,7 +45,7 @@ const NewsSection = () => {
                 <div className="max-w-7xl mx-auto">
                     
                     <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4  font-nunito">
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4 font-nunito">
                             Noticias
                         </h2>
                         <span className="font-bold tracking-widest uppercase text-xs sm:text-sm text-[#8E6F96]">
@@ -67,6 +67,7 @@ const NewsSection = () => {
                                         src={noticia.imagen} 
                                         alt={noticia.titulo} 
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1615286611384-5f508003f6f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}
                                     />
                                     <div className="absolute inset-0 bg-[#291840]/10 group-hover:bg-transparent transition-colors duration-500"></div>
                                 </div>
@@ -95,7 +96,7 @@ const NewsSection = () => {
                 </div>
             </div>
 
-            {/* ONDA INFERIOR: Transición de Noticias (#F2F2F2) a Promociones (#FFFFFF) */}
+            {/* ONDA INFERIOR */}
             <div className="w-full leading-none bg-[#F2F2F2]">
                 <svg viewBox="0 0 1440 150" preserveAspectRatio="none" className="w-full h-16 sm:h-24 md:h-32 lg:h-40 block">
                     <path fill="#F2BDC7" fillOpacity="0.2" d="M0,40 C400,130 800,0 1440,60 L1440,150 L0,150 Z"></path>
