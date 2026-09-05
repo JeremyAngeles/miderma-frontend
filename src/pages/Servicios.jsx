@@ -218,7 +218,7 @@ const serviciosLista = [
         id: "quirurgica-oncologica",
         titulo: "Dermatología Quirúrgica y Oncológica",
         descripcion: "En Miderma contamos con Dermatología Quirúrgica y Oncológica, el área de nuestra especialidad dedicada al diagnóstico, tratamiento quirúrgico con técnicas de cirugía reconstructiva para minimizar el impacto estético y funcional, y el seguimiento de tumores cutáneos benignos y malignos. Somos conscientes de que un diagnóstico de cáncer de piel genera incertidumbre; nuestro enfoque combina la máxima precisión oncológica con la mejor técnica reconstructiva. Ofrecemos: Diagnóstico preciso (dermatoscopia digital y biopsia), Cirugía oncológica, Cirugía reconstructiva y Tratamiento de lesiones benignas.",
-        imagen: "/portada-quirurgica.jpg",
+        imagen: "/quirurgico.jpg",
         tratamientos: [
             {
                 titulo: "Quiste Epidérmico de Inclusión (Ateroma)",

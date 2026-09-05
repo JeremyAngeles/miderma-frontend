@@ -4,47 +4,47 @@ import { Link } from 'react-router-dom';
 const productosDestacados = [
     {
         id: 1,
-        nombre: "Sérum Hidratante Ácido Hialurónico",
-        marca: "Miderma Care",
-        precio: 120.00,
-        precio_oferta: 96.00, // Con descuento
-        etiqueta_descuento: "-20% OFF",
-        etiqueta: null,
+        nombre: "Roseliane Crema Antirrogeces",
+        marca: "Uriage",
+        precio: 95.00,
+        precio_oferta: null, 
+        etiqueta_descuento: null,
+        etiqueta: "RECOMENDADO",
         stock: 15,
-        imagen: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80"
+        imagen: "/Rosaline.jpg"
     },
     {
         id: 2,
-        nombre: "Protector Solar Fotoprotector 50+",
-        marca: "Isdin",
-        precio: 95.00,
-        precio_oferta: null, // Sin descuento
-        etiqueta_descuento: null,
-        etiqueta: "MÁS VENDIDO",
+        nombre: "Gel Limpiador SkinScience Sebiox AKN 250 ml",
+        marca: "SkinScience",
+        precio: 115.00,
+        precio_oferta: 95.00, 
+        etiqueta_descuento: "-15% OFF",
+        etiqueta: null,
         stock: 8,
-        imagen: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=500&q=80"
+        imagen: "/Sebiox-AKN.webp"
     },
     {
         id: 3,
-        nombre: "Crema Despigmentante Noche",
-        marca: "Eucerin",
+        nombre: "PROPIEL ÁCIDO HIALURÓNICO 2.5% SERUM",
+        marca: "Propiel",
         precio: 145.00,
-        precio_oferta: 116.00, // Con descuento
+        precio_oferta: 116.00, 
         etiqueta_descuento: "-20% OFF",
         etiqueta: null,
         stock: 5,
-        imagen: "https://images.unsplash.com/photo-1615397323147-3806a6ccad92?auto=format&fit=crop&w=500&q=80"
+        imagen: "/Propiel.jpg"
     },
     {
         id: 4,
-        nombre: "Gel Limpiador Purificante",
-        marca: "La Roche-Posay",
-        precio: 85.00,
-        precio_oferta: null, // Sin descuento
+        nombre: "Fotoprotector Eucerin Sun Hydro Fluid FPS 50+ 50 ml",
+        marca: "Eucerin",
+        precio: 110.00,
+        precio_oferta: null, 
         etiqueta_descuento: null,
         etiqueta: "NUEVO",
         stock: 20,
-        imagen: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=500&q=80"
+        imagen: "/Hydro-fluid.webp"
     }
 ];
 
@@ -100,7 +100,7 @@ const FeaturedProducts = () => {
                         const cantActual = cantidades[producto.id] || 1;
 
                         return (
-                            /* TARJETA MÁS VERTICAL: Sin proporciones forzadas, solo dejándola fluir con una imagen más alta */
+                            /* TARJETA MÁS VERTICAL */
                             <div key={producto.id} className="bg-white rounded-[1.25rem] sm:rounded-3xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(242,189,199,0.35)] transition-all duration-500 border border-[#F2F2F2] flex flex-col relative p-3 sm:p-5 group h-full w-full mx-auto max-w-[280px] lg:max-w-none">
                                 
                                 {/* Efecto de destello rosado suave en el fondo */}
@@ -117,7 +117,7 @@ const FeaturedProducts = () => {
                                     </div>
                                 ) : null}
 
-                                {/* IMAGEN MÁS GRANDE Y VERTICAL (h-40 en celular, h-52 en PC) */}
+                                {/* IMAGEN MÁS GRANDE Y VERTICAL */}
                                 <div className="w-full h-40 sm:h-52 relative flex items-center justify-center mt-2 mb-3 sm:mb-5 bg-white z-20 shrink-0">
                                     <img 
                                         src={producto.imagen} 
@@ -151,7 +151,7 @@ const FeaturedProducts = () => {
                                         )}
                                     </div>
 
-                                    {/* CONTROLES EXACTAMENTE COMO LOS TENÍAS */}
+                                    {/* CONTROLES */}
                                     <div className="flex flex-col xl:flex-row items-center justify-between gap-2 w-full mt-auto">
                                         
                                         {/* Selector de cantidad */}

@@ -11,10 +11,6 @@ const ServicesSection = () => {
                 
                 {/* Título de la Sección */}
                 <div className="text-center mb-16 relative z-10">
-                    <span className="font-extrabold tracking-widest uppercase mb-3 block text-sm text-miderma-pink">
-                        Especialidades Destacadas
-                    </span>
-                    
                     {/* AQUÍ ESTÁ LA FUENTE NUNITO APLICADA SOLO A ESTE TÍTULO */}
                     <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark mb-4 font-nunito">
                         Nuestros Servicios
