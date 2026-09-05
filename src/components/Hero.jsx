@@ -130,7 +130,6 @@ const Hero = () => {
                             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold leading-[1.2] mb-4 sm:mb-5">
                                 Tu piel, nuestra esencia y pasión.
                             </h1>
-                            <div className="w-24 sm:w-32 h-1.5 mb-6 sm:mb-8"></div>
                             <span className="font-nunito font-bold tracking-[0.2em] uppercase mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl">
                                 Especialistas en Dermatología y Estética
                             </span>
