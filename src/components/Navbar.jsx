@@ -29,7 +29,7 @@ const Navbar = () => {
 
     const estiloEnlaceDesktop = (path) => {
         // === AQUÍ AGREGAMOS font-titulos AL MENÚ DE PC ===
-        const base = "font-titulos text-[12px] lg:text-[14px] font-bold tracking-[0.15em] uppercase transition-all duration-300 relative py-2 shrink-0 flex items-center ";
+        const base = "font-titulos text-[12px] lg:text-[16px] font-bold tracking-[0.15em] uppercase transition-all duration-300 relative py-2 shrink-0 flex items-center ";
         if (isActive(path)) {
             return base + (isSolid ? "text-[#291840] " : "text-white ") + "after:content-[''] after:absolute after:w-full after:h-1 after:bg-[#F2BDC7] after:bottom-0 after:left-0 after:rounded-full";
         }
