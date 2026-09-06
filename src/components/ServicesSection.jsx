@@ -16,7 +16,7 @@ const ServicesSection = () => {
                         Nuestros Servicios
                     </h2>
                     
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto font-subtitulos mt-4">
                         Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.
                     </p>
                 </div>

@@ -17,7 +17,8 @@ export default {
       },
       fontFamily: {
         nunito: ['"Nunito"', 'sans-serif'],
-        titulos: ['"MisTitulos"', 'sans-serif'], // <--- AGREGAS ESTA LÍNEA
+        titulos: ['"MisTitulos"', 'sans-serif'], 
+        subtitulos: ['"MisSubtitulos"', 'sans-serif'], // <--- AQUÍ ESTÁ TU NUEVA FUENTE
       }
     },
   },
