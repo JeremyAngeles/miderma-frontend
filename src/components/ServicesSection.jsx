@@ -12,7 +12,7 @@ const ServicesSection = () => {
                 {/* Título de la Sección */}
                 <div className="text-center mb-16 relative z-10">
                     {/* AQUÍ ESTÁ LA FUENTE NUNITO APLICADA SOLO A ESTE TÍTULO */}
-                    <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark mb-4 font-nunito">
+                    <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark mb-4 font-titulos">
                         Nuestros Servicios
                     </h2>
                     

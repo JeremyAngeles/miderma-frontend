@@ -28,7 +28,8 @@ const Navbar = () => {
     const isActive = (path) => location.pathname === path;
 
     const estiloEnlaceDesktop = (path) => {
-        const base = "text-[12px] lg:text-[14px] font-bold tracking-[0.15em] uppercase transition-all duration-300 relative py-2 shrink-0 flex items-center ";
+        // === AQUÍ AGREGAMOS font-titulos AL MENÚ DE PC ===
+        const base = "font-titulos text-[12px] lg:text-[14px] font-bold tracking-[0.15em] uppercase transition-all duration-300 relative py-2 shrink-0 flex items-center ";
         if (isActive(path)) {
             return base + (isSolid ? "text-[#291840] " : "text-white ") + "after:content-[''] after:absolute after:w-full after:h-1 after:bg-[#F2BDC7] after:bottom-0 after:left-0 after:rounded-full";
         }
@@ -120,7 +121,8 @@ const Navbar = () => {
                         <Link 
                             key={link.name} to={link.path} 
                             onClick={() => setMenuAbierto(false)} 
-                            className={`text-lg font-bold tracking-wider uppercase transition-colors ${isActive(link.path) ? 'text-[#291840] border-b-2 border-[#F2BDC7] pb-1' : 'text-[#291840]/80 hover:text-[#F2BDC7]'}`}
+                            // === AQUÍ AGREGAMOS font-titulos AL MENÚ MÓVIL ===
+                            className={`font-titulos text-lg font-bold tracking-wider uppercase transition-colors ${isActive(link.path) ? 'text-[#291840] border-b-2 border-[#F2BDC7] pb-1' : 'text-[#291840]/80 hover:text-[#F2BDC7]'}`}
                         >
                             {link.name}
                         </Link>

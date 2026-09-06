@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'MisTitulos';
+  src: url('/titulos.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
