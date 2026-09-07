@@ -27,8 +27,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Crioglobulinemia, síndrome de Raynaud, intolerancia al frío, lesiones en zonas con compromiso vascular, trastornos de sensibilidad.",
                 sesiones: "1-3 sesiones, espaciadas 3-4 semanas.",
                 observaciones: "Puede causar ampolla, enrojecimiento e hipo/hiperpigmentación temporal. Molestia tolerable durante la aplicación.",
-                layout_galeria: "2-mix",
-                imagenes: ["/clinico-crio-1.jpg", "/clinico-crio-2.jpg"]
+                layout_galeria: "1-foto", // Cambiado a 1-foto porque ahora solo hay una imagen
+                imagenes: ["/clinico-crio-2.jpg"]
             },
             {
                 nombre: "Biopsia de Piel",
@@ -71,8 +71,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Trastornos de coagulación no controlados, infección activa, alergia a anestésicos locales.",
                 sesiones: "1 sesión generalmente. Lesiones múltiples pueden requerir 2-3.",
                 observaciones: "Puede dejar cicatriz residual y/o cambio de pigmentación. Cuidados similares a biopsia.",
-                layout_galeria: "2-mix",
-                imagenes: ["/curetaje.jpg", "/clinico-curetaje-2.avif"]
+                layout_galeria: "1-foto", // ¡Ojo! También cambié esto a "1-foto" para que no quede el hueco de la segunda imagen
+                imagenes: ["/curetaje.jpg"]
             },
             {
                 nombre: "Drenaje de Absceso de Acné Nódulo-Quístico y Quiste Epidérmico",
@@ -150,7 +150,7 @@ const categoriasTratamientos = [
                 sesiones: "3-6 sesiones, espaciadas 3-4 semanas.",
                 observaciones: "Leve enrojecimiento por 24-48 horas. Las manchas pueden oscurecerse temporalmente y desprenderse en 7-10 días. Fotoprotección estricta.",
                 layout_galeria: "2-horiz",
-                imagenes: ["/estetico-ipl-1.jpg", "/stetico-ipl-2.jpg"]
+                imagenes: ["/estetico-ipl-1.png", "/estetico-ipl-2.jpg"]
             },
             {
                 nombre: "Depilación con IPL",
@@ -183,7 +183,7 @@ const categoriasTratamientos = [
                 sesiones: "3-5 sesiones, espaciadas 4-6 semanas.",
                 observaciones: "Descamación importante es esperada (aspecto de piel quemada por 1 semana). Se puede combinar con cremas despigmentantes. Fotoprotección obligatoria.",
                 layout_galeria: "1-foto",
-                imagenes: ["/estetico-peeling-1.webp"]
+                imagenes: ["/estetico-peeling-2.jpg"]
             },
             {
                 nombre: "Peeling de Ácido Salicílico",
@@ -194,7 +194,7 @@ const categoriasTratamientos = [
                 sesiones: "4-6 sesiones, espaciadas 2-4 semanas.",
                 observaciones: "Ideal para acné activo, puntos negros, poros obstruidos y piel grasa. Puede causar leve descamación blanquecina superficial.",
                 layout_galeria: "1-foto",
-                imagenes: ["/estetico-peeling-2.jpg"]
+                imagenes: ["/estetico-peeling-3.jpg"]
             },
             {
                 nombre: "Peeling Súper Nova",
@@ -204,8 +204,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Embarazo, lactancia, infección activa, herpes, isotretinoína reciente, alergia a componentes.",
                 sesiones: "2-4 sesiones, espaciadas 4-8 semanas.",
                 observaciones: "Tratamiento combinado para manchas, acné, fotoenvejecimiento y textura. Descamación esperada. Fotoprotección estricta obligatoria.",
-                layout_galeria: "2-mix",
-                imagenes: ["/estetico-peeling-1.webp", "/estetico-peeling-2.jpg"]
+                layout_galeria: "1-foto",
+                imagenes: ["/estetico-peeling-1.webp"]
             },
             {
                 nombre: "Plasma Rico en Plaquetas (PRP)",
@@ -242,7 +242,7 @@ const categoriasTratamientos = [
             },
             {
                 nombre: "Bioestimuladores: Profhilo y Opera",
-                que_es: "Cómo actúa: Profhilo es ácido hialurónico no reticulado que se difunde estimulando hidratación profunda y colágeno. Opera combina ácido hialurónico y aminoácidos que activa los fibroblastos. En qué consiste: Inyección en puntos estratégicos (técnica BAP) o microinyecciones difusas.",
+                que_es: "Cómo actúa: Profhilo: Ácido hialurónico puro no reticulado de alto y bajo peso molecular que se difunde en la piel estimulando hidratación profunda y colágeno. Opera: Bioestimulador que combina ácido hialurónico y aminoácidos que activa los fibroblastos y mejora la calidad cutánea. En qué consiste: Inyección en puntos estratégicos (técnica BAP para Profhilo: 5 puntos por lado) o microinyecciones difusas.",
                 duracion: "20-30 minutos.",
                 efectos: "Mejoría visible desde las 2-4 semanas, progresiva. Duración: 6-9 meses.",
                 contraindicaciones: "Embarazo, lactancia, infección activa, alergia a componentes, enfermedades autoinmunes.",
@@ -276,8 +276,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Infección activa severa, herpes, quemaduras, dermatitis aguda, uso reciente de isotretinoína (para extracciones).",
                 sesiones: "1 sesión mensual como mantenimiento. En acné activo: cada 2-4 semanas.",
                 observaciones: "Adaptada a cada tipo de piel y patología. Puede haber leve enrojecimiento post extracciones (2-24 horas).",
-                layout_galeria: "3-fotos",
-                imagenes: ["/estetico-limpieza-1.jpg", "/estetico-limpieza-2.webp", "/estetico-limpieza-3.jpg"]
+                layout_galeria: "2-mix",
+                imagenes: ["/estetico-limpieza-1.jpg", "/estetico-limpieza-2.webp"]
             },
             {
                 nombre: "Hydrafacial",

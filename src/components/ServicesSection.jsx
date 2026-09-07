@@ -27,7 +27,7 @@ const ServicesSection = () => {
                     {/* 1. Dermatología Clínica */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
                         <div className="h-64 lg:h-72 overflow-hidden relative">
-                            <img src="/especialidad-clinica.jpg" alt="Dermatología Clínica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
+                            <img src="/portada-clinica.jpg" alt="Dermatología Clínica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
                             <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Clínica</h3>
                         </div>
@@ -84,7 +84,7 @@ const ServicesSection = () => {
                     {/* 4. Dermatología Pediátrica */}
                     <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_50px_rgba(242,189,199,0.2)] transition-all duration-500 group border border-miderma-pink/10 hover:-translate-y-2 flex flex-col w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)]">
                         <div className="h-64 lg:h-72 overflow-hidden relative">
-                            <img src="/especialidad-pediatrica.webp" alt="Dermatología Pediátrica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
+                            <img src="/pediatrica.jpg" alt="Dermatología Pediátrica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
                             <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Pediátrica</h3>
                         </div>

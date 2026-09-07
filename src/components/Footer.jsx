@@ -112,8 +112,8 @@ const Footer = () => {
                                         <a href="tel:014567890" className="hover:text-[#F2BDC7] transition-colors font-medium text-[#FDF6F4]/90 block">
                                             Fijo: (01) 456 7890
                                         </a>
-                                        <a href="https://wa.me/51940873816" target="_blank" rel="noreferrer" className="hover:text-[#F2BDC7] transition-colors font-medium text-[#FDF6F4]/90 block">
-                                            WhatsApp: +51 940 873 816
+                                        <a href="https://wa.me/51940873814" target="_blank" rel="noreferrer" className="hover:text-[#F2BDC7] transition-colors font-medium text-[#FDF6F4]/90 block">
+                                            WhatsApp: +51 940 873 814
                                         </a>
                                     </div>
                                 </div>
