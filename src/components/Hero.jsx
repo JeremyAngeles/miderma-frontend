@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // === CONFIGURACIÓN DE TAMAÑOS DE LETRA DEL HERO ===
 const TAMANOS_LETRA = {
-    titulo: "text-2xl sm:text-4xl lg:text-5xl",
+    titulo: "text-2xl sm:text-4xl lg:text-4xl",
     subtitulo: "text-base sm:text-xl md:text-2xl",
     boton: "text-sm sm:text-base"
 };
