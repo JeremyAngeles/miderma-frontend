@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // === CONFIGURACIÓN DE TAMAÑOS DE LETRA DEL HERO ===
 const TAMANOS_LETRA = {
-    titulo: "text-2xl sm:text-4xl lg:text-5xl",
+    titulo: "text-2xl sm:text-3xl lg:text-4xl",
     subtitulo: "text-base sm:text-xl md:text-2xl",
     boton: "text-sm sm:text-base"
 };
@@ -12,8 +12,8 @@ const TAMANOS_LETRA = {
 const slides = [
     {
         id: 1,
-        image: "/banner.jpg",
-        title: <>TU PIEL, NUESTRA ESENCIA Y <span className="text-miderma-pink">PASIÓN.</span></>,
+        image: "/imagen-chica-banner.png",
+        title: <>TU PIEL, NUESTRA ESENCIA Y <br /><span className="text-miderma-pink">PASIÓN.</span></>,
         subtitle: "ESPECIALISTAS EN DERMATOLOGÍA Y ESTÉTICA",
         buttonText: "RESERVA TU CITA",
         link: "/contacto"
@@ -21,7 +21,7 @@ const slides = [
     {
         id: 2,
         image: "/imagen-chica-banner-b.png",
-        title: <>TECNOLOGÍA Y EXPERIENCIA A TU <span className="text-miderma-pink">SERVICIO.</span></>,
+        title: <>TECNOLOGÍA Y EXPERIENCIA A TU <br /><span className="text-miderma-pink">SERVICIO.</span></>,
         subtitle: "RESULTADOS NATURALES Y SEGUROS",
         buttonText: "CONOCE MÁS",
         link: "/servicios"
@@ -29,7 +29,8 @@ const slides = [
     {
         id: 3,
         image: "/imagen-chica-banner-c.png", 
-        title: <>CUIDADO INTEGRAL PARA <span className="text-miderma-pink">TU BIENESTAR.</span></>,
+        // AQUÍ ESTÁ LA CORRECCIÓN: "TU" arriba, salto de línea, y "BIENESTAR." abajo
+        title: <>CUIDADO INTEGRAL PARA TU<span className="text-miderma-pink"> <br />BIENESTAR.</span></>,
         subtitle: "TRATAMIENTOS PERSONALIZADOS",
         buttonText: "VER TRATAMIENTOS",
         link: "/tratamientos"
@@ -37,7 +38,7 @@ const slides = [
     {
         id: 4,
         image: "/imagen-chica-banner-d.png", 
-        title: <>DESCUBRE LA MEJOR VERSIÓN DE <span className="text-miderma-pink">TI.</span></>,
+        title: <>DESCUBRE LA MEJOR VERSIÓN  <br /><span className="text-miderma-pink">DE TI.</span></>,
         subtitle: "SALUD DERMATOLÓGICA DE CALIDAD",
         buttonText: "CONTÁCTANOS",
         link: "/contacto"
@@ -132,7 +133,7 @@ const Hero = () => {
                         {/* CONTENEDOR INVISIBLE (Mantiene el alto de la caja) */}
                         <div className="invisible opacity-0">
                             <h1 className={`${TAMANOS_LETRA.titulo} font-titulos font-bold leading-[1.2] mb-4 sm:mb-5 uppercase tracking-tight`}>
-                                Tu piel, nuestra esencia y pasión.
+                                Tu piel, nuestra esencia y <br />pasión.
                             </h1>
                             <span className={`${TAMANOS_LETRA.subtitulo} font-subtitulos font-bold tracking-tight uppercase mt-4 mb-4 sm:mb-6 block`}>
                                 Especialistas en Dermatología y Estética
@@ -150,17 +151,17 @@ const Hero = () => {
                                     index === currentSlide ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
-                                {/* TÍTULO: tracking-tight para juntar letras */}
+                                {/* TÍTULO */}
                                 <h1 className={`${TAMANOS_LETRA.titulo} font-titulos font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg uppercase tracking-tight`}>
                                     {slide.title}
                                 </h1>
                                 
-                                {/* SUBTÍTULO: tracking-tight para juntar letras */}
+                                {/* SUBTÍTULO */}
                                 <span className={`${TAMANOS_LETRA.subtitulo} text-miderma-pink font-subtitulos font-bold tracking-tight uppercase mt-4 mb-4 sm:mb-6 block drop-shadow-md`}>
                                     {slide.subtitle}
                                 </span>
                                 
-                                {/* BOTÓN: tracking-tight para juntar letras */}
+                                {/* BOTÓN */}
                                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
                                     <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-subtitulos font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${TAMANOS_LETRA.boton} tracking-tight w-max uppercase`}>
                                         {slide.buttonText}
