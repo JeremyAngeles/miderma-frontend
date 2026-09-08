@@ -1,38 +1,45 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+// === CONFIGURACIÓN DE TAMAÑOS DE LETRA DEL HERO ===
+const TAMANOS_LETRA = {
+    titulo: "text-2xl sm:text-4xl lg:text-5xl",
+    subtitulo: "text-base sm:text-xl md:text-2xl",
+    boton: "text-sm sm:text-base"
+};
+
 // === DATOS DE LAS DIAPOSITIVAS DEL BANNER ===
 const slides = [
     {
         id: 1,
         image: "/imagen-chica-banner.png",
-        title: <>Tu piel, nuestra esencia y <span className="text-miderma-pink">pasión.</span></>,
-        subtitle: "Especialistas en Dermatología y Estética",
-        buttonText: "Reserva tu Cita",
+        title: <>TU PIEL, NUESTRA ESENCIA Y <span className="text-miderma-pink">PASIÓN.</span></>,
+        subtitle: "ESPECIALISTAS EN DERMATOLOGÍA Y ESTÉTICA",
+        buttonText: "RESERVA TU CITA",
         link: "/contacto"
     },
     {
         id: 2,
         image: "/imagen-chica-banner-b.png",
-        title: <>Tecnología y experiencia a tu <span className="text-miderma-pink">servicio.</span></>,
-        subtitle: "Resultados naturales y seguros",
-        buttonText: "Conoce más",
+        title: <>TECNOLOGÍA Y EXPERIENCIA A TU <span className="text-miderma-pink">SERVICIO.</span></>,
+        subtitle: "RESULTADOS NATURALES Y SEGUROS",
+        buttonText: "CONOCE MÁS",
         link: "/servicios"
     },
     {
         id: 3,
         image: "/imagen-chica-banner-c.png", 
-        title: <>Cuidado integral para <span className="text-miderma-pink">tu bienestar.</span></>,
-        subtitle: "Tratamientos personalizados",
-        buttonText: "Ver Tratamientos",
+        title: <>CUIDADO INTEGRAL PARA <span className="text-miderma-pink">TU BIENESTAR.</span></>,
+        subtitle: "TRATAMIENTOS PERSONALIZADOS",
+        buttonText: "VER TRATAMIENTOS",
         link: "/tratamientos"
     },
     {
         id: 4,
         image: "/imagen-chica-banner-d.png", 
-        title: <>Descubre la mejor versión de <span className="text-miderma-pink">ti.</span></>,
-        subtitle: "Salud dermatológica de calidad",
-        buttonText: "Contáctanos",
+        title: <>DESCUBRE LA MEJOR VERSIÓN DE <span className="text-miderma-pink">TI.</span></>,
+        subtitle: "SALUD DERMATOLÓGICA DE CALIDAD",
+        buttonText: "CONTÁCTANOS",
         link: "/contacto"
     }
 ];
@@ -122,19 +129,20 @@ const Hero = () => {
                 <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 w-full mt-40 md:mt-56 lg:mt-72">
                     <div className="relative max-w-4xl text-left pb-16 md:pb-24 -ml-2 lg:-ml-6">
                         
+                        {/* CONTENEDOR INVISIBLE (Mantiene el alto de la caja) */}
                         <div className="invisible opacity-0">
-                            {/* AQUÍ SE APLICA UPPERCASE SOLO AL TÍTULO */}
-                            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold leading-[1.2] mb-4 sm:mb-5 uppercase">
+                            <h1 className={`${TAMANOS_LETRA.titulo} font-titulos font-bold leading-[1.2] mb-4 sm:mb-5 uppercase tracking-tight`}>
                                 Tu piel, nuestra esencia y pasión.
                             </h1>
-                            <span className="font-nunito font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl">
+                            <span className={`${TAMANOS_LETRA.subtitulo} font-subtitulos font-bold tracking-tight uppercase mt-4 mb-4 sm:mb-6 block`}>
                                 Especialistas en Dermatología y Estética
                             </span>
-                            <div className="px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-base w-max">
+                            <div className={`px-5 py-2.5 sm:px-6 sm:py-3 ${TAMANOS_LETRA.boton} font-subtitulos font-bold tracking-tight w-max uppercase`}>
                                 Reserva tu Cita
                             </div>
                         </div>
 
+                        {/* DIAPOSITIVAS VISIBLES */}
                         {slides.map((slide, index) => (
                             <div 
                                 key={slide.id}
@@ -142,17 +150,19 @@ const Hero = () => {
                                     index === currentSlide ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
-                                {/* AQUÍ SE APLICA UPPERCASE SOLO AL TÍTULO VISIBLE */}
-                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-titulos font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg uppercase">
+                                {/* TÍTULO: tracking-tight para juntar letras */}
+                                <h1 className={`${TAMANOS_LETRA.titulo} font-titulos font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg uppercase tracking-tight`}>
                                     {slide.title}
                                 </h1>
                                 
-                                <span className="text-miderma-pink font-subtitulos font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
+                                {/* SUBTÍTULO: tracking-tight para juntar letras */}
+                                <span className={`${TAMANOS_LETRA.subtitulo} text-miderma-pink font-subtitulos font-bold tracking-tight uppercase mt-4 mb-4 sm:mb-6 block drop-shadow-md`}>
                                     {slide.subtitle}
                                 </span>
                                 
+                                {/* BOTÓN: tracking-tight para juntar letras */}
                                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
-                                    <Link to={slide.link} className="bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base w-max">
+                                    <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-subtitulos font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${TAMANOS_LETRA.boton} tracking-tight w-max uppercase`}>
                                         {slide.buttonText}
                                     </Link>
                                 </div>
@@ -183,7 +193,7 @@ const Hero = () => {
                                 <h4 className="font-extrabold text-[#291840] text-2xl md:text-3xl mb-0 group-hover:text-[#F2BDC7] transition-colors duration-300">
                                     +<AnimatedCounter end={10} duration={2000} />
                                 </h4>
-                                <p className="text-[11px] font-bold text-[#615573] uppercase tracking-wider">Años de Trayectoria</p>
+                                <p className="text-[11px] font-bold text-[#615573] font-subtitulos tracking-tight uppercase">Años de Trayectoria</p>
                             </div>
                         </div>
 
@@ -197,7 +207,7 @@ const Hero = () => {
                                 <h4 className="font-extrabold text-[#291840] text-2xl md:text-3xl mb-0 group-hover:text-[#F2BDC7] transition-colors duration-300">
                                     +<AnimatedCounter end={3000} duration={2000} />
                                 </h4>
-                                <p className="text-[11px] font-bold text-[#615573] uppercase tracking-wider">Pacientes Atendidos</p>
+                                <p className="text-[11px] font-bold text-[#615573] font-subtitulos tracking-tight uppercase">Pacientes Atendidos</p>
                             </div>
                         </div>
 
@@ -211,7 +221,7 @@ const Hero = () => {
                                 <h4 className="font-extrabold text-[#291840] text-2xl md:text-3xl mb-0 group-hover:text-[#F2BDC7] transition-colors duration-300">
                                     <AnimatedCounter end={9} duration={2000} /> de 10
                                 </h4>
-                                <p className="text-[11px] font-bold text-[#615573] uppercase tracking-wider leading-tight mt-1">Pacientes recomiendan nuestros tratamientos</p>
+                                <p className="text-[11px] font-bold text-[#615573] font-subtitulos tracking-tight uppercase leading-tight mt-1">Pacientes recomiendan nuestros tratamientos</p>
                             </div>
                         </div>
 
