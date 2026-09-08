@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // === CONFIGURACIÓN DE TAMAÑOS DE LETRA DEL HERO ===
 const TAMANOS_LETRA = {
-    titulo: "text-2xl sm:text-4xl lg:text-4xl",
+    titulo: "text-2xl sm:text-4xl lg:text-5xl",
     subtitulo: "text-base sm:text-xl md:text-2xl",
     boton: "text-sm sm:text-base"
 };
@@ -12,7 +12,7 @@ const TAMANOS_LETRA = {
 const slides = [
     {
         id: 1,
-        image: "/imagen-chica-banner.png",
+        image: "/banner.jpg",
         title: <>TU PIEL, NUESTRA ESENCIA Y <span className="text-miderma-pink">PASIÓN.</span></>,
         subtitle: "ESPECIALISTAS EN DERMATOLOGÍA Y ESTÉTICA",
         buttonText: "RESERVA TU CITA",
