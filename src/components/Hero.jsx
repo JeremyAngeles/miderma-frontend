@@ -123,7 +123,8 @@ const Hero = () => {
                     <div className="relative max-w-4xl text-left pb-16 md:pb-24 -ml-2 lg:-ml-6">
                         
                         <div className="invisible opacity-0">
-                            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold leading-[1.2] mb-4 sm:mb-5">
+                            {/* AQUÍ SE APLICA UPPERCASE SOLO AL TÍTULO */}
+                            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold leading-[1.2] mb-4 sm:mb-5 uppercase">
                                 Tu piel, nuestra esencia y pasión.
                             </h1>
                             <span className="font-nunito font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl">
@@ -141,11 +142,12 @@ const Hero = () => {
                                     index === currentSlide ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
-                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-nunito font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg">
+                                {/* AQUÍ SE APLICA UPPERCASE SOLO AL TÍTULO VISIBLE */}
+                                <h1 className="text-2xl sm:text-4xl lg:text-5xl font-titulos font-bold text-white leading-[1.2] mb-4 sm:mb-5 drop-shadow-lg uppercase">
                                     {slide.title}
                                 </h1>
                                 
-                                <span className="text-miderma-pink font-nunito font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
+                                <span className="text-miderma-pink font-subtitulos font-bold tracking-[0.2em] uppercase mt-4 mb-4 sm:mb-6 block text-base sm:text-xl md:text-2xl drop-shadow-md">
                                     {slide.subtitle}
                                 </span>
                                 
