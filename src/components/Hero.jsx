@@ -14,15 +14,15 @@ const slides = [
         id: 1,
         image: "/imagen-chica-banner.png",
         title: <>TU PIEL, NUESTRA ESENCIA Y <br /><span className="text-miderma-pink">PASIÓN.</span></>,
-        subtitle: "ESPECIALISTAS EN DERMATOLOGÍA Y ESTÉTICA",
+        subtitle: "Dermatología y belleza de la piel",
         buttonText: "RESERVA TU CITA",
         link: "/contacto"
     },
     {
         id: 2,
         image: "/imagen-chica-banner-b.png",
-        title: <>TECNOLOGÍA Y EXPERIENCIA A TU <br /><span className="text-miderma-pink">SERVICIO.</span></>,
-        subtitle: "RESULTADOS NATURALES Y SEGUROS",
+        title: <>EXPERTOS EN DERMATOLOGÍA <br /><span className="text-miderma-pink">CLÍNICA , ESTETICA Y LÁSER.</span></>,
+        subtitle: "Innovación y confianza en cada tratamiento",
         buttonText: "CONOCE MÁS",
         link: "/servicios"
     },
@@ -30,16 +30,16 @@ const slides = [
         id: 3,
         image: "/imagen-chica-banner-c.png", 
         // AQUÍ ESTÁ LA CORRECCIÓN: "TU" arriba, salto de línea, y "BIENESTAR." abajo
-        title: <>CUIDADO INTEGRAL PARA TU<span className="text-miderma-pink"> <br />BIENESTAR.</span></>,
+        title: <>DERMATOLOGÍA CON TECNOLOGÍA <br /><span className="text-miderma-pink">DE VANGUARDIA.</span></>,        
         subtitle: "TRATAMIENTOS PERSONALIZADOS",
         buttonText: "VER TRATAMIENTOS",
         link: "/tratamientos"
     },
     {
         id: 4,
-        image: "/imagen-chica-banner-d.png", 
-        title: <>DESCUBRE LA MEJOR VERSIÓN  <br /><span className="text-miderma-pink">DE TI.</span></>,
-        subtitle: "SALUD DERMATOLÓGICA DE CALIDAD",
+        image: "/imagen-chica-banner-dD.png", 
+        title: <>NOSOTROS SOLUCIONAMOS TUS PROBLEMAS <br /><span className="text-miderma-pink">DERMATOLÓGICOS.</span></>,        
+        subtitle: "Tecnología y experiencia al servicio de tu piel",
         buttonText: "CONTÁCTANOS",
         link: "/contacto"
     }
