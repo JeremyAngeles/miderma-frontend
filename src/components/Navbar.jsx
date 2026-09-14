@@ -53,23 +53,34 @@ const Navbar = () => {
                 : 'bg-transparent py-5 md:py-6' 
             }`}
         >
-            <div className="max-w-[110rem] mx-auto w-full px-4 sm:px-6 lg:px-10">
-                {/* lg:justify-center centra TODO el contenido en PC */}
-                <nav className="relative flex items-center justify-between lg:justify-center w-full">
+            {/* ===================================================================================================
+                ⚙️ PALANCA 1: CONTROL DE DISTANCIA DESDE LA IZQUIERDA ⚙️
+                - `max-w-full`: Deja que el menú se estire por toda tu pantalla sin límites.
+                - `lg:px-8`: Es el espacio entre el borde izquierdo de tu monitor y el logo en PC.
+                  👉 ¿Lo quieres MÁS a la izquierda? Cámbialo a `lg:px-4`, `lg:px-2` o `px-0` (pegado al borde).
+                  👉 ¿Lo quieres más al centro? Auméntalo a `lg:px-16` o `lg:px-24`.
+            =================================================================================================== */}
+            <div className="max-w-full mx-auto w-full px-4 sm:px-6 lg:px-80">
+                
+                {/* ===================================================================================================
+                    ⚙️ PALANCA 2: LIBERTAD DE ALINEACIÓN ⚙️
+                    - Ya NO dice "lg:justify-center". Al quitarlo, todo se va naturalmente hacia la izquierda.
+                =================================================================================================== */}
+                <nav className="relative flex items-center justify-between w-full">
                     
                     {/* BLOQUE CENTRAL: LOGO + ENLACES */}
                     <div className="flex items-center">
                         
-                        {/* LOGO (Al costado de "Inicio" con margen para que no esté pegado) */}
+                        {/* LOGO */}
                         <div className="flex-shrink-0 cursor-pointer flex items-center z-20 mr-6 lg:mr-10">
                             <Link to="/">
                                 <img 
-                                    src="/logooooo.png" 
+                                    src={isSolid ? "/logooooo.png" : "/logo-blanco-sinfondo.png"} 
                                     alt="Miderma Logo" 
-                                    className={`transition-all duration-500 object-contain ${
+                                    className={`transition-all duration-500 object-contain drop-shadow-none ${
                                         isSolid 
-                                        ? 'h-14 md:h-16 lg:h-[5.5rem] drop-shadow-none' 
-                                        : 'h-16 md:h-20 lg:h-[6rem] drop-shadow-[0_2px_15px_rgba(255,255,255,0.7)]'
+                                        ? 'h-14 md:h-16 lg:h-[5.5rem]' 
+                                        : 'h-16 md:h-20 lg:h-[6rem]'
                                     }`}
                                     style={{ background: 'transparent' }}
                                 />

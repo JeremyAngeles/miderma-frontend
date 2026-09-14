@@ -27,7 +27,7 @@ const categoriasTratamientos = [
                 contraindicaciones: "Crioglobulinemia, síndrome de Raynaud, intolerancia al frío, lesiones en zonas con compromiso vascular, trastornos de sensibilidad.",
                 sesiones: "1-3 sesiones, espaciadas 3-4 semanas.",
                 observaciones: "Puede causar ampolla, enrojecimiento e hipo/hiperpigmentación temporal. Molestia tolerable durante la aplicación.",
-                layout_galeria: "1-foto", // Cambiado a 1-foto porque ahora solo hay una imagen
+                layout_galeria: "1-foto", 
                 imagenes: ["/clinico-crio-2.jpg"]
             },
             {
@@ -71,7 +71,7 @@ const categoriasTratamientos = [
                 contraindicaciones: "Trastornos de coagulación no controlados, infección activa, alergia a anestésicos locales.",
                 sesiones: "1 sesión generalmente. Lesiones múltiples pueden requerir 2-3.",
                 observaciones: "Puede dejar cicatriz residual y/o cambio de pigmentación. Cuidados similares a biopsia.",
-                layout_galeria: "1-foto", // ¡Ojo! También cambié esto a "1-foto" para que no quede el hueco de la segunda imagen
+                layout_galeria: "1-foto", 
                 imagenes: ["/curetaje.jpg"]
             },
             {
@@ -171,8 +171,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Embarazo, infección activa, alergia a componentes, trastornos de coagulación, diabetes descompensada.",
                 sesiones: "4-6 sesiones iniciales, espaciadas 2-4 semanas. Luego mantenimiento.",
                 observaciones: "Puede haber pequeños hematomas y pápulas transitorias (24-72 horas). Resultados más evidentes al completar protocolo.",
-                layout_galeria: "1-foto",
-                imagenes: ["/estetico-mesoterapia-1.jpg"]
+                layout_galeria: "2-horiz",
+                imagenes: ["/estetico-mesoterapia-1.jpg", 'mesoterapia-facial.jpg']
             },
             {
                 nombre: "Peeling de Ácido Retinoico",
@@ -193,8 +193,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Alergia a salicilatos, embarazo, infección activa, herpes, aspirina (precaución).",
                 sesiones: "4-6 sesiones, espaciadas 2-4 semanas.",
                 observaciones: "Ideal para acné activo, puntos negros, poros obstruidos y piel grasa. Puede causar leve descamación blanquecina superficial.",
-                layout_galeria: "1-foto",
-                imagenes: ["/estetico-peeling-3.jpg"]
+                layout_galeria: "2-mix",
+                imagenes: ["/acido-salirico.jpg", 'asido-salirico.jpg']
             },
             {
                 nombre: "Peeling Súper Nova",
@@ -205,7 +205,7 @@ const categoriasTratamientos = [
                 sesiones: "2-4 sesiones, espaciadas 4-8 semanas.",
                 observaciones: "Tratamiento combinado para manchas, acné, fotoenvejecimiento y textura. Descamación esperada. Fotoprotección estricta obligatoria.",
                 layout_galeria: "1-foto",
-                imagenes: ["/estetico-peeling-1.webp"]
+                imagenes: ["/limpiezas.png"]
             },
             {
                 nombre: "Plasma Rico en Plaquetas (PRP)",
@@ -249,7 +249,7 @@ const categoriasTratamientos = [
                 sesiones: "2 sesiones, espaciadas 4 semanas. Mantenimiento cada 6 meses.",
                 observaciones: "No aporta volumen, mejora calidad de piel (hidratación, firmeza, luminosidad). Ideal para pieles desvitalizadas, con arrugas finas y flacidez leve.",
                 layout_galeria: "2-mix",
-                imagenes: ["/estetico-bioestimulador-1.webp", "/estetico-bioestimulador-2.jpg"]
+                imagenes: ["/bioestimuladores.png", "/bioestimuladores2.png"]
             },
             {
                 nombre: "Exosomas",
@@ -276,8 +276,8 @@ const categoriasTratamientos = [
                 contraindicaciones: "Infección activa severa, herpes, quemaduras, dermatitis aguda, uso reciente de isotretinoína (para extracciones).",
                 sesiones: "1 sesión mensual como mantenimiento. En acné activo: cada 2-4 semanas.",
                 observaciones: "Adaptada a cada tipo de piel y patología. Puede haber leve enrojecimiento post extracciones (2-24 horas).",
-                layout_galeria: "2-mix",
-                imagenes: ["/estetico-limpieza-1.jpg", "/estetico-limpieza-2.webp"]
+                layout_galeria: "3-fotos",
+                imagenes: ["/limpieza-2.jpg", "/estetico-limpieza-1.jpg",'limpieza-3.jpg']
             },
             {
                 nombre: "Hydrafacial",
@@ -392,16 +392,18 @@ const Tratamientos = () => {
                     
                     <div className="bg-white rounded-[2rem] shadow-sm border border-gray-100 overflow-hidden flex flex-col">
                         
-                        {/* ÁREA GRIS REDUCIDA CON FOTOS GRANDES (p-2 a p-3) */}
+                        {/* ÁREA GRIS REDUCIDA CON FOTOS */}
                         <div className="w-full bg-[#F2F2F2] p-2 sm:p-3 relative rounded-t-[2rem]">
                             
                             <div className="absolute top-5 left-5 z-20 bg-miderma-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md pointer-events-none">
                                 {catActiva.nombre}
                             </div>
 
-                            {/* 1. LAYOUT: 1-FOTO HORIZONTAL PANORÁMICA */}
+                            {/* ============================================================================== */}
+                            {/* 1. LAYOUT: 1-FOTO (Ajustado para que no sea tan panorámico) */}
+                            {/* ============================================================================== */}
                             {tratActivo.layout_galeria === "1-foto" && (
-                                <div className="w-full h-[250px] md:h-[380px] rounded-[1.5rem] overflow-hidden relative">
+                                <div className="w-full max-w-3xl mx-auto h-[250px] sm:h-[350px] md:h-[420px] rounded-[1.5rem] overflow-hidden relative shadow-sm">
                                     <img 
                                         src={tratActivo.imagenes[0]} 
                                         alt={tratActivo.nombre} 

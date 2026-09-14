@@ -66,7 +66,7 @@ const Contacto = () => {
                         Estamos para escucharte
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#291840] mb-4 font-titulos">
-                        Contacto y Reservas
+                        Contacto
                     </h1>
                     <div className="w-16 h-1.5 bg-[#F2BDC7] rounded-full mx-auto mb-6"></div>
                     

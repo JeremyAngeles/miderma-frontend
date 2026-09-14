@@ -35,7 +35,8 @@ const ImageSlider = ({ images, title }) => {
 // ==========================================
 // COMPONENTE ACORDEÓN PARA LOS TRATAMIENTOS
 // ==========================================
-const AccordionItem = ({ title, details }) => {
+// 1. CAMBIO: Se añadió 'image' como propiedad (prop) del componente
+const AccordionItem = ({ title, details, image }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -51,14 +52,30 @@ const AccordionItem = ({ title, details }) => {
                     +
                 </span>
             </button>
-            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[800px] opacity-100 pb-4' : 'max-h-0 opacity-0'}`}>
-                <div className="text-sm text-[#615573] leading-relaxed space-y-2 bg-[#FDF6F4]/50 p-4 rounded-xl border-l-2 border-miderma-pink">
-                    {details.map((detail, index) => (
-                        <p key={index}>
-                            {detail.label && <strong className="text-[#291840]">{detail.label} </strong>}
-                            {detail.text}
-                        </p>
-                    ))}
+            
+            {/* 2. CAMBIO: max-h-[1200px] para asegurar que la imagen y el texto quepan sin cortarse */}
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1200px] opacity-100 pb-4' : 'max-h-0 opacity-0'}`}>
+                <div className="bg-[#FDF6F4]/50 p-4 rounded-xl border-l-2 border-miderma-pink">
+                    
+                    {/* 3. CAMBIO: Renderiza la imagen arriba del texto si existe */}
+                    {image && (
+                        <div className="w-full mb-4 rounded-lg overflow-hidden">
+                            <img 
+                                src={image} 
+                                alt={title} 
+                                className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                            />
+                        </div>
+                    )}
+
+                    <div className="text-sm text-[#615573] leading-relaxed space-y-2">
+                        {details.map((detail, index) => (
+                            <p key={index}>
+                                {detail.label && <strong className="text-[#291840]">{detail.label} </strong>}
+                                {detail.text}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,6 +95,7 @@ const serviciosLista = [
         tratamientos: [
             {
                 titulo: "Acné",
+                imagen: "/acne-servicios.jpeg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Inflamación de la piel por la obstrución de los folículos pilosos." },
                     { label: "¿Por qué ocurre?:", text: "Acumulación de sebo, detritos celulares, bacterias y cambios hormonales." },
@@ -87,6 +105,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Psoriasis",
+                imagen: "/psoriasis-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Enfermedad crónica autoinmune que acelera la renovación de la células de la piel." },
                     { label: "¿Por qué ocurre?:", text: "El sistema inmunológico provoca una producción excesiva de células cutáneas." },
@@ -96,6 +115,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Rosácea",
+                imagen: "/rosacea-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Una enfermedad inflamatoria crónica que causa enrojecimiento y visibilidad de los vasos sanguíneos en el rostro." },
                     { label: "¿Por qué ocurre?:", text: "Factores vasculares, inmunológicos y ambientales." },
@@ -105,6 +125,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Melasma",
+                imagen: "/melasma-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Es una alteración de la pigmentación de la piel que se manifiesta como manchas marrones o grisáceas, generalmente en el rostro (mejillas, frente, nariz y labio superior)." },
                     { label: "¿Por qué ocurre?:", text: "Se produce por una sobreproducción de melanina, el pigmento natural de la piel. Los principales factores que lo desencadenan son: cambios hormonales, exposición solar sin protección, predisposición genética y uso de ciertos medicamentos o cosméticos irritantes." },
@@ -114,6 +135,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Dermatitis (Atópica, Seborreica, de Contacto)",
+                imagen: "/dermatosis-seborreica-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Inflamación de la piel que puede ser atópica, seborreica o de contacto." },
                     { label: "¿Por qué ocurre?:", text: "Predisposición genética, exceso de grasa, alergias o irritantes externos." },
@@ -123,6 +145,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Vitíligo",
+                imagen: "/mitiligo-servicios.png",
                 detalles: [
                     { label: "¿Qué es?:", text: "Pérdida de pigmento que genera manchas blancas en la piel." },
                     { label: "¿Por qué ocurre?:", text: "El sistema inmunológico destruye las células que producen el color de la piel (melanocitos)." },
@@ -132,6 +155,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Urticaria",
+                imagen: "/urticaria-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Reacción de la piel que provoca ronchas rojas o rosadas que producen picazón." },
                     { label: "¿Por qué ocurre?:", text: "Respuesta alérgica a alimentos, medicamentos, picaduras, infecciones o estrés." },
@@ -141,6 +165,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Caída del Cabello (Alopecia)",
+                imagen: "/caida-de-cabello-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "La pérdida de cabello localizada o difusa puede ser temporal o permanente." },
                     { label: "¿Por qué ocurre?:", text: "Genética, cambios hormonales, enfermedades autoinmunes, estrés o medicamentos." },
@@ -150,6 +175,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Infecciones Micóticas y Bacterianas de la Piel",
+                imagen: "/infeccion.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Infecciones comunes causadas por hongos (tiña o pie de atleta) o bacterias (como el impétigo) que afectan la piel, uñas o cabello." },
                     { label: "¿Por qué ocurren?:", text: "Humedad, calor, contacto con superficies contaminadas, baja inmunidad." },
@@ -159,6 +185,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Enfermedades de las Uñas",
+                imagen: "/hongos.png",
                 detalles: [
                     { label: "¿Qué es?:", text: "Alteraciones en la forma, color o textura de las uñas." },
                     { label: "¿Por qué ocurren?:", text: "Infecciones por hongos o bacterias, traumatismos, enfermedades internas." },
@@ -177,6 +204,7 @@ const serviciosLista = [
         tratamientos: [
             {
                 titulo: "Dermatitis Atópica",
+                imagen: "/dermatitis-atopica.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Es la forma más común de eczema en la infancia. Inflamación crónica de la piel con resequedad y picazón." },
                     { label: "¿Por qué ocurre?:", text: "Predisposición genética, alergias, clima." },
@@ -186,6 +214,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Miliaria Rubra (sarpullido por calor)",
+                imagen: "/miliaria-rubra-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Una erupción muy común en bebés y niños que ocurre cuando el sudor queda atrapado en los conductos de las glándulas sudoríparas, que en los más pequeños aún son inmaduros." },
                     { label: "¿Por qué ocurre?:", text: "Calor, humedad, exceso de abrigo." },
@@ -196,6 +225,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Impétigo",
+                imagen: "/Impetigo-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Infección bacteriana superficial de la piel." },
                     { label: "¿Por qué ocurre?:", text: "Bacterias (estreptococos, estafilococos) en heridas o rasguños." },
@@ -206,6 +236,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Infecciones Micóticas (Hongos)",
+                imagen: "/micoticas-servicios.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Infecciones muy frecuentes en la infancia. Incluyen la candidiasis y las dermatofitosis o 'tiñas'. En niños, la tiña más común es la del cuero cabelludo (tiña capitis)." },
                     { label: "¿Por qué ocurre?:", text: "Humedad, contacto con superficies contaminadas." },
@@ -216,6 +247,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Dermatitis de Pañal",
+                imagen: "/Dermatitis-de-panal-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Irritación en la zona cubierta por el pañal." },
                     { label: "¿Por qué ocurre?:", text: "Humedad, fricción, contacto prolongado con orina o heces." },
@@ -226,6 +258,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Verrugas (Virus del Papiloma Humano)",
+                imagen: "/Verrugas-servicios.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Lesiones cutáneas causadas por el virus del papiloma humano (VPH)." },
                     { label: "¿Por qué ocurre?:", text: "Contagio por contacto directo o superficies contaminadas." },
@@ -236,6 +269,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Molusco Contagioso",
+                imagen: "/molusco-contagioso-servicios.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Infección viral benigna de la piel muy contagiosa." },
                     { label: "¿Por qué ocurre?:", text: "Virus poxvirus, transmitido por contacto directo o con objetos contaminados o de agua (piscinas)." },
@@ -255,6 +289,7 @@ const serviciosLista = [
         tratamientos: [
             {
                 titulo: "Quiste Epidérmico de Inclusión (Ateroma)",
+                imagen: "/Quiste.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Tumor benigno formado por acumulación de queratina y sebo bajo la piel." },
                     { label: "¿Por qué ocurre?:", text: "La obstrucción del conducto de una glándula sebácea o un folículo piloso." },
@@ -264,6 +299,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Pilomatrixoma",
+                imagen: "/Pilomatricoma-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Tumor benigno derivado de células de la matriz del folículo piloso." },
                     { label: "¿Por qué ocurre?:", text: "Alteración en el desarrollo de la matriz folículo piloso." },
@@ -274,6 +310,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Hidrocistoma Ecrino",
+                imagen: "/hidrocistoma-ecrino-servicios.png", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Quiste benigno de las glándulas sudoríparas ecrinas." },
                     { label: "¿Por qué ocurre?:", text: "Obstrucción de conductos sudoríparos." },
@@ -284,6 +321,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Uñas Encarnadas",
+                imagen: "/Una-encarnada-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Crecimiento de la uña hacia el tejido blando circundante." },
                     { label: "¿Por qué ocurre?:", text: "Corte inadecuado de uñas, calzado ajustado, traumatismos." },
@@ -294,6 +332,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Carcinoma Basocelular (CBC)",
+                imagen: "/Carcinoma-basocelular-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "El cáncer de piel más frecuente. Se origina en las células basales de la epidermis y suele aparecer en áreas expuestas al sol. Es de crecimiento lento." },
                     { label: "Síntomas:", text: "Puede presentarse como una herida que no cicatriza, una pequeña protuberancia brillante o perlada, o una mancha roja y descamativa." },
@@ -302,6 +341,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Carcinoma Epidermoide (CE)",
+                imagen: "/Carcinoma-Epidermoide-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Segundo tipo más común de cáncer de piel. Originado en células escamosas. Es más agresivo que el basocelular y suele aparecer en áreas de exposición solar crónica." },
                     { label: "Síntomas:", text: "Puede comenzar como una pápula o placa roja, escamosa o costrosa, que puede volverse nodular y ulcerarse." },
@@ -310,6 +350,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Melanoma",
+                imagen: "/Melanoma-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "El tipo de cáncer de piel más grave y agresivo. Puede aparecer como un lunar nuevo o un cambio en un lunar existente (regla ABCDE)." },
                     { label: "Tratamiento:", text: "La detección precoz es clave. El tratamiento se basa en la extirpación quirúrgica con márgenes oncológicos. Puede ser necesario el estudio del ganglio centinela." }
@@ -317,6 +358,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Queratoacantoma",
+                imagen: "/Queratoacantoma-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Un tumor cutáneo que crece rápidamente y puede asemejarse al carcinoma epidermoide." },
                     { label: "Síntomas:", text: "Rápido crecimiento inicial, seguido de un periodo de estabilidad. Difícil de diferenciar de un cáncer más agresivo." },
@@ -325,6 +367,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Queratosis Actínica (QA)",
+                imagen: "/Queratosis-actinica-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Una lesión cutánea precancerosa causada por el daño solar acumulado." },
                     { label: "Síntomas:", text: "Manchas ásperas, escamosas y de color rosado o rojizo, en zonas muy expuestas al sol." },
@@ -333,6 +376,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Cuerno Cutáneo",
+                imagen: "/Cuerno-cutaneo-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Una proyección cónica de queratina que crece desde la piel. Lo importante es la lesión que tiene en su base." },
                     { label: "Síntomas:", text: "Protuberancia rígida, amarillenta o marrón. Frecuente en zonas fotoexpuestas." },
@@ -341,6 +385,7 @@ const serviciosLista = [
             },
             {
                 titulo: "Lunar (Nevus)",
+                imagen: "/Lunar-Nevus-servicios.jpg", // AGREGADO
                 detalles: [
                     { label: "¿Qué es?:", text: "Crecimientos benignos muy comunes formados por células pigmentadas (melanocitos)." },
                     { label: "Síntomas:", text: "Pequeños, de forma redonda u ovalada, de color uniforme y bordes definidos." },
@@ -353,7 +398,6 @@ const serviciosLista = [
         id: "estetica-laser",
         titulo: "Dermatología Estética y Láser",
         descripcion: "La belleza y la salud se complementan. En Miderma Centro de la Piel sabemos que la Dermatología Estética es una parte fundamental de nuestra especialidad que busca promover la salud cutánea óptima, entendiendo que una piel sana es, por definición, una piel estética. Nuestro enfoque se basa en un profundo conocimiento de la anatomía, utilizando tecnología médica de vanguardia para ofrecer tratamientos seguros que realzan tu imagen sin perder naturalidad, mejorando la textura, luminosidad y firmeza de tu piel.",
-        // AGREGAMOS EL SLIDER AQUÍ
         isSlider: true, 
         imagenes: ["/dermatologia-estetica1.jpg", "/dermatologia-estetica2.jpg"],
         tratamientos: [
@@ -361,7 +405,7 @@ const serviciosLista = [
                 titulo: "Toxina Botulínica",
                 detalles: [
                     { label: "¿Qué es?:", text: "Un tratamiento que utiliza una neurotoxina purificada para relajar temporalmente los músculos faciales responsables de las arrugas de expresión (patas de gallo, frente y entrecejo)." },
-                    { label: "Objetivo:", text: "Lograr un aspecto más relajado y rejuvenecido, manteniendo la naturalidad y la capacidad de expresar emociones." }
+                    { label: "Objetivo:", text: "Lograr un aspecto más relajado y rejuvenecido, manteniendo la naturalidad y la capacidad de expressing emociones." }
                 ]
             },
             {
@@ -484,7 +528,6 @@ const Servicios = () => {
                 <span className="text-[#F2BDC7] font-extrabold tracking-widest uppercase mb-2 block text-xs md:text-sm">Especialidades</span>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#291840] mb-4 font-titulos">Nuestros Servicios</h1>
                 
-                {/* SUBTÍTULO AGREGADO AQUÍ */}
                 <p className="text-lg text-[#615573] max-w-2xl mx-auto font-subtitulos mt-4 mb-6 leading-relaxed">
                     Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.
                 </p>
@@ -534,16 +577,17 @@ const Servicios = () => {
                                     </p>
 
                                     <div className="mb-10 pr-2 max-h-[380px] overflow-y-auto custom-scrollbar border-y border-[#F2F2F2] py-2">
+                                        {/* 4. CAMBIO: Se pasa la propiedad `image` al componente AccordionItem */}
                                         {servicio.tratamientos.map((tratamiento, i) => (
                                             <AccordionItem
                                                 key={i}
                                                 title={tratamiento.titulo}
                                                 details={tratamiento.detalles}
+                                                image={tratamiento.imagen} 
                                             />
                                         ))}
                                     </div>
 
-                                    {/* BOTONES ACTUALIZADOS */}
                                     <div className="flex flex-col sm:flex-row gap-4 mt-auto">
                                         <Link
                                             to="/contacto"

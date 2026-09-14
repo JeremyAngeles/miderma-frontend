@@ -59,67 +59,51 @@ const TestimonialsSection = () => {
 
     return (
         <section className="py-16 md:py-24 px-4 sm:px-6 relative z-10 bg-[#FDF6F4] text-miderma-dark overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+            {/* Contenedor central ajustado para que todo se agrupe al medio */}
+            <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
                 
-                {/* VIDEO / FOTO (Izquierda en PC, Arriba en Celular) */}
-                <div className="w-full lg:w-1/2 flex justify-center lg:justify-start xl:justify-center">
-                    
-                    {/* AQUÍ SE AGRANDÓ EL TAMAÑO (de max-w-500px pasó a 650px y 700px) */}
-                    <div className="w-full max-w-[600px] lg:max-w-[650px] xl:max-w-[700px] aspect-video rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 sm:border-8 border-white bg-miderma-dark relative group">
-                        
-                        {/* Puedes poner un póster o dejar el video directo */}
-                        <video 
-                            controls 
-                            className="w-full h-full object-cover"
-                            poster="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" // Imagen de portada mientras no se reproduce
-                        >
-                            <source src="/video-presentacion.mp4" type="video/mp4" />
-                            Tu navegador no soporta videos.
-                        </video>
-                    </div>
-                </div>
-
-                {/* TESTIMONIOS (Derecha en PC, Abajo en Celular) */}
-                <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left lg:pl-6">
+                {/* TESTIMONIOS (Centrados en todas las pantallas) */}
+                <div className="w-full flex flex-col text-center">
                     
                     {/* Encabezado */}
-                    <div className="mb-8">
+                    <div className="mb-10">
                         <span className="font-extrabold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-miderma-pink">
                             Testimonios
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark  font-nunito">
+                        <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark font-nunito">
                             Lo que dicen nuestros pacientes
                         </h2>
                     </div>
                     
                     {/* Contenedor dinámico con GRID */}
-                    <div className="grid max-w-xl mx-auto lg:mx-0 w-full mb-6">
+                    <div className="grid max-w-2xl mx-auto w-full mb-6">
                         {testimonios.map((t, idx) => (
                             <div 
                                 key={t.id}
-                                className={`col-start-1 row-start-1 transition-all duration-1000 ease-in-out flex flex-col ${
+                                className={`col-start-1 row-start-1 transition-all duration-1000 ease-in-out flex flex-col items-center ${
                                     currentIndex === idx 
                                     ? 'opacity-100 z-10 translate-y-0' 
                                     : 'opacity-0 z-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
                                 {/* Texto del testimonio */}
-                                <p className="text-lg md:text-2xl italic text-[#7A6B63] mb-6 font-serif leading-relaxed">
+                                <p className="text-lg md:text-2xl italic text-[#7A6B63] mb-8 font-serif leading-relaxed">
                                     "{t.texto}"
                                 </p>
                                 
-                                {/* Info del Paciente */}
-                                <div className="flex items-center justify-center lg:justify-start gap-4 mt-2">
+                                {/* Info del Paciente - Forzado al centro en celular y escritorio */}
+                                <div className="flex items-center justify-center gap-4 mt-2">
                                     <img 
                                         src={t.imagen} 
                                         alt={t.nombre} 
                                         className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shadow-sm ring-2 ring-miderma-pink/30" 
                                     />
+                                    {/* El texto del paciente se queda alineado a la izquierda respecto a la foto para que se vea ordenado */}
                                     <div className="text-left">
                                         <h4 className="font-bold text-[#5A4A42] text-sm md:text-lg leading-tight mb-1">
                                             {t.nombre}
                                         </h4>
-                                        <span className="text-[10px] md:text-xs text-miderma-pink font-extrabold uppercase tracking-wider">
+                                        <span className="text-[10px] md:text-xs text-miderma-pink font-extrabold uppercase tracking-wider block">
                                             {t.tratamiento}
                                         </span>
                                     </div>
