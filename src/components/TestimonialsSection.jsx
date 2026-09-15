@@ -67,11 +67,13 @@ const TestimonialsSection = () => {
                     
                     {/* Encabezado */}
                     <div className="mb-10">
-                        <span className="font-extrabold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-miderma-pink">
+                        {/* APLICADO: font-Montserrat para el antetítulo */}
+                        <span className="font-bold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-miderma-pink font-Montserrat">
                             Testimonios
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-miderma-dark font-nunito">
-                            Lo que dicen nuestros pacientes
+                        {/* APLICADO: font-GFSDidot y font-normal para el título principal */}
+                        <h2 className="text-3xl md:text-5xl font-normal text-miderma-dark font-GFSDidot">
+                        LO QUE DICEN NUESTROS PACIENTES
                         </h2>
                     </div>
                     
@@ -86,8 +88,8 @@ const TestimonialsSection = () => {
                                     : 'opacity-0 z-0 translate-y-4 pointer-events-none'
                                 }`}
                             >
-                                {/* Texto del testimonio */}
-                                <p className="text-lg md:text-2xl italic text-[#7A6B63] mb-8 font-serif leading-relaxed">
+                                {/* APLICADO: font-Montserrat para el texto de la reseña */}
+                                <p className="text-lg md:text-2xl italic text-[#7A6B63] mb-8 font-Montserrat leading-relaxed">
                                     "{t.texto}"
                                 </p>
                                 
@@ -100,10 +102,12 @@ const TestimonialsSection = () => {
                                     />
                                     {/* El texto del paciente se queda alineado a la izquierda respecto a la foto para que se vea ordenado */}
                                     <div className="text-left">
-                                        <h4 className="font-bold text-[#5A4A42] text-sm md:text-lg leading-tight mb-1">
+                                        {/* APLICADO: font-GFSDidot y font-normal para el nombre del paciente */}
+                                        <h4 className="font-normal text-miderma-dark text-lg md:text-xl leading-tight mb-1 font-GFSDidot">
                                             {t.nombre}
                                         </h4>
-                                        <span className="text-[10px] md:text-xs text-miderma-pink font-extrabold uppercase tracking-wider block">
+                                        {/* APLICADO: font-Montserrat para el tratamiento */}
+                                        <span className="text-[10px] md:text-xs text-miderma-pink font-bold uppercase tracking-wider block font-Montserrat">
                                             {t.tratamiento}
                                         </span>
                                     </div>

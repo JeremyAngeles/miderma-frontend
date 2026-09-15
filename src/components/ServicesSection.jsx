@@ -11,12 +11,11 @@ const ServicesSection = () => {
                 
                 {/* Título de la Sección */}
                 <div className="text-center mb-16 relative z-10">
-                    {/* AQUÍ ESTÁ LA FUENTE NUNITO APLICADA SOLO A ESTE TÍTULO */}
-                    <h2 className="text-3xl md:text-5xl font-semibold text-miderma-dark mb-4 font-titulos">
-                        Nuestros Servicios
+                    <h2 className="text-3xl md:text-5xl font-normal text-miderma-dark mb-4 font-GFSDidot">
+                        NUESTROS SERVICIOS
                     </h2>
                     
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto font-subtitulos mt-4">
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto font-Montserrat mt-4">
                         Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.
                     </p>
                 </div>
@@ -29,13 +28,13 @@ const ServicesSection = () => {
                         <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/portada-clinica.jpg" alt="Dermatología Clínica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Clínica</h3>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-normal text-white leading-tight font-GFSDidot">Dermatología<br/>Clínica</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed font-Montserrat">
                                 Diagnósticos precisos y terapias efectivas. Tratamos enfermedades de la piel, cabellos y uñas con la mayor rigurosidad médica.
                             </p>
-                            <ul className="space-y-3 mb-2 mt-auto">
+                            <ul className="space-y-3 mb-2 mt-auto font-Montserrat">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Acné, rosácea y melasma.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermatopatías infantiles y autoinmunes.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Caída de cabello y hongos en uñas.</li>
@@ -48,13 +47,13 @@ const ServicesSection = () => {
                         <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-quirurgica.jpg" alt="Dermatología Quirúrgica y Oncológica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Quirúrgica y<br/>Oncológica</h3>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-normal text-white leading-tight font-GFSDidot">Quirúrgica y<br/>Oncológica</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed font-Montserrat">
                                 Abordaje médico especializado para el diagnóstico, extirpación segura y reconstrucción de lesiones cutáneas, priorizando tu salud.
                             </p>
-                            <ul className="space-y-3 mb-2 mt-auto">
+                            <ul className="space-y-3 mb-2 mt-auto font-Montserrat">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Cáncer de piel (Melanoma y No Melanoma).</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Extirpación de lunares y quistes.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Biopsias cutáneas precisas.</li>
@@ -67,13 +66,13 @@ const ServicesSection = () => {
                         <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-estetica.jpeg" alt="Dermatología Estética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Estética</h3>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-normal text-white leading-tight font-GFSDidot">Dermatología<br/>Estética</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed font-Montserrat">
                                 Mejoramos tu apariencia y prevenimos el envejecimiento con procedimientos seguros, resaltando tu belleza natural.
                             </p>
-                            <ul className="space-y-3 mb-2 mt-auto">
+                            <ul className="space-y-3 mb-2 mt-auto font-Montserrat">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Botox y Ácido Hialurónico.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Bioestimuladores y Mesoterapia.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Rejuvenecimiento láser e IPL.</li>
@@ -86,13 +85,13 @@ const ServicesSection = () => {
                         <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/pediatrica.jpg" alt="Dermatología Pediátrica" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Pediátrica</h3>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-normal text-white leading-tight font-GFSDidot">Dermatología<br/>Pediátrica</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed font-Montserrat">
                                 Atención especializada para la piel delicada de los niños. Diagnosticamos y tratamos afecciones infantiles, acompañando a la familia.
                             </p>
-                            <ul className="space-y-3 mb-2 mt-auto">
+                            <ul className="space-y-3 mb-2 mt-auto font-Montserrat">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermatitis atópica y del pañal.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Sarpullido por calor e Infecciones.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Verrugas y Molusco Contagioso.</li>
@@ -105,13 +104,13 @@ const ServicesSection = () => {
                         <div className="h-64 lg:h-72 overflow-hidden relative">
                             <img src="/especialidad-dermocosmetica.jpg" alt="Dermocosmética" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-miderma-dark/90 via-miderma-dark/20 to-transparent opacity-80"></div>
-                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-bold text-white leading-tight">Dermatología<br/>Cosmética</h3>
+                            <h3 className="absolute bottom-6 left-6 text-xl xl:text-2xl font-normal text-white leading-tight font-GFSDidot">Dermatología<br/>Cosmética</h3>
                         </div>
                         <div className="p-6 xl:p-8 flex flex-col flex-grow">
-                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed">
+                            <p className="text-gray-600 mb-6 flex-grow text-xs xl:text-sm leading-relaxed font-Montserrat">
                                 Tratamientos especializados para limpiar, nutrir y potenciar el brillo natural, textura y salud de tu piel.
                             </p>
-                            <ul className="space-y-3 mb-2 mt-auto">
+                            <ul className="space-y-3 mb-2 mt-auto font-Montserrat">
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Rutinas Skin Care y Peelings.</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Limpieza profunda (Hydrofacial).</li>
                                 <li className="flex items-start gap-2 text-xs xl:text-sm text-gray-700"><span className="text-miderma-pink font-bold mt-0.5">✓</span> Dermapen y terapias Luz LED.</li>

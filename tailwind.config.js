@@ -18,7 +18,8 @@ export default {
       fontFamily: {
         nunito: ['"Nunito"', 'sans-serif'],
         titulos: ['"MisTitulos"', 'sans-serif'], 
-        subtitulos: ['"MisSubtitulos"', 'sans-serif'], // <--- AQUÍ ESTÁ TU NUEVA FUENTE
+        titulosreal: ['"GFSDidot"', 'serif'],
+        subtitulos: ['"Montserrat"', 'sans-serif'], // <--- ACTUALIZADO A MONTSERRAT
       }
     },
   },

@@ -59,7 +59,7 @@ const Navbar = () => {
                 - `lg:px-8`: Es el espacio entre el borde izquierdo de tu monitor y el logo en PC.
                   👉 ¿Lo quieres MÁS a la izquierda? Cámbialo a `lg:px-4`, `lg:px-2` o `px-0` (pegado al borde).
                   👉 ¿Lo quieres más al centro? Auméntalo a `lg:px-16` o `lg:px-24`.
-            =================================================================================================== */}
+            =======================================================================================================      */}
             <div className="max-w-full mx-auto w-full px-4 sm:px-6 lg:px-80">
                 
                 {/* ===================================================================================================
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <div className="flex-shrink-0 cursor-pointer flex items-center z-20 mr-6 lg:mr-10">
                             <Link to="/">
                                 <img 
-                                    src={isSolid ? "/logooooo.png" : "/logo-blanco-sinfondo.png"} 
+                                    src={isSolid ? "/logooooo.png" : "/miderma-logo-morado.png"} 
                                     alt="Miderma Logo" 
                                     className={`transition-all duration-500 object-contain drop-shadow-none ${
                                         isSolid 

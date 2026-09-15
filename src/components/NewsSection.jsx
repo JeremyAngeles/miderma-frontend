@@ -44,13 +44,16 @@ const NewsSection = () => {
             <div className="w-full bg-[#F2F2F2] py-12 md:py-20 px-4 sm:px-6 flex-grow">
                 <div className="max-w-7xl mx-auto">
                     
+                    {/* ENCABEZADO DE LA SECCIÓN */}
                     <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4 font-nunito">
-                            Noticias
-                        </h2>
-                        <span className="font-bold tracking-widest uppercase text-xs sm:text-sm text-[#8E6F96]">
+                        {/* APLICADO: font-Montserrat para el antetítulo */}
+                        <span className="font-bold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-[#8E6F96] font-Montserrat">
                             Lo que nos gustaría contarte
                         </span>
+                        {/* APLICADO: font-GFSDidot, font-normal y uppercase para el título */}
+                        <h2 className="text-3xl md:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
+                            Noticias
+                        </h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
@@ -60,7 +63,8 @@ const NewsSection = () => {
                                 className="bg-white rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgba(41,24,64,0.04)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(242,189,199,0.3)] hover:-translate-y-2 hover:border-[#F2BDC7]/40 transition-all duration-500 group flex flex-col"
                             >
                                 <div className="relative h-56 sm:h-64 overflow-hidden bg-gray-100">
-                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#291840] font-extrabold px-4 py-1.5 rounded-full text-[10px] sm:text-xs tracking-wider shadow-sm z-10 uppercase">
+                                    {/* APLICADO: font-Montserrat para la categoría */}
+                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#291840] font-bold px-4 py-1.5 rounded-full text-[10px] sm:text-xs tracking-wider shadow-sm z-10 uppercase font-Montserrat">
                                         {noticia.categoria}
                                     </div>
                                     <img 
@@ -73,16 +77,20 @@ const NewsSection = () => {
                                 </div>
 
                                 <div className="p-6 md:p-8 flex flex-col flex-grow">
-                                    <h3 className="font-extrabold text-xl md:text-2xl text-[#291840] mb-3 leading-tight group-hover:text-[#F2BDC7] transition-colors duration-300 font-serif line-clamp-2">
+                                    {/* APLICADO: font-GFSDidot, font-normal y uppercase para el título de la tarjeta */}
+                                    <h3 className="font-normal text-xl md:text-2xl text-[#291840] mb-4 leading-tight group-hover:text-[#F2BDC7] transition-colors duration-300 font-GFSDidot uppercase line-clamp-3">
                                         {noticia.titulo}
                                     </h3>
-                                    <p className="text-[#8E6F96] text-sm md:text-base leading-relaxed mb-6 flex-grow line-clamp-3 opacity-90">
+                                    
+                                    {/* APLICADO: font-Montserrat para el resumen */}
+                                    <p className="text-[#8E6F96] text-sm md:text-base leading-relaxed mb-6 flex-grow line-clamp-3 opacity-90 font-Montserrat">
                                         {noticia.resumen}
                                     </p>
                                     
+                                    {/* APLICADO: font-GFSDidot, font-normal y uppercase para el botón */}
                                     <Link 
                                         to={noticia.enlace} 
-                                        className="inline-flex items-center gap-2 text-[#291840] font-bold text-sm hover:text-[#F2BDC7] transition-colors mt-auto group/btn"
+                                        className="inline-flex items-center gap-2 text-[#291840] font-normal text-sm hover:text-[#F2BDC7] transition-colors mt-auto group/btn font-GFSDidot uppercase tracking-wider"
                                     >
                                         Leer artículo completo
                                         <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

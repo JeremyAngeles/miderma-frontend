@@ -71,21 +71,25 @@ const FeaturedProducts = () => {
             {/* CONTENEDOR PRINCIPAL */}
             <div className="pt-20 md:pt-28 pb-12 px-4 sm:px-6 max-w-7xl mx-auto relative z-10 w-full flex-grow">
                 
-                {/* CABECERA DE LA SECCIÓN (TEXTO ACTUALIZADO AQUÍ) */}
+                {/* CABECERA DE LA SECCIÓN */}
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 sm:mb-16 gap-6">
                     <div className="text-center md:text-left">
-                        <span className="font-extrabold tracking-[0.2em] uppercase mb-3 block text-xs text-[#F2BDC7]">
+                        {/* APLICADO: font-Montserrat */}
+                        <span className="font-bold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-[#F2BDC7] font-Montserrat">
                             Cuidado en Casa
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-[#291840] mb-4 font-nunito">
+                        {/* APLICADO: font-GFSDidot, font-normal, uppercase y mismo tamaño que otras secciones */}
+                        <h2 className="text-4xl md:text-5xl lg:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                             Tienda Dermocosmética
                         </h2>
-                        <p className="text-sm sm:text-base md:text-lg text-[#615573] max-w-2xl leading-relaxed">
+                        {/* APLICADO: font-Montserrat */}
+                        <p className="text-sm sm:text-base md:text-lg text-[#615573] max-w-2xl leading-relaxed font-Montserrat">
                             MiDerma ofrece un portafolio integral de productos dermatológicos y dermocosméticos para garantizar calidad y eficacia en tu piel.
                         </p>
                     </div>
 
-                    <Link to="/productos" className="hidden md:inline-flex items-center justify-center gap-2 bg-white border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 shadow-sm whitespace-nowrap">
+                    {/* APLICADO: font-GFSDidot, font-normal y uppercase para el botón */}
+                    <Link to="/productos" className="hidden md:inline-flex items-center justify-center gap-2 bg-white border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-normal transition-all duration-300 shadow-sm whitespace-nowrap font-GFSDidot uppercase tracking-wider">
                         Ver tienda completa
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -100,19 +104,18 @@ const FeaturedProducts = () => {
                         const cantActual = cantidades[producto.id] || 1;
 
                         return (
-                            /* TARJETA MÁS VERTICAL */
                             <div key={producto.id} className="bg-white rounded-[1.25rem] sm:rounded-3xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_35px_rgba(242,189,199,0.35)] transition-all duration-500 border border-[#F2F2F2] flex flex-col relative p-3 sm:p-5 group h-full w-full mx-auto max-w-[280px] lg:max-w-none">
                                 
                                 {/* Efecto de destello rosado suave en el fondo */}
                                 <div className="absolute inset-0 bg-[#F2BDC7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 rounded-[1.25rem] sm:rounded-3xl"></div>
 
-                                {/* ETIQUETAS FLOTANDO */}
+                                {/* ETIQUETAS FLOTANDO (APLICADO: font-Montserrat) */}
                                 {producto.etiqueta_descuento ? (
-                                    <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 z-30 bg-[#E63946] text-white text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider">
+                                    <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 z-30 bg-[#E63946] text-white text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider font-Montserrat">
                                         {producto.etiqueta_descuento}
                                     </div>
                                 ) : producto.etiqueta ? (
-                                    <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 z-30 bg-[#291840] text-white text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider">
+                                    <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 z-30 bg-[#291840] text-white text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider font-Montserrat">
                                         {producto.etiqueta}
                                     </div>
                                 ) : null}
@@ -129,33 +132,33 @@ const FeaturedProducts = () => {
                                 {/* CONTENIDO INFERIOR */}
                                 <div className="flex flex-col flex-grow text-center relative z-20 bg-transparent justify-end">
                                     
-                                    {/* Marca */}
-                                    <span className="text-[9px] sm:text-[11px] font-medium text-[#9A92A6] group-hover:text-[#F2BDC7] transition-colors uppercase tracking-widest mb-1">
+                                    {/* Marca (APLICADO: font-Montserrat) */}
+                                    <span className="text-[9px] sm:text-[11px] font-bold text-[#9A92A6] group-hover:text-[#F2BDC7] transition-colors uppercase tracking-widest mb-1 font-Montserrat">
                                         {producto.marca}
                                     </span>
                                     
-                                    {/* Título en Mayúsculas */}
-                                    <h3 className="text-[11px] sm:text-sm font-bold text-[#291840] group-hover:text-[#F2BDC7] transition-colors uppercase leading-snug mb-2 sm:mb-4 line-clamp-2 min-h-[30px] sm:min-h-[40px] px-1 flex items-center justify-center">
+                                    {/* Título en Mayúsculas (APLICADO: font-GFSDidot, font-normal) */}
+                                    <h3 className="text-xs sm:text-base font-normal text-[#291840] group-hover:text-[#F2BDC7] transition-colors uppercase leading-snug mb-2 sm:mb-4 line-clamp-2 min-h-[30px] sm:min-h-[44px] px-1 flex items-center justify-center font-GFSDidot">
                                         {producto.nombre}
                                     </h3>
                                     
-                                    {/* PRECIOS */}
+                                    {/* PRECIOS (APLICADO: font-GFSDidot para los números) */}
                                     <div className="mt-auto mb-3 sm:mb-5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
                                         {producto.precio_oferta ? (
                                             <>
-                                                <span className="text-[10px] sm:text-sm text-[#9A92A6] line-through font-medium mt-0.5 sm:mt-1">S/ {producto.precio.toFixed(2)}</span>
-                                                <span className="text-base sm:text-2xl font-bold text-[#E63946]">S/ {producto.precio_oferta.toFixed(2)}</span>
+                                                <span className="text-[10px] sm:text-sm text-[#9A92A6] line-through font-normal mt-0.5 sm:mt-1 font-GFSDidot">S/ {producto.precio.toFixed(2)}</span>
+                                                <span className="text-lg sm:text-2xl font-normal text-[#E63946] font-GFSDidot">S/ {producto.precio_oferta.toFixed(2)}</span>
                                             </>
                                         ) : (
-                                            <span className="text-base sm:text-2xl font-bold text-[#291840]">S/ {producto.precio.toFixed(2)}</span>
+                                            <span className="text-lg sm:text-2xl font-normal text-[#291840] font-GFSDidot">S/ {producto.precio.toFixed(2)}</span>
                                         )}
                                     </div>
 
                                     {/* CONTROLES */}
                                     <div className="flex flex-col xl:flex-row items-center justify-between gap-2 w-full mt-auto">
                                         
-                                        {/* Selector de cantidad */}
-                                        <div className="flex items-center justify-between border border-[#F2F2F2] rounded-full px-2 sm:px-3 py-1.5 sm:py-2.5 w-full xl:w-[45%] bg-white">
+                                        {/* Selector de cantidad (APLICADO: font-Montserrat) */}
+                                        <div className="flex items-center justify-between border border-[#F2F2F2] rounded-full px-2 sm:px-3 py-1.5 sm:py-2 w-full xl:w-[45%] bg-white font-Montserrat">
                                             <button 
                                                 onClick={() => decrementarCantidad(producto.id)}
                                                 className="text-[#9A92A6] hover:text-[#F2BDC7] text-sm sm:text-base font-bold transition-colors px-1 w-6 flex justify-center"
@@ -171,8 +174,8 @@ const FeaturedProducts = () => {
                                             </button>
                                         </div>
 
-                                        {/* Botón Añadir */}
-                                        <button className="w-full xl:flex-grow flex items-center justify-center bg-[#291840] hover:bg-[#F2BDC7] text-white hover:text-[#291840] text-[9px] sm:text-xs font-bold py-2 sm:py-3 rounded-full transition-colors duration-300 uppercase tracking-widest text-center shadow-sm">
+                                        {/* Botón Añadir (APLICADO: font-GFSDidot, font-normal y uppercase) */}
+                                        <button className="w-full xl:flex-grow flex items-center justify-center bg-[#291840] hover:bg-[#F2BDC7] text-white hover:text-[#291840] text-[10px] sm:text-sm font-normal py-2 sm:py-2.5 rounded-full transition-colors duration-300 uppercase tracking-widest text-center shadow-sm font-GFSDidot">
                                             Añadir
                                         </button>
                                         
@@ -183,9 +186,9 @@ const FeaturedProducts = () => {
                     })}
                 </div>
 
-                {/* Botón en Móvil */}
+                {/* Botón en Móvil (APLICADO: font-GFSDidot, font-normal y uppercase) */}
                 <div className="mt-10 text-center md:hidden">
-                    <Link to="/productos" className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-bold transition-all duration-300 w-full shadow-sm text-sm">
+                    <Link to="/productos" className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-normal transition-all duration-300 w-full shadow-sm text-sm font-GFSDidot uppercase tracking-wider">
                         Ver tienda completa
                     </Link>
                 </div>

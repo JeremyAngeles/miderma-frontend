@@ -30,7 +30,10 @@ const PromotionsSection = () => {
             <div className="pt-16 md:pt-24 pb-12 px-4 sm:px-6 max-w-7xl mx-auto w-full flex-grow">
                 
                 <div className="text-center md:text-left mb-10">
-                    <h2 className="text-3xl md:text-5xl font-bold text-[#291840] font-nunito">Promociones</h2>
+                    {/* APLICADO: font-GFSDidot, font-normal y uppercase para el título */}
+                    <h2 className="text-3xl md:text-5xl font-normal text-[#291840] font-GFSDidot uppercase">
+                        Promociones
+                    </h2>
                     <div className="w-20 h-1.5 bg-[#F2BDC7] mt-4 mx-auto md:mx-0 rounded-full"></div>
                 </div>
 
@@ -51,41 +54,47 @@ const PromotionsSection = () => {
                             <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full justify-between items-end text-right w-full sm:w-[75%] ml-auto">
                                 
                                 <div className="flex flex-col items-end">
-                                    <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#7A6B63] uppercase mb-2">
+                                    {/* APLICADO: font-Montserrat */}
+                                    <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#7A6B63] uppercase mb-2 font-Montserrat">
                                         MIDERMA EXCLUSIVA
                                     </span>
                                     
-                                    <h3 translate="no" className="text-2xl lg:text-3xl font-light text-[#291840] leading-[1.15] mb-2 font-serif max-w-[280px]">
+                                    {/* APLICADO: font-GFSDidot, font-normal y uppercase */}
+                                    <h3 translate="no" className="text-2xl lg:text-3xl font-normal text-[#291840] leading-[1.15] mb-2 font-GFSDidot uppercase max-w-[280px]">
                                         {promo.titulo}
                                     </h3>
                                     
-                                    <p className="text-xs sm:text-sm font-bold text-[#291840] uppercase tracking-wider mb-2 max-w-[250px]">
+                                    {/* APLICADO: font-Montserrat */}
+                                    <p className="text-xs sm:text-sm font-bold text-[#291840] uppercase tracking-wider mb-2 max-w-[250px] font-Montserrat">
                                         {promo.subtitulo}
                                     </p>
                                     
-                                    <p className="text-xs sm:text-sm text-[#5A4A42] leading-relaxed max-w-[260px] font-medium">
+                                    {/* APLICADO: font-Montserrat */}
+                                    <p className="text-xs sm:text-sm text-[#5A4A42] leading-relaxed max-w-[260px] font-medium font-Montserrat">
                                         {promo.descripcion}
                                     </p>
                                 </div>
 
                                 <div className="mt-auto flex flex-col items-end">
-                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5 font-bold">
+                                    {/* APLICADO: font-Montserrat */}
+                                    <span className="text-xs sm:text-sm text-[#7A6B63] line-through mb-1.5 font-bold font-Montserrat">
                                         Antes: {promo.precioAntes}
                                     </span>
                                     
-                                    {/* CAJA DE PRECIO SOLUCIONADA */}
-                                    {/* Cambié w-[160px] por w-max para que se adapte al contenido exacto */}
+                                    {/* CAJA DE PRECIO */}
                                     <div className="bg-[#F2BDC7] text-[#291840] px-5 py-3 rounded-xl flex flex-col items-end w-max ml-auto shadow-md transform group-hover:-translate-y-1 transition-transform mb-3">
-                                        <span className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold opacity-80 mb-0.5">
+                                        {/* APLICADO: font-Montserrat */}
+                                        <span className="text-[10px] sm:text-xs uppercase tracking-wider font-extrabold opacity-80 mb-0.5 font-Montserrat">
                                             Ahora:
                                         </span>
-                                        {/* whitespace-nowrap fuerza al S/. y al número a estar siempre en la misma línea */}
-                                        <span className="text-2xl sm:text-3xl font-serif font-bold leading-none whitespace-nowrap">
+                                        {/* APLICADO: font-GFSDidot y font-normal para el número del precio */}
+                                        <span className="text-2xl sm:text-3xl font-normal leading-none whitespace-nowrap font-GFSDidot">
                                             {promo.precioAhora}
                                         </span>
                                     </div>
 
-                                    <p className="text-[9px] sm:text-[10px] text-[#7A6B63] font-bold text-right max-w-[180px] leading-tight">
+                                    {/* APLICADO: font-Montserrat */}
+                                    <p className="text-[9px] sm:text-[10px] text-[#7A6B63] font-bold text-right max-w-[180px] leading-tight font-Montserrat">
                                         {promo.validez}
                                     </p>
                                 </div>
