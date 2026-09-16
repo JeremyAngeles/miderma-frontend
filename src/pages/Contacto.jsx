@@ -67,9 +67,7 @@ const Contacto = () => {
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#291840] mb-4 font-titulos">
                         Contacto
-                    </h1>
-                    <div className="w-16 h-1.5 bg-[#F2BDC7] rounded-full mx-auto mb-6"></div>
-                    
+                    </h1>                    
                     {/* TEXTO AÑADIDO AQUÍ */}
                     <p className="text-lg text-[#615573] max-w-2xl mx-auto font-subtitulos mt-4 leading-relaxed">
                         Soluciones médicas e innovadoras para recuperar, cuidar y potenciar la salud y belleza de tu piel.

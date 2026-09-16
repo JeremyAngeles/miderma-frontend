@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Le agregamos el título y descripción a los casos
+// Le agregamos el título, descripción y las fotos correspondientes
 const casos = [
     {
         id: 1,
@@ -9,8 +9,14 @@ const casos = [
         descripcion: "Resultados reales después de 4 meses de tratamiento clínico integral, combinando medicamentos orales y rutinas de skincare especializadas para restaurar la salud de la piel.",
         imagenAntes: "/antes-1.jpg",
         imagenDespues: "/despues-1.jpg"
+    },
+    {
+        id: 2,
+        titulo: "Ac. Hialurónico Puntos de Anclaje",
+        descripcion: "Rejuvenecimiento facial sin cirugía. Aplicación estratégica de ácido hialurónico en puntos clave para reposicionar los tejidos, reponer volumen y lograr un efecto lifting natural.",
+        imagenAntes: "/antes-2.jpg",
+        imagenDespues: "/despues-2.jpg"
     }
-    // Puedes agregar más casos copiando el bloque de arriba
 ];
 
 const BeforeAfterSection = () => {
@@ -129,7 +135,7 @@ const BeforeAfterSection = () => {
                             </span>
                             
                             {/* APLICADO: font-GFSDidot y font-normal en el título del caso */}
-                            <h3 className="text-3xl sm:text-4xl font-normal text-[#291840] mb-4 font-GFSDidot">
+                            <h3 className="text-3xl sm:text-4xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                                 {casoActual.titulo}
                             </h3>
                             

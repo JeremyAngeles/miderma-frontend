@@ -78,8 +78,8 @@ const FeaturedProducts = () => {
                         <span className="font-bold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-[#F2BDC7] font-Montserrat">
                             Cuidado en Casa
                         </span>
-                        {/* APLICADO: font-GFSDidot, font-normal, uppercase y mismo tamaño que otras secciones */}
-                        <h2 className="text-4xl md:text-5xl lg:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
+                        {/* APLICADO: font-GFSDidot, font-normal, uppercase */}
+                        <h2 className="text-3xl md:text-5xl lg:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                             Tienda Dermocosmética
                         </h2>
                         {/* APLICADO: font-Montserrat */}
@@ -109,7 +109,7 @@ const FeaturedProducts = () => {
                                 {/* Efecto de destello rosado suave en el fondo */}
                                 <div className="absolute inset-0 bg-[#F2BDC7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 rounded-[1.25rem] sm:rounded-3xl"></div>
 
-                                {/* ETIQUETAS FLOTANDO (APLICADO: font-Montserrat) */}
+                                {/* ETIQUETAS FLOTANDO */}
                                 {producto.etiqueta_descuento ? (
                                     <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 z-30 bg-[#E63946] text-white text-[9px] sm:text-[11px] font-bold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-md tracking-wider font-Montserrat">
                                         {producto.etiqueta_descuento}
@@ -120,29 +120,34 @@ const FeaturedProducts = () => {
                                     </div>
                                 ) : null}
 
-                                {/* IMAGEN MÁS GRANDE Y VERTICAL */}
-                                <div className="w-full h-40 sm:h-52 relative flex items-center justify-center mt-2 mb-3 sm:mb-5 bg-white z-20 shrink-0">
+                                {/* AHORA LA IMAGEN ES UN LINK QUE LLEVA AL DETALLE DEL PRODUCTO */}
+                                <Link 
+                                    to={`/producto/${producto.id}`} 
+                                    className="w-full h-40 sm:h-52 relative flex items-center justify-center mt-2 mb-3 sm:mb-5 bg-white z-20 shrink-0 cursor-pointer"
+                                >
                                     <img 
                                         src={producto.imagen} 
                                         alt={producto.nombre} 
                                         className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
                                     />
-                                </div>
+                                </Link>
 
                                 {/* CONTENIDO INFERIOR */}
                                 <div className="flex flex-col flex-grow text-center relative z-20 bg-transparent justify-end">
                                     
-                                    {/* Marca (APLICADO: font-Montserrat) */}
+                                    {/* Marca */}
                                     <span className="text-[9px] sm:text-[11px] font-bold text-[#9A92A6] group-hover:text-[#F2BDC7] transition-colors uppercase tracking-widest mb-1 font-Montserrat">
                                         {producto.marca}
                                     </span>
                                     
-                                    {/* Título en Mayúsculas (APLICADO: font-GFSDidot, font-normal) */}
-                                    <h3 className="text-xs sm:text-base font-normal text-[#291840] group-hover:text-[#F2BDC7] transition-colors uppercase leading-snug mb-2 sm:mb-4 line-clamp-2 min-h-[30px] sm:min-h-[44px] px-1 flex items-center justify-center font-GFSDidot">
-                                        {producto.nombre}
-                                    </h3>
+                                    {/* AHORA EL TÍTULO TAMBIÉN ES UN LINK QUE LLEVA AL DETALLE */}
+                                    <Link to={`/producto/${producto.id}`}>
+                                        <h3 className="text-xs sm:text-base font-normal text-[#291840] hover:text-[#F2BDC7] transition-colors uppercase leading-snug mb-2 sm:mb-4 line-clamp-2 min-h-[30px] sm:min-h-[44px] px-1 flex items-center justify-center font-GFSDidot cursor-pointer">
+                                            {producto.nombre}
+                                        </h3>
+                                    </Link>
                                     
-                                    {/* PRECIOS (APLICADO: font-GFSDidot para los números) */}
+                                    {/* PRECIOS */}
                                     <div className="mt-auto mb-3 sm:mb-5 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
                                         {producto.precio_oferta ? (
                                             <>
@@ -154,27 +159,25 @@ const FeaturedProducts = () => {
                                         )}
                                     </div>
 
-                                    {/* CONTROLES */}
+                                    {/* CONTROLES (Estos NO tienen link para poder usarlos sin salir de la página) */}
                                     <div className="flex flex-col xl:flex-row items-center justify-between gap-2 w-full mt-auto">
                                         
-                                        {/* Selector de cantidad (APLICADO: font-Montserrat) */}
                                         <div className="flex items-center justify-between border border-[#F2F2F2] rounded-full px-2 sm:px-3 py-1.5 sm:py-2 w-full xl:w-[45%] bg-white font-Montserrat">
                                             <button 
-                                                onClick={() => decrementarCantidad(producto.id)}
+                                                onClick={(e) => { e.preventDefault(); decrementarCantidad(producto.id); }}
                                                 className="text-[#9A92A6] hover:text-[#F2BDC7] text-sm sm:text-base font-bold transition-colors px-1 w-6 flex justify-center"
                                             >
                                                 -
                                             </button>
                                             <span className="font-bold text-[#291840] text-[10px] sm:text-sm">{cantActual}</span>
                                             <button 
-                                                onClick={() => incrementarCantidad(producto.id, producto.stock)}
+                                                onClick={(e) => { e.preventDefault(); incrementarCantidad(producto.id, producto.stock); }}
                                                 className="text-[#9A92A6] hover:text-[#F2BDC7] text-sm sm:text-base font-bold transition-colors px-1 w-6 flex justify-center"
                                             >
                                                 +
                                             </button>
                                         </div>
 
-                                        {/* Botón Añadir (APLICADO: font-GFSDidot, font-normal y uppercase) */}
                                         <button className="w-full xl:flex-grow flex items-center justify-center bg-[#291840] hover:bg-[#F2BDC7] text-white hover:text-[#291840] text-[10px] sm:text-sm font-normal py-2 sm:py-2.5 rounded-full transition-colors duration-300 uppercase tracking-widest text-center shadow-sm font-GFSDidot">
                                             Añadir
                                         </button>
@@ -186,7 +189,6 @@ const FeaturedProducts = () => {
                     })}
                 </div>
 
-                {/* Botón en Móvil (APLICADO: font-GFSDidot, font-normal y uppercase) */}
                 <div className="mt-10 text-center md:hidden">
                     <Link to="/productos" className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#291840] text-[#291840] hover:bg-[#291840] hover:text-white px-8 py-3.5 rounded-full font-normal transition-all duration-300 w-full shadow-sm text-sm font-GFSDidot uppercase tracking-wider">
                         Ver tienda completa

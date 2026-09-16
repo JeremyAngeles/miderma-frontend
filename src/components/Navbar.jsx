@@ -40,7 +40,7 @@ const Navbar = () => {
         { name: 'Nosotros', path: '/sobre-mi' },
         { name: 'Servicios', path: '/servicios' },
         { name: 'Tratamientos', path: '/tratamientos' },
-        { name: 'Casos', path: '/intervenciones' },
+        { name: 'Noticias', path: '/noticias' },
         { name: 'Farmacia', path: '/productos' },
         { name: 'Contacto', path: '/contacto' },
     ];
@@ -75,7 +75,7 @@ const Navbar = () => {
                         <div className="flex-shrink-0 cursor-pointer flex items-center z-20 mr-6 lg:mr-10">
                             <Link to="/">
                                 <img 
-                                    src={isSolid ? "/logooooo.png" : "/miderma-logo-morado.png"} 
+                                    src={isSolid ? "/logooooo.png" : "/logooooo.png"} 
                                     alt="Miderma Logo" 
                                     className={`transition-all duration-500 object-contain drop-shadow-none ${
                                         isSolid 
