@@ -30,7 +30,7 @@ const PromotionsSection = () => {
             <div className="pt-16 md:pt-24 pb-12 px-4 sm:px-6 max-w-7xl mx-auto w-full flex-grow">
                 
                 <div className="text-center md:text-left mb-10">
-                    <h2 className="text-2xl md:text-5xl font-normal text-[#291840] font-GFSDidot uppercase">
+                    <h2 className="text-2xl md:text-4xl font-normal text-[#291840] font-GFSDidot uppercase">
                         Promociones
                     </h2>
                 </div>

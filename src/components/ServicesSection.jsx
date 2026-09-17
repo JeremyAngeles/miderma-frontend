@@ -11,7 +11,7 @@ const ServicesSection = () => {
                 
                 {/* Título de la Sección */}
                 <div className="text-center mb-16 relative z-10">
-                    <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-4 font-GFSDidot">
+                    <h2 className="text-2xl md:text-4xl font-normal text-miderma-dark mb-4 font-GFSDidot">
                         NUESTROS SERVICIOS
                     </h2>
                     

@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
                             Testimonios
                         </span>
                         {/* APLICADO: font-GFSDidot y font-normal para el título principal */}
-                        <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark font-GFSDidot uppercase">
+                        <h2 className="text-2xl md:text-4xl font-normal text-miderma-dark font-GFSDidot uppercase">
                             LO QUE DICEN NUESTROS PACIENTES
                         </h2>
                     </div>

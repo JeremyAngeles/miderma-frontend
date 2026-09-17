@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // === CONFIGURACIÓN DE TAMAÑOS Y ESPACIOS DEL HERO ===
 // APLICADO: Títulos con el mismo tamaño gigante de las otras secciones
 const ESTILOS_HERO = {
-    titulo: "text-2xl md:text-5xl lg:text-4xl mb-4 sm:mb-6", 
+    titulo: "text-1xl md:text-5xl lg:text-4xl mb-4 sm:mb-6", 
     subtitulo: "text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 font-medium", 
     boton: "text-sm sm:text-base tracking-wider"
 };

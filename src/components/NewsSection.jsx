@@ -47,7 +47,7 @@ const NewsSection = () => {
                         <span className="font-bold tracking-widest uppercase mb-3 block text-xs sm:text-sm text-[#8E6F96] font-Montserrat">
                             Lo que nos gustaría contarte
                         </span>
-                        <h2 className="text-2xl md:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
+                        <h2 className="text-2xl md:text-4xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                             Noticias
                         </h2>
                     </div>

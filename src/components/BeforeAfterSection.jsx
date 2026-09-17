@@ -57,7 +57,7 @@ const BeforeAfterSection = () => {
                             Resultados Reales
                         </span>
                         {/* APLICADO: font-GFSDidot y font-normal en el título principal */}
-                        <h2 className="text-2xl md:text-5xl lg:text-5xl font-normal text-[#291840] font-GFSDidot">
+                        <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-[#291840] font-GFSDidot">
                             GALERIA DE CASOS
                         </h2>
                     </div>
