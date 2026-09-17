@@ -79,7 +79,7 @@ const FeaturedProducts = () => {
                             Cuidado en Casa
                         </span>
                         {/* APLICADO: font-GFSDidot, font-normal, uppercase */}
-                        <h2 className="text-3xl md:text-5xl lg:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
+                        <h2 className="text-2xl md:text-5xl lg:text-5xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                             Tienda Dermocosmética
                         </h2>
                         {/* APLICADO: font-Montserrat */}
