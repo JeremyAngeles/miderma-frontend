@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 // === CONFIGURACIÓN DE TAMAÑOS Y ESPACIOS DEL HERO ===
 // APLICADO: Títulos con el mismo tamaño gigante de las otras secciones
 const ESTILOS_HERO = {
-    titulo: "text-1xl md:text-5xl lg:text-4xl mb-4 sm:mb-6", 
+    titulo: "text-2xl md:text-5xl lg:text-4xl mb-4 sm:mb-6", 
     subtitulo: "text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 font-medium", 
     boton: "text-sm sm:text-base tracking-wider"
 };
@@ -168,8 +168,9 @@ const Hero = () => {
                                 {/* BOTÓN: font-Montserrat, font-bold, uppercase */}
                                 {/* BOTÓN AJUSTADO: Más chico en celular (px-6 py-2.5 text-xs) y a la izquierda */}
                                 {/* BOTÓN MÁS CHICO Y AJUSTADO */}
+                            {/* BOTÓN AJUSTADO Y CON LA LETRA UN POCO MÁS GRANDE */}
 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start w-fit">
-    <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-4 py-2 sm:px-6 sm:py-3 rounded-full font-Montserrat font-bold transition-all duration-300 shadow-lg inline-flex items-center justify-center gap-1.5 text-[10px] sm:text-xs md:text-sm tracking-wide uppercase w-fit`}>
+    <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-5 py-2.5 sm:px-7 sm:py-3 rounded-full font-Montserrat font-bold transition-all duration-300 shadow-lg inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm md:text-base tracking-wide uppercase w-fit`}>
         {slide.buttonText}
     </Link>
 </div>
