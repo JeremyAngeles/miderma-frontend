@@ -44,11 +44,11 @@ const AccordionItem = ({ title, details, image }) => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex justify-between items-center py-3.5 text-left focus:outline-none group"
             >
-                {/* APLICADO: font-GFSDidot, uppercase, y text-sm para ser un poco más pequeño */}
+                {/* APLICADO: font-GFSDidot, uppercase */}
                 <span className={`font-normal font-GFSDidot uppercase text-xs md:text-sm transition-colors pr-4 ${isOpen ? 'text-miderma-pink' : 'text-miderma-dark group-hover:text-miderma-pink'}`}>
                     {title}
                 </span>
-                <span className={`transform transition-transform duration-300 text-miderma-pink font-bold text-xl flex-shrink-0 ${isOpen ? 'rotate-45' : ''}`}>
+                <span className={`transform transition-transform duration-300 text-miderma-pink font-bold text-xl flex-shrink-0 font-Montserrat ${isOpen ? 'rotate-45' : ''}`}>
                     +
                 </span>
             </button>
@@ -395,7 +395,6 @@ const Tratamientos = () => {
             <Navbar />
 
             {/* HERO */}
-                {/* pt-24 es para celular, md:pt-40 es para computadora */}
              <div className="relative w-full pt-24 md:pt-40 pb-16 flex flex-col items-center justify-center text-center px-4">                {/* APLICADO: El texto rosadito ("Antetítulo") usa exactamente la misma configuración que en SobreMi */}
                 <span className="text-[11px] md:text-xs font-bold text-[#F2BDC7] uppercase tracking-widest mb-3 block font-Montserrat">
                     Catálogo de Especialidades
@@ -414,14 +413,14 @@ const Tratamientos = () => {
                 
                 {/* MENÚ LATERAL (IZQUIERDA) */}
                 <div className="w-full lg:w-1/3 xl:w-1/4 bg-white rounded-[2rem] shadow-sm border border-gray-100 p-6 lg:sticky lg:top-32 flex-shrink-0">
-                    <h3 className="font-serif font-bold text-xl text-miderma-dark mb-6 border-b border-gray-100 pb-4">
-                        Categorías
-                    </h3>
+                   <h3 className="text-xl font-normal text-miderma-dark mb-6 border-b border-gray-100 pb-4 font-GFSDidot uppercase">
+    Categorías
+</h3>
 
                     {/* SELECTOR MÓVIL DE CATEGORÍAS */}
                     <div className="lg:hidden mb-6">
                         <select 
-                            className="w-full p-4 rounded-xl border border-gray-200 bg-[#F2F2F2] text-miderma-dark font-bold focus:outline-none focus:border-miderma-pink"
+                            className="w-full p-4 rounded-xl border border-gray-200 bg-[#F2F2F2] text-miderma-dark font-bold focus:outline-none focus:border-miderma-pink font-Montserrat"
                             value={catActiva.id}
                             onChange={(e) => {
                                 const cat = categoriasTratamientos.find(c => c.id === e.target.value);
@@ -440,7 +439,7 @@ const Tratamientos = () => {
                             <button
                                 key={cat.id}
                                 onClick={() => handleCategoriaClick(cat)}
-                                className={`text-left px-5 py-3 rounded-xl font-bold transition-all duration-300 ${
+                                className={`text-left px-5 py-3 rounded-xl font-bold transition-all duration-300 font-Montserrat ${
                                     catActiva.id === cat.id 
                                     ? 'bg-miderma-pink text-white shadow-md' 
                                     : 'bg-transparent text-miderma-purple hover:bg-[#FDF6F4] hover:text-miderma-dark'
@@ -460,7 +459,7 @@ const Tratamientos = () => {
                             <button
                                 key={trat.nombre}
                                 onClick={() => setTratActivo(trat)}
-                                className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 border-l-4 ${
+                                className={`text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 border-l-4 font-Montserrat ${
                                     tratActivo.nombre === trat.nombre 
                                     ? 'border-miderma-pink bg-[#FDF6F4] text-miderma-dark font-bold' 
                                     : 'border-transparent text-miderma-purple hover:bg-gray-50 hover:text-miderma-dark'
