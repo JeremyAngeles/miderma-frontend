@@ -166,8 +166,9 @@ const Hero = () => {
                                 </span>
                                 
                                 {/* BOTÓN: font-Montserrat, font-bold, uppercase */}
-                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start">
-                                    <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-8 py-3.5 rounded-full font-Montserrat font-bold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 ${ESTILOS_HERO.boton} uppercase`}>
+                                {/* BOTÓN AJUSTADO: Más chico en celular (px-6 py-2.5 text-xs) y a la izquierda */}
+                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start w-full">
+                                    <Link to={slide.link} className={`bg-miderma-pink hover:bg-white text-miderma-dark hover:text-miderma-dark px-6 py-2.5 sm:px-8 sm:py-3.5 rounded-full font-Montserrat font-bold transition-all duration-300 shadow-lg inline-flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base tracking-wider uppercase w-auto max-w-[220px] sm:max-w-none`}>
                                         {slide.buttonText}
                                     </Link>
                                 </div>

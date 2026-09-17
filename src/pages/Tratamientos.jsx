@@ -2,7 +2,87 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
-// === BASE DE DATOS DE TRATAMIENTOS COMPLETA ===
+// ==========================================
+// COMPONENTE PARA IMÁGENES ROTATIVAS (CARRUSEL)
+// ==========================================
+const ImageSlider = ({ images, title }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        // Cambiar imagen cada 3 segundos
+        const timer = setInterval(() => {
+            setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+        }, 3000);
+        return () => clearInterval(timer);
+    }, [images]);
+
+    return (
+        <div className="absolute inset-0 w-full h-full rounded-[2rem] overflow-hidden">
+            {images.map((img, index) => (
+                <img
+                    key={index}
+                    src={img}
+                    alt={`${title} - Imagen ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                        index === currentIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                />
+            ))}
+        </div>
+    );
+};
+
+// ==========================================
+// COMPONENTE ACORDEÓN PARA LOS TRATAMIENTOS
+// ==========================================
+const AccordionItem = ({ title, details, image }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="border-b border-[#F2F2F2] last:border-0">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-full flex justify-between items-center py-3.5 text-left focus:outline-none group"
+            >
+                {/* APLICADO: font-GFSDidot, uppercase, y text-sm para ser un poco más pequeño */}
+                <span className={`font-normal font-GFSDidot uppercase text-xs md:text-sm transition-colors pr-4 ${isOpen ? 'text-miderma-pink' : 'text-miderma-dark group-hover:text-miderma-pink'}`}>
+                    {title}
+                </span>
+                <span className={`transform transition-transform duration-300 text-miderma-pink font-bold text-xl flex-shrink-0 ${isOpen ? 'rotate-45' : ''}`}>
+                    +
+                </span>
+            </button>
+            
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[1200px] opacity-100 pb-4' : 'max-h-0 opacity-0'}`}>
+                <div className="bg-[#FDF6F4]/50 p-4 rounded-xl border-l-2 border-miderma-pink">
+                    
+                    {image && (
+                        <div className="w-full mb-4 rounded-lg overflow-hidden">
+                            <img 
+                                src={image} 
+                                alt={title} 
+                                className="w-full h-48 sm:h-56 md:h-64 object-cover"
+                            />
+                        </div>
+                    )}
+
+                    <div className="text-sm text-[#615573] leading-relaxed space-y-2 font-Montserrat">
+                        {details.map((detail, index) => (
+                            <p key={index}>
+                                {detail.label && <strong className="text-miderma-dark">{detail.label} </strong>}
+                                {detail.text}
+                            </p>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+// ==========================================
+// DATA DE LOS SERVICIOS ACTUALIZADA
+// ==========================================
 const categoriasTratamientos = [
     {
         id: "clinicos",
@@ -315,10 +395,16 @@ const Tratamientos = () => {
             <Navbar />
 
             {/* HERO */}
-            <div className="relative w-full pt-32 pb-16 flex flex-col items-center justify-center text-center px-4">
-                <span className="text-miderma-pink font-extrabold tracking-widest uppercase mb-2 block text-xs md:text-sm">Catálogo de Especialidades</span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-miderma-dark mb-4 font-serif">Nuestros Tratamientos</h1>
-                <p className="max-w-2xl text-miderma-purple text-sm md:text-base leading-relaxed">
+                {/* pt-24 es para celular, md:pt-40 es para computadora */}
+             <div className="relative w-full pt-24 md:pt-40 pb-16 flex flex-col items-center justify-center text-center px-4">                {/* APLICADO: El texto rosadito ("Antetítulo") usa exactamente la misma configuración que en SobreMi */}
+                <span className="text-[11px] md:text-xs font-bold text-[#F2BDC7] uppercase tracking-widest mb-3 block font-Montserrat">
+                    Catálogo de Especialidades
+                </span>
+                
+                {/* APLICADO: text-2xl md:text-5xl font-normal text-miderma-dark font-GFSDidot uppercase */}
+                <h1 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-4 font-GFSDidot uppercase">Nuestros Tratamientos</h1>
+                
+                <p className="max-w-2xl text-miderma-purple text-sm md:text-base leading-relaxed font-Montserrat">
                     Soluciones avanzadas y tecnología de última generación adaptadas a las necesidades clínicas, quirúrgicas y estéticas de tu piel.
                 </p>
             </div>
@@ -366,7 +452,7 @@ const Tratamientos = () => {
                     </div>
 
                     {/* TRATAMIENTOS DE LA CATEGORÍA SELECCIONADA */}
-                    <h4 className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-4 px-2">
+                    <h4 className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-4 px-2 font-Montserrat">
                         Opciones en {catActiva.nombre}
                     </h4>
                     <div className="flex flex-col gap-1.5 max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar">
@@ -394,7 +480,7 @@ const Tratamientos = () => {
                         {/* ÁREA GRIS REDUCIDA CON FOTOS */}
                         <div className="w-full bg-[#F2F2F2] p-2 sm:p-3 relative rounded-t-[2rem]">
                             
-                            <div className="absolute top-5 left-5 z-20 bg-miderma-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md pointer-events-none">
+                            <div className="absolute top-5 left-5 z-20 bg-miderma-dark text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md pointer-events-none font-Montserrat">
                                 {catActiva.nombre}
                             </div>
 
@@ -498,18 +584,19 @@ const Tratamientos = () => {
 
                         {/* ÁREA BLANCA CON TEXTO Y DETALLES */}
                         <div className="p-6 sm:p-10 lg:p-12 bg-white flex-1">
-                            <h2 className="text-3xl md:text-4xl font-extrabold text-miderma-dark font-serif mb-6">
+                            {/* APLICADO: text-2xl md:text-5xl font-normal text-miderma-dark font-GFSDidot uppercase */}
+                            <h2 className="text-2xl md:text-4xl font-normal text-miderma-dark mb-6 font-GFSDidot uppercase">
                                 {tratActivo.nombre}
                             </h2>
 
                             <div className="space-y-8">
                                 {/* Qué es */}
                                 <div>
-                                    <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2 flex items-center gap-2">
+                                    <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2 flex items-center gap-2 font-Montserrat">
                                         <svg className="w-4 h-4 text-miderma-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                         ¿En qué consiste?
                                     </h4>
-                                    <p className="text-miderma-purple leading-relaxed">
+                                    <p className="text-miderma-purple leading-relaxed font-Montserrat">
                                         {tratActivo.que_es}
                                     </p>
                                 </div>
@@ -519,20 +606,20 @@ const Tratamientos = () => {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#FDF6F4]/50 p-6 rounded-2xl border border-miderma-pink/20">
                                         {tratActivo.duracion && (
                                             <div>
-                                                <h4 className="font-bold text-miderma-dark text-sm mb-2 flex items-center gap-2">
+                                                <h4 className="font-bold text-miderma-dark text-sm mb-2 flex items-center gap-2 font-Montserrat">
                                                     <svg className="w-4 h-4 text-miderma-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                                     Duración del tratamiento
                                                 </h4>
-                                                <p className="text-sm text-miderma-purple">{tratActivo.duracion}</p>
+                                                <p className="text-sm text-miderma-purple font-Montserrat">{tratActivo.duracion}</p>
                                             </div>
                                         )}
                                         {tratActivo.sesiones && (
                                             <div>
-                                                <h4 className="font-bold text-miderma-dark text-sm mb-2 flex items-center gap-2">
+                                                <h4 className="font-bold text-miderma-dark text-sm mb-2 flex items-center gap-2 font-Montserrat">
                                                     <svg className="w-4 h-4 text-miderma-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                                                     Frecuencia / Sesiones
                                                 </h4>
-                                                <p className="text-sm text-miderma-purple">{tratActivo.sesiones}</p>
+                                                <p className="text-sm text-miderma-purple font-Montserrat">{tratActivo.sesiones}</p>
                                             </div>
                                         )}
                                     </div>
@@ -543,20 +630,20 @@ const Tratamientos = () => {
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                         {tratActivo.efectos && (
                                             <div>
-                                                <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2">
+                                                <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2 font-Montserrat">
                                                     Duración de Efectos
                                                 </h4>
-                                                <p className="text-sm text-miderma-purple leading-relaxed">
+                                                <p className="text-sm text-miderma-purple leading-relaxed font-Montserrat">
                                                     {tratActivo.efectos}
                                                 </p>
                                             </div>
                                         )}
                                         {tratActivo.contraindicaciones && (
                                             <div>
-                                                <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2 text-red-500/80">
+                                                <h4 className="font-bold text-miderma-pink uppercase tracking-widest text-xs mb-3 border-b border-gray-100 pb-2 text-red-500/80 font-Montserrat">
                                                     Contraindicaciones Principales
                                                 </h4>
-                                                <p className="text-sm text-miderma-purple leading-relaxed">
+                                                <p className="text-sm text-miderma-purple leading-relaxed font-Montserrat">
                                                     {tratActivo.contraindicaciones}
                                                 </p>
                                             </div>
@@ -567,10 +654,10 @@ const Tratamientos = () => {
                                 {/* Observaciones */}
                                 {tratActivo.observaciones && (
                                     <div className="bg-gray-50 p-5 rounded-xl border-l-4 border-miderma-dark">
-                                        <h4 className="font-bold text-miderma-dark text-xs uppercase tracking-wider mb-2">
+                                        <h4 className="font-bold text-miderma-dark text-xs uppercase tracking-wider mb-2 font-Montserrat">
                                             Observaciones Médicas
                                         </h4>
-                                        <p className="text-sm text-gray-600 italic">
+                                        <p className="text-sm text-gray-600 italic font-Montserrat">
                                             "{tratActivo.observaciones}"
                                         </p>
                                     </div>
@@ -580,15 +667,16 @@ const Tratamientos = () => {
 
                         {/* BOTONES DE ACCIÓN */}
                         <div className="bg-white border-t border-gray-100 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-end gap-4 rounded-b-[2rem]">
+                            {/* APLICADO: font-GFSDidot y uppercase */}
                             <Link 
                                 to="/contacto" 
-                                className="w-full sm:w-auto bg-miderma-dark hover:bg-miderma-purple text-white px-8 py-3.5 rounded-full font-bold shadow-md transition-all text-sm text-center tracking-wider"
+                                className="w-full sm:w-auto bg-miderma-dark hover:bg-miderma-purple text-white px-8 py-3.5 rounded-full font-normal shadow-md transition-all text-sm text-center tracking-wider font-GFSDidot uppercase"
                             >
                                 Reservar Cita
                             </Link>
                             <Link 
                                 to="/contacto" 
-                                className="w-full sm:w-auto bg-miderma-pink hover:opacity-80 text-miderma-dark px-8 py-3.5 rounded-full font-bold shadow-md transition-all text-sm text-center flex items-center justify-center gap-2 tracking-wider"
+                                className="w-full sm:w-auto bg-miderma-pink hover:opacity-80 text-miderma-dark px-8 py-3.5 rounded-full font-normal shadow-md transition-all text-sm text-center flex items-center justify-center gap-2 tracking-wider font-GFSDidot uppercase"
                             >
                                 Reservar una consulta virtual
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>

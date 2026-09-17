@@ -4,7 +4,6 @@ const DoctorSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        /* AQUÍ ESTÁ EL TRUCO: Envolvemos todo en un Fragmento <> </> */
         <>
             <section className="py-24 px-4 sm:px-6 relative z-10 bg-[#FDF6F4] text-miderma-dark overflow-hidden"> 
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -25,7 +24,7 @@ const DoctorSection = () => {
                             Dirección Médica y Fundadora
                         </span>
                         
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight font-GFSDidot text-[#291840]">
+                        <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-6 font-GFSDidot uppercase">
                             Dra. Rudid Huamaní
                         </h2>
                         
@@ -36,10 +35,10 @@ const DoctorSection = () => {
                         </p>
 
                         <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start mb-10 font-Montserrat">
-                            <span className="bg-white text-miderma-dark px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm border border-miderma-pink/50 tracking-wide">
+                            <span className="bg-white text-miderma-dark px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm border border-miderma-pink/50 tracking-wide uppercase">
                                 CMP: 68795
                             </span>
-                            <span className="bg-white text-miderma-dark px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm border border-miderma-pink/50 tracking-wide">
+                            <span className="bg-white text-miderma-dark px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm border border-miderma-pink/50 tracking-wide uppercase">
                                 RNE: 050681
                             </span>
                         </div>
@@ -47,7 +46,9 @@ const DoctorSection = () => {
                         {/* ==============================================
                             GRID DE FORMACIÓN
                         ============================================== */}
-                        <h4 className="font-bold border-b-2 border-miderma-dark/10 pb-2 mb-6 text-base sm:text-lg text-[#291840] font-Montserrat">Formación Académica e Internacional</h4>
+                        <h4 className="font-normal border-b-2 border-miderma-dark/10 pb-2 mb-6 text-xl text-miderma-dark font-GFSDidot uppercase">
+                            Formación Académica e Internacional
+                        </h4>
                         
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-10 text-left font-Montserrat">
                             
@@ -55,7 +56,7 @@ const DoctorSection = () => {
                             <div className="flex flex-row items-center gap-3 bg-white/80 p-3 sm:p-4 rounded-xl shadow-sm border border-white hover:border-miderma-pink/50 transition-colors">
                                 <img src="/logo-unica.png" alt="UNICA" className="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0" />
                                 <div className="flex flex-col">
-                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight line-clamp-2">Univ. San Luis G.</p>
+                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight line-clamp-2 uppercase">Univ. San Luis G.</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 font-medium mt-0.5">Pregrado</p>
                                 </div>
                             </div>
@@ -64,7 +65,7 @@ const DoctorSection = () => {
                             <div className="flex flex-row items-center gap-3 bg-white/80 p-3 sm:p-4 rounded-xl shadow-sm border border-white hover:border-miderma-pink/50 transition-colors">
                                 <img src="/logo-unmsm.png" alt="UNMSM" className="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0" />
                                 <div className="flex flex-col">
-                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight line-clamp-2">Hosp. Dos de Mayo</p>
+                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight line-clamp-2 uppercase">Hosp. Dos de Mayo</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 font-medium mt-0.5">Posgrado UNMSM</p>
                                 </div>
                             </div>
@@ -74,7 +75,7 @@ const DoctorSection = () => {
                                 <img src="/logo-italiano.png" alt="Hospital Italiano" className="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0" />
                                 <div className="flex flex-col">
                                     <div className="flex items-center gap-1.5">
-                                        <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight">Hosp. Italiano</p>
+                                        <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight uppercase">Hosp. Italiano</p>
                                         <img src="/bandera-argentina.png" alt="Argentina" className="w-3 h-2 sm:w-4 sm:h-3 object-cover rounded-sm shrink-0" />
                                     </div>
                                     <p className="text-[9px] sm:text-xs text-gray-500 font-medium mt-0.5">Pasantía Dermatología</p>
@@ -85,7 +86,7 @@ const DoctorSection = () => {
                             <div className="flex flex-row items-center gap-3 bg-white/80 p-3 sm:p-4 rounded-xl shadow-sm border border-white hover:border-miderma-pink/50 transition-colors">
                                 <img src="/logo-cilad.png" alt="CILAD" className="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0" />
                                 <div className="flex flex-col">
-                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight">CILAD 2024</p>
+                                    <p className="font-bold text-[10px] sm:text-sm text-miderma-dark leading-tight uppercase">CILAD 2024</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 font-medium mt-0.5">Diplomado Estética</p>
                                 </div>
                             </div>
@@ -95,7 +96,7 @@ const DoctorSection = () => {
                                 <img src="/logo-adev.png" alt="ADEV" className="w-8 h-8 sm:w-11 sm:h-11 object-contain shrink-0" />
                                 <div className="flex flex-col text-left">
                                     <div className="flex items-center gap-2">
-                                        <p className="font-bold text-[11px] sm:text-sm text-miderma-dark leading-tight">ADEV 2025</p>
+                                        <p className="font-bold text-[11px] sm:text-sm text-miderma-dark leading-tight uppercase">ADEV 2025</p>
                                         <img src="/bandera-espana.png" alt="España" className="w-3.5 h-2.5 sm:w-4 sm:h-3 object-cover rounded-sm shrink-0" />
                                     </div>
                                     <p className="text-[10px] sm:text-xs text-gray-500 font-medium mt-0.5">Diplomado en Ecografía Cutánea</p>
@@ -107,7 +108,7 @@ const DoctorSection = () => {
                         {/* BOTÓN PARA ABRIR EL MODAL */}
                         <button 
                             onClick={() => setIsModalOpen(true)}
-                            className="inline-flex items-center justify-center gap-2 bg-miderma-dark hover:bg-miderma-pink text-white hover:text-miderma-dark px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold transition-all duration-300 shadow-xl text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto group font-Montserrat"
+                            className="inline-flex items-center justify-center gap-2 bg-miderma-dark hover:bg-miderma-pink text-white hover:text-miderma-dark px-6 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all duration-300 shadow-xl text-sm sm:text-base uppercase tracking-wider w-full sm:w-auto group font-GFSDidot"
                         >
                             Más sobre mí
                             <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,22 +119,15 @@ const DoctorSection = () => {
                 </div>
             </section>
 
-            {/* ==============================================
-                MODAL (VENTANA EMERGENTE) CON LA INFO COMPLETA
-                ** AHORA ESTÁ FUERA DE LA ETIQUETA SECTION **
-            ============================================== */}
+            {/* MODAL */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6">
-                    {/* Fondo oscuro difuminado */}
                     <div 
                         className="absolute inset-0 bg-[#291840]/80 backdrop-blur-sm transition-opacity" 
                         onClick={() => setIsModalOpen(false)}
                     ></div>
                     
-                    {/* Contenedor del Modal */}
                     <div className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[2rem] shadow-2xl p-6 sm:p-10 animate-slide-up custom-scrollbar">
-                        
-                        {/* Botón Cerrar */}
                         <button 
                             onClick={() => setIsModalOpen(false)}
                             className="absolute top-5 right-5 w-10 h-10 bg-[#F2F2F2] hover:bg-[#F2BDC7] text-[#291840] rounded-full flex items-center justify-center transition-colors shadow-sm"
@@ -147,9 +141,9 @@ const DoctorSection = () => {
                             <span className="text-[11px] font-bold text-[#F2BDC7] uppercase tracking-widest mb-2 block font-Montserrat">
                                 Perfil Profesional
                             </span>
-                            <h3 className="text-2xl sm:text-3xl font-medium text-[#291840] font-GFSDidot mb-6">
+                            <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-6 font-GFSDidot uppercase">
                                 Dra. Rudid Huamaní
-                            </h3>
+                            </h2>
                             
                             <div className="space-y-4 text-sm sm:text-base text-[#615573] leading-relaxed text-justify font-Montserrat">
                                 <p>

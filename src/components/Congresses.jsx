@@ -124,7 +124,6 @@ const Congresses = () => {
     return (
         <section className="py-20 md:py-32 bg-[#FDF6F4]/40 overflow-hidden relative">
             
-            {/* Decoración de fondo */}
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#F2BDC7]/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#291840]/5 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
 
@@ -134,7 +133,7 @@ const Congresses = () => {
                     <span className="font-extrabold tracking-widest uppercase mb-3 block text-xs md:text-sm text-[#F2BDC7]">
                         Actualización Constante
                     </span>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#291840] font-serif mb-6">
+                    <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-4 font-GFSDidot uppercase">
                         Últimos Congresos
                     </h2>
                     <p className="text-[#615573] max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
@@ -167,19 +166,17 @@ const Congresses = () => {
                                 onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }}
                             />
                             
-                            {/* Gradiente más suave y elegante */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#291840] via-[#291840]/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
                             
-                            {/* Icono de Ver Flotante */}
                             <div className="absolute top-5 right-5 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 pointer-events-none shadow-lg">
                                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                             </div>
 
                             <div className="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                                <span className="bg-[#F2BDC7] text-[#291840] text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block shadow-md">
+                                <span className="bg-[#F2BDC7] text-[#291840] text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 inline-block shadow-md font-Montserrat">
                                     {congreso.fecha}
                                 </span>
-                                <h3 className="text-xl md:text-2xl font-bold leading-snug mb-2 font-serif group-hover:text-[#F2BDC7] transition-colors duration-300">
+                                <h3 className="text-xl font-normal leading-snug mb-2 font-GFSDidot uppercase group-hover:text-[#F2BDC7] transition-colors duration-300">
                                     {congreso.titulo}
                                 </h3>
                                 <div className="w-10 h-1 bg-white/30 rounded-full mt-4 group-hover:w-16 group-hover:bg-[#F2BDC7] transition-all duration-500"></div>
@@ -189,7 +186,6 @@ const Congresses = () => {
                 </div>
             </div>
 
-            {/* MODAL REDISEÑADO Y ELEGANTE */}
             {selectedCongreso && (
                 <div 
                     className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 bg-[#291840]/80 backdrop-blur-md transition-opacity"
@@ -212,10 +208,9 @@ const Congresses = () => {
                                 alt={selectedCongreso.titulo} 
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
-                            {/* Sombra interna para el texto en móviles */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#291840]/90 to-transparent md:hidden"></div>
                             <div className="absolute bottom-4 left-4 right-4 md:hidden">
-                                <span className="bg-[#F2BDC7] text-[#291840] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                <span className="bg-[#F2BDC7] text-[#291840] text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider font-Montserrat">
                                     {selectedCongreso.fecha}
                                 </span>
                             </div>
@@ -223,14 +218,14 @@ const Congresses = () => {
 
                         <div className="w-full md:w-7/12 p-6 sm:p-10 flex flex-col overflow-y-auto bg-white relative">
                             <div className="hidden md:block mb-4">
-                                <span className="bg-[#F2BDC7]/20 text-[#291840] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-[#F2BDC7]/30">
+                                <span className="bg-[#F2BDC7]/20 text-[#291840] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-[#F2BDC7]/30 font-Montserrat">
                                     {selectedCongreso.fecha}
                                 </span>
                             </div>
                             
-                            <h3 className="text-2xl md:text-4xl font-extrabold text-[#291840] mb-6 leading-tight font-serif">
+                            <h2 className="text-2xl md:text-5xl font-normal text-miderma-dark mb-6 font-GFSDidot uppercase">
                                 {selectedCongreso.titulo}
-                            </h3>
+                            </h2>
                             
                             {selectedCongreso.organizador && (
                                 <div className="mb-8 flex items-start gap-4 bg-[#FDF6F4]/50 p-5 rounded-2xl border border-[#F2BDC7]/20">
@@ -238,15 +233,15 @@ const Congresses = () => {
                                         <svg className="w-5 h-5 text-[#F2BDC7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                                     </div>
                                     <div>
-                                        <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1">Organizado por:</p>
-                                        <p className="text-sm font-bold text-[#291840] leading-snug">{selectedCongreso.organizador}</p>
+                                        <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1 font-Montserrat">Organizado por:</p>
+                                        <p className="text-sm font-bold text-[#291840] leading-snug font-Montserrat uppercase">{selectedCongreso.organizador}</p>
                                     </div>
                                 </div>
                             )}
                             
                             <div className="mb-8">
-                                <h4 className="font-bold text-sm text-[#291840] mb-3 uppercase tracking-wider">Detalles del Evento</h4>
-                                <p className="text-sm md:text-base text-[#615573] leading-relaxed">
+                                <h4 className="text-xl font-normal text-miderma-dark mb-4 font-GFSDidot uppercase">Detalles del Evento</h4>
+                                <p className="text-sm md:text-base text-[#615573] leading-relaxed font-Montserrat">
                                     {selectedCongreso.descripcion}
                                 </p>
                             </div>
@@ -257,8 +252,8 @@ const Congresses = () => {
                                         <svg className="w-5 h-5 text-[#291840]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                                     </div>
                                     <div>
-                                        <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1">Ponentes Destacados:</p>
-                                        <p className="text-sm font-bold text-[#291840]">{selectedCongreso.ponentes}</p>
+                                        <p className="text-xs text-[#9A92A6] uppercase font-bold tracking-wider mb-1 font-Montserrat">Ponentes Destacados:</p>
+                                        <p className="text-sm font-bold text-[#291840] font-Montserrat uppercase">{selectedCongreso.ponentes}</p>
                                     </div>
                                 </div>
                             )}
