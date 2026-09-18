@@ -180,11 +180,7 @@ const Hero = () => {
                 </div>
 
                 {/* CURVA BLANCA */}
-                <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] sm:h-[60px] md:h-[120px]">
-                        <path d="M0,120 C300,0 900,0 1200,120 L1200,120 L0,120 Z" className="fill-white"></path>
-                    </svg>
-                </div>
+                
             </div>
 
             <div className="relative w-full bg-white pt-8 md:pt-12 px-4 sm:px-6">

@@ -99,15 +99,10 @@ const Contacto = () => {
                             <p>
                                 <strong>Haz que tu piel se sienta cuidada con nosotros.</strong> En Miderma sabemos que tu tiempo es valioso y que la salud de tu piel no puede esperar. Por eso hemos creado un sistema de reservas sencillo y rápido: completa el formulario y agenda tu consulta en pocos pasos. Nuestro equipo revisará tu solicitud y confirmará tu cita a la brevedad posible.
                             </p>
-                            
-                            <div className="bg-[#FDF6F4] border-l-4 border-[#F2BDC7] p-5 rounded-r-2xl my-8 shadow-sm">
-                                <span className="block text-[#615573] text-sm uppercase tracking-widest font-bold mb-1">Inversión</span>
-                                <span className="text-2xl md:text-2xl font-normal text-[#291840] font-GFSDidot">Precio de Consulta: S/. 120.00</span>
-                            </div>
 
-                            <p className="text-sm bg-gray-50 p-4 rounded-xl italic">
-                                👉 Si tienes una urgencia, indícalo en tu mensaje y nos pondremos en contacto contigo lo más pronto posible.
-                            </p>
+                                <p className="text-sm bg-gray-50 p-4 rounded-xl italic">
+                                    👉 Si tienes una urgencia, indícalo en tu mensaje y nos pondremos en contacto contigo lo más pronto posible.
+                                </p>
                             <p>
                                 De esta manera, garantizamos que recibas la atención que necesitas con confianza y tranquilidad.
                             </p>

@@ -135,7 +135,7 @@ const BeforeAfterSection = () => {
                             </span>
                             
                             {/* APLICADO: font-GFSDidot y font-normal en el título del caso */}
-                            <h3 className="text-2xl sm:text-4xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
+                            <h3 className="text-2xl sm:text-3xl font-normal text-[#291840] mb-4 font-GFSDidot uppercase">
                                 {casoActual.titulo}
                             </h3>
                             
